@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Jet&#39;s BLOG</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jet&#39;s BLOG">
-<meta property="og:url" content="https://github.com/taokiang/blog/index.html">
-<meta property="og:site_name" content="Jet&#39;s BLOG">
+  <meta name="description" content="问题Vue2在低版本app（包括安卓和ios），显示空白 解决方法这是由于IE对promise的支持不好，我们需要安装：babel-polyfill和es6-promise:12npm install babel-polyfill --savenpm install es6-promise --save main.js文件中引用:1234import &apos;babel-polyfill&apos;import">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/taokiang/blog/2018/06/26/Vue2在低版本app显示空白/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="问题Vue2在低版本app（包括安卓和ios），显示空白 解决方法这是由于IE对promise的支持不好，我们需要安装：babel-polyfill和es6-promise:12npm install babel-polyfill --savenpm install es6-promise --save main.js文件中引用:1234import &apos;babel-polyfill&apos;import">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-27T05:42:26.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jet&#39;s BLOG">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="问题Vue2在低版本app（包括安卓和ios），显示空白 解决方法这是由于IE对promise的支持不好，我们需要安装：babel-polyfill和es6-promise:12npm install babel-polyfill --savenpm install es6-promise --save main.js文件中引用:1234import &apos;babel-polyfill&apos;import">
   
-    <link rel="alternate" href="/atom.xml" title="Jet&#39;s BLOG" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="icon" href="/blog/favicon.png">
+    <link rel="icon" href="/favicon.png">
   
   
     
@@ -57,86 +61,30 @@
     </div>
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">Jet&#39;s BLOG</a>
+        <a href="/blog/" id="logo">Hexo</a>
       </h1>
       
     </div>
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-2018-6-27-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Vue2在低版本app显示空白" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/06/27/2018-6-27-2/" class="article-date">
-  <time datetime="2018-06-27T05:56:31.000Z" itemprop="datePublished">2018-06-27</time>
+    <a href="/blog/2018/06/26/Vue2在低版本app显示空白/" class="article-date">
+  <time datetime="2018-06-26T08:25:59.417Z" itemprop="datePublished">2018-06-26</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/27/2018-6-27-2/">打包后css浏览器兼容前缀自动去除，导致某些版本的机型css不兼容</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
         <!-- Table of Contents -->
         
-        <p><br><br>由于vue cli这个脚手架在打包后把css统一用postCSS的autoprefixer 插件进行压缩，而autoprefixer插件会针对支持的浏览器进行CSS前缀的删除和追加。对于某些版本的浏览器可能会导致前缀被删除而产生不兼容，具体解决方法如下</p>
-<h5 id="package-json-文件中配置如下："><a href="#package-json-文件中配置如下：" class="headerlink" title="package.json 文件中配置如下："></a>package.json 文件中配置如下：</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"last 10 Chrome versions"</span>,</span><br><span class="line">    <span class="string">"last 5 Firefox versions"</span>,</span><br><span class="line">    <span class="string">"Safari &gt;= 6"</span>,</span><br><span class="line">    <span class="string">"ie &gt; 8"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-2/" data-id="cjiwtwapl0003747t78deskj6" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-2018-6-27-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/27/2018-6-27-1/" class="article-date">
-  <time datetime="2018-06-27T05:56:31.000Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/27/2018-6-27-1/">Vue2在低版本app，显示空白</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br><br>这是由于IE对promise的支持不好，我们需要安装：babel-polyfill和es6-promise:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-polyfill --save</span><br><span class="line">npm install es6-promise --save</span><br></pre></td></tr></table></figure></p>
+        <hr>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h2 id="Vue2在低版本app（包括安卓和ios），显示空白"><a href="#Vue2在低版本app（包括安卓和ios），显示空白" class="headerlink" title="Vue2在低版本app（包括安卓和ios），显示空白"></a>Vue2在低版本app（包括安卓和ios），显示空白</h2><p><br><br><br></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>这是由于IE对promise的支持不好，我们需要安装：babel-polyfill和es6-promise:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-polyfill --save</span><br><span class="line">npm install es6-promise --save</span><br></pre></td></tr></table></figure></p>
 <p><br><br>main.js文件中引用:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Es6Promise <span class="keyword">from</span> <span class="string">'es6-promise'</span></span><br><span class="line">Es6Promise.polyfill()</span><br></pre></td></tr></table></figure></p>
 <p><br><br>build/webpack.base.conf.js 文件中配置如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">     entry: &#123;</span><br><span class="line">       app: [<span class="string">"babel-polyfill"</span>, <span class="string">"./src/main.js"</span>]</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">		  &#123;</span><br><span class="line">			test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">			loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">			<span class="comment">//include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],</span></span><br><span class="line">			exclude: <span class="regexp">/node_modules/</span>,<span class="comment">//除了node_modules文件夹以外的，均使用babel-loader转换</span></span><br><span class="line">			query: &#123;</span><br><span class="line">			  presets: [<span class="string">'es2015'</span>]</span><br><span class="line">			&#125;</span><br><span class="line">		  &#125;</span><br><span class="line">    	]</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p><br><br>.babelrc 文件中配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;modules&quot;: false,</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;not ie &lt;= 8&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    &quot;es2015&quot;,</span><br><span class="line">    &quot;stage-2&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-vue-jsx&quot;, &quot;transform-runtime&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -149,63 +97,85 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-1/" data-id="cjiwtwham0004747tuzyk3djk" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/06/26/Vue2在低版本app显示空白/" data-id="cjiwmxd9w0004s07t5d1f1nz5" class="article-share-link">分享</a>
       
       
       
     </footer>
   </div>
   
-</article>
- 
-
-
-  
-    <article id="post-2018-6-27-3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/27/2018-6-27-3/" class="article-date">
-  <time datetime="2018-06-27T05:56:31.000Z" itemprop="datePublished">2018-06-27</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/27/2018-6-27-3/">ios中input设置readonly，仍能聚焦</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br></p>
-<h5 id="package-json-文件中配置如下："><a href="#package-json-文件中配置如下：" class="headerlink" title="package.json 文件中配置如下："></a>package.json 文件中配置如下：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"number"</span> placeholder=<span class="string">""</span> v-model=<span class="string">"idNo"</span> @focus=<span class="string">"lostBlur"</span> readonly&gt;</span><br><span class="line"></span><br><span class="line"> methods: &#123;</span><br><span class="line">      lostBlur(el) &#123;</span><br><span class="line">        $(el.target).blur();</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
-
-      
+ <script src="/blog/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/blog/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-3/" data-id="cjiwtyr9f0006747t85484w7z" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
   </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2018/06/27/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
  
-
-
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
   
 
 </section>
@@ -213,78 +183,32 @@
     <aside id="sidebar">
   
     
-  <div class="widget-wrap">
-     
-        <h3 class="follow-title ">联系我</h3>
-     
-    <div class="widget follow">
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
       
-              <a class="github" aria-hidden="true" href="https://github.com/taokiang" target="_blank" title="Github"></a>
-      
-      
-      
-      
-            <a class="email" aria-hidden="true"  href="mailto:532067334@qq.com" target="_blank" title="邮箱"></a>
-      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue2在低版本app（包括安卓和ios），显示空白"><span class="toc-number">2.</span> <span class="toc-text">Vue2在低版本app（包括安卓和ios），显示空白</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">3.</span> <span class="toc-text">解决方法</span></a></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
 
+  
+    
 
   
     
   
     
+  
+    
 
   
     
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/blog/2018/06/27/2018-6-27-2/">打包后css浏览器兼容前缀自动去除，导致某些版本的机型css不兼容</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/27/2018-6-27-1/">Vue2在低版本app，显示空白</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/27/2018-6-27-3/">ios中input设置readonly，仍能聚焦</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title archive">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a><span class="archive-list-count">3</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-<div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
-    <div class="widget">
-        <ul>
-            
-            <li>
-                <a href="http://www.ruanyifeng.com/home.html">ruanyifeng&#39;s blog</a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
   
     <!--微信公众号二维码-->
 
