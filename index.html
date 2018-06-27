@@ -66,52 +66,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-6-27-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/27/2018-6-27-2/" class="article-date">
-  <time datetime="2018-06-27T05:56:31.000Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/27/2018-6-27-2/">打包后css浏览器兼容前缀自动去除，导致某些版本的机型css不兼容</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br><br>由于vue cli这个脚手架在打包后把css统一用postCSS的autoprefixer 插件进行压缩，而autoprefixer插件会针对支持的浏览器进行CSS前缀的删除和追加。对于某些版本的浏览器可能会导致前缀被删除而产生不兼容，具体解决方法如下</p>
-<h5 id="package-json-文件中配置如下："><a href="#package-json-文件中配置如下：" class="headerlink" title="package.json 文件中配置如下："></a>package.json 文件中配置如下：</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"last 10 Chrome versions"</span>,</span><br><span class="line">    <span class="string">"last 5 Firefox versions"</span>,</span><br><span class="line">    <span class="string">"Safari &gt;= 6"</span>,</span><br><span class="line">    <span class="string">"ie &gt; 8"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-2/" data-id="cjiwtwapl0003747t78deskj6" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
     <article id="post-2018-6-27-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/06/27/2018-6-27-1/" class="article-date">
@@ -149,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-1/" data-id="cjiwtwham0004747tuzyk3djk" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-1/" data-id="cjiwv4xwf00003s7tb66mq61x" class="article-share-link">分享</a>
       
       
       
@@ -195,7 +149,53 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-3/" data-id="cjiwtyr9f0006747t85484w7z" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-3/" data-id="cjiwv4xwl00013s7tvnt7nr0c" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-2018-6-27-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/27/2018-6-27-2/" class="article-date">
+  <time datetime="2018-06-27T05:56:31.000Z" itemprop="datePublished">2018-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/27/2018-6-27-2/">打包后css浏览器兼容前缀自动去除，导致某些版本的机型css不兼容</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><br><br>由于vue cli这个脚手架在打包后把css统一用postCSS的autoprefixer 插件进行压缩，而autoprefixer插件会针对支持的浏览器进行CSS前缀的删除和追加。对于某些版本的浏览器可能会导致前缀被删除而产生不兼容，具体解决方法如下</p>
+<h5 id="package-json-文件中配置如下："><a href="#package-json-文件中配置如下：" class="headerlink" title="package.json 文件中配置如下："></a>package.json 文件中配置如下：</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"last 10 Chrome versions"</span>,</span><br><span class="line">    <span class="string">"last 5 Firefox versions"</span>,</span><br><span class="line">    <span class="string">"Safari &gt;= 6"</span>,</span><br><span class="line">    <span class="string">"ie &gt; 8"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<blockquote>
+<p>作者：仇江涛</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-2/" data-id="cjiwv4xwn00023s7t2dl4gptf" class="article-share-link">分享</a>
       
       
       
@@ -245,15 +245,15 @@
       <ul>
         
           <li>
-            <a href="/blog/2018/06/27/2018-6-27-2/">打包后css浏览器兼容前缀自动去除，导致某些版本的机型css不兼容</a>
-          </li>
-        
-          <li>
             <a href="/blog/2018/06/27/2018-6-27-1/">Vue2在低版本app，显示空白</a>
           </li>
         
           <li>
             <a href="/blog/2018/06/27/2018-6-27-3/">ios中input设置readonly，仍能聚焦</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/06/27/2018-6-27-2/">打包后css浏览器兼容前缀自动去除，导致某些版本的机型css不兼容</a>
           </li>
         
       </ul>
@@ -273,7 +273,7 @@
   
     
 <div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <div class="widget">
         <ul>
             
