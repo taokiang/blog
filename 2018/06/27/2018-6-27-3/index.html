@@ -5,17 +5,17 @@
   
   <title>ios中input设置readonly，仍能聚焦 | jet&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="package.json 文件中配置如下：1234567&amp;lt;input type=&quot;number&quot; placeholder=&quot;&quot; v-model=&quot;idNo&quot; @focus=&quot;lostBlur&quot; readonly&amp;gt; methods: &amp;#123;      lostBlur(el) &amp;#123;        $(el.target).blur();      &amp;#125; &amp;#125">
+  <meta name="description" content="页面内部代码如下：1234567&amp;lt;input type=&quot;number&quot; placeholder=&quot;&quot; v-model=&quot;idNo&quot; @focus=&quot;lostBlur&quot; readonly&amp;gt; methods: &amp;#123;      lostBlur(el) &amp;#123;        $(el.target).blur();      &amp;#125; &amp;#125;   作者：仇江涛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios中input设置readonly，仍能聚焦">
 <meta property="og:url" content="https://github.com/taokiang/blog/2018/06/27/2018-6-27-3/index.html">
 <meta property="og:site_name" content="jet&#39;s blog">
-<meta property="og:description" content="package.json 文件中配置如下：1234567&amp;lt;input type=&quot;number&quot; placeholder=&quot;&quot; v-model=&quot;idNo&quot; @focus=&quot;lostBlur&quot; readonly&amp;gt; methods: &amp;#123;      lostBlur(el) &amp;#123;        $(el.target).blur();      &amp;#125; &amp;#125">
+<meta property="og:description" content="页面内部代码如下：1234567&amp;lt;input type=&quot;number&quot; placeholder=&quot;&quot; v-model=&quot;idNo&quot; @focus=&quot;lostBlur&quot; readonly&amp;gt; methods: &amp;#123;      lostBlur(el) &amp;#123;        $(el.target).blur();      &amp;#125; &amp;#125;   作者：仇江涛">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-28T03:07:51.028Z">
+<meta property="og:updated_time" content="2018-08-13T11:25:16.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios中input设置readonly，仍能聚焦">
-<meta name="twitter:description" content="package.json 文件中配置如下：1234567&amp;lt;input type=&quot;number&quot; placeholder=&quot;&quot; v-model=&quot;idNo&quot; @focus=&quot;lostBlur&quot; readonly&amp;gt; methods: &amp;#123;      lostBlur(el) &amp;#123;        $(el.target).blur();      &amp;#125; &amp;#125">
+<meta name="twitter:description" content="页面内部代码如下：1234567&amp;lt;input type=&quot;number&quot; placeholder=&quot;&quot; v-model=&quot;idNo&quot; @focus=&quot;lostBlur&quot; readonly&amp;gt; methods: &amp;#123;      lostBlur(el) &amp;#123;        $(el.target).blur();      &amp;#125; &amp;#125;   作者：仇江涛">
   
     <link rel="alternate" href="/atom.xml" title="jet&#39;s blog" type="application/atom+xml">
   
@@ -93,7 +93,7 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<h5 id="package-json-文件中配置如下："><a href="#package-json-文件中配置如下：" class="headerlink" title="package.json 文件中配置如下："></a>package.json 文件中配置如下：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"number"</span> placeholder=<span class="string">""</span> v-model=<span class="string">"idNo"</span> @focus=<span class="string">"lostBlur"</span> readonly&gt;</span><br><span class="line"></span><br><span class="line"> methods: &#123;</span><br><span class="line">      lostBlur(el) &#123;</span><br><span class="line">        $(el.target).blur();</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="页面内部代码如下："><a href="#页面内部代码如下：" class="headerlink" title="页面内部代码如下："></a>页面内部代码如下：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"number"</span> placeholder=<span class="string">""</span> v-model=<span class="string">"idNo"</span> @focus=<span class="string">"lostBlur"</span> readonly&gt;</span><br><span class="line"></span><br><span class="line"> methods: &#123;</span><br><span class="line">      lostBlur(el) &#123;</span><br><span class="line">        $(el.target).blur();</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <blockquote>
 <p>作者：仇江涛</p>
@@ -202,7 +202,7 @@
       
         <strong class="toc-title">文章目录</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#package-json-文件中配置如下："><span class="toc-number">1.</span> <span class="toc-text">package.json 文件中配置如下：</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#页面内部代码如下："><span class="toc-number">1.</span> <span class="toc-text">页面内部代码如下：</span></a></li></ol>
           </div>
       </div>
     </div>
