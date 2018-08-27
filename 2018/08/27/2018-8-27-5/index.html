@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS编码和命名样例 | 仇江涛的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最佳选择器写法（模块）1234567891011121314151617181920/* 这是某个模块 */.m-nav&amp;#123;&amp;#125;/* 模块容器 */.m-nav li,.m-nav a&amp;#123;&amp;#125;/* 先共性  优化组合 */.m-nav li&amp;#123;&amp;#125;/* 后个性  语义化标签选择器 */.m-nav a&amp;#123;&amp;#125;/* 后个性中的共性 按">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS编码和命名样例">
+<meta property="og:url" content="https://github.com/taokiang/blog/2018/08/27/2018-8-27-5/index.html">
+<meta property="og:site_name" content="仇江涛的博客">
+<meta property="og:description" content="最佳选择器写法（模块）1234567891011121314151617181920/* 这是某个模块 */.m-nav&amp;#123;&amp;#125;/* 模块容器 */.m-nav li,.m-nav a&amp;#123;&amp;#125;/* 先共性  优化组合 */.m-nav li&amp;#123;&amp;#125;/* 后个性  语义化标签选择器 */.m-nav a&amp;#123;&amp;#125;/* 后个性中的共性 按">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-27T11:20:20.842Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS编码和命名样例">
+<meta name="twitter:description" content="最佳选择器写法（模块）1234567891011121314151617181920/* 这是某个模块 */.m-nav&amp;#123;&amp;#125;/* 模块容器 */.m-nav li,.m-nav a&amp;#123;&amp;#125;/* 先共性  优化组合 */.m-nav li&amp;#123;&amp;#125;/* 后个性  语义化标签选择器 */.m-nav a&amp;#123;&amp;#125;/* 后个性中的共性 按">
+  
+  
+    <link rel="icon" href="/blog/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/taokiang/blog"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">首页</a>
+        
+          <a class="main-nav-link" href="/blog/archives">归档</a>
+        
+          <a class="main-nav-link" href="/blog/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">仇江涛的博客</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-8-27-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/08/27/2018-8-27-5/" class="article-date">
+  <time datetime="2018-08-27T11:19:28.762Z" itemprop="datePublished">2018-08-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/总结/">总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS编码和命名样例
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><br></p>
+<h4 id="最佳选择器写法（模块）"><a href="#最佳选择器写法（模块）" class="headerlink" title="最佳选择器写法（模块）"></a>最佳选择器写法（模块）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这是某个模块 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span>&#123;&#125;<span class="comment">/* 模块容器 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">li</span>,<span class="selector-class">.m-nav</span> <span class="selector-tag">a</span>&#123;&#125;<span class="comment">/* 先共性  优化组合 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">li</span>&#123;&#125;<span class="comment">/* 后个性  语义化标签选择器 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">a</span>&#123;&#125;<span class="comment">/* 后个性中的共性 按结构顺序 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">a</span><span class="selector-class">.a1</span>&#123;&#125;<span class="comment">/* 后个性中的个性 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">a</span><span class="selector-class">.a2</span>&#123;&#125;<span class="comment">/* 后个性中的个性 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.z-crt</span> <span class="selector-tag">a</span>&#123;&#125;<span class="comment">/* 交互状态变化 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.z-crt</span> <span class="selector-tag">a</span><span class="selector-class">.a1</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.z-crt</span> <span class="selector-tag">a</span><span class="selector-class">.a2</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.btn</span>&#123;&#125;<span class="comment">/* 典型后代选择器 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.btn-1</span>&#123;&#125;<span class="comment">/* 典型后代选择器扩展 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.btn-disabled</span>&#123;&#125;<span class="comment">/* 典型后代选择器扩展（状态） */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.btn</span><span class="selector-class">.z-disabled</span>&#123;&#125;<span class="comment">/* 作用同上，请二选一（如果可以不兼容IE6时使用） */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.m-sch</span>&#123;&#125;<span class="comment">/* 控制内部其他模块位置 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.u-sel</span>&#123;&#125;<span class="comment">/* 控制内部其他元件位置 */</span></span><br><span class="line"><span class="selector-class">.m-nav-1</span>&#123;&#125;<span class="comment">/* 模块扩展 */</span></span><br><span class="line"><span class="selector-class">.m-nav-1</span> <span class="selector-tag">li</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-nav-disabled</span>&#123;&#125;<span class="comment">/* 模块扩展（状态） */</span></span><br><span class="line"><span class="selector-class">.m-nav</span><span class="selector-class">.z-disabled</span>&#123;&#125;<span class="comment">/* 作用同上，请二选一（如果可以不兼容IE6时使用） */</span></span><br></pre></td></tr></table></figure>
+<h4 id="统一语义理解和命名"><a href="#统一语义理解和命名" class="headerlink" title="统一语义理解和命名"></a>统一语义理解和命名</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>命名</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文档</td>
+<td>doc</td>
+<td>doc</td>
+</tr>
+<tr>
+<td>主体</td>
+<td>body</td>
+<td>bd</td>
+</tr>
+<tr>
+<td>头部</td>
+<td>header</td>
+<td>hd</td>
+</tr>
+<tr>
+<td>尾部</td>
+<td>foot</td>
+<td>ft</td>
+</tr>
+<tr>
+<td>主栏</td>
+<td>main</td>
+<td>main</td>
+</tr>
+<tr>
+<td>侧栏</td>
+<td>sidebar</td>
+<td>sidebar</td>
+</tr>
+<tr>
+<td>栏目</td>
+<td>column</td>
+<td>column</td>
+</tr>
+<tr>
+<td>页面最外层控制整体布局</td>
+<td>wrapper</td>
+<td>wrapper</td>
+</tr>
+</tbody>
+</table>
+<h4 id="模块（-m-）、元件（-u-）"><a href="#模块（-m-）、元件（-u-）" class="headerlink" title="模块（.m-）、元件（.u-）"></a>模块（.m-）、元件（.u-）</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>命名</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>导航</td>
+<td>nav</td>
+<td>nav</td>
+</tr>
+<tr>
+<td>子导航</td>
+<td>subnav</td>
+<td>snav</td>
+</tr>
+<tr>
+<td>面包屑</td>
+<td>crumb</td>
+<td>crm</td>
+</tr>
+<tr>
+<td>菜单</td>
+<td>menu</td>
+<td>menu</td>
+</tr>
+<tr>
+<td>选项卡</td>
+<td>tab</td>
+<td>tab</td>
+</tr>
+<tr>
+<td>标题区</td>
+<td>head/title</td>
+<td>hd/title</td>
+</tr>
+<tr>
+<td>摘要</td>
+<td>summary</td>
+<td>summary</td>
+</tr>
+<tr>
+<td>内容区</td>
+<td>body/content</td>
+<td>bd/ct</td>
+</tr>
+<tr>
+<td>列表</td>
+<td>list</td>
+<td>list</td>
+</tr>
+<tr>
+<td>表格</td>
+<td>table</td>
+<td>tb</td>
+</tr>
+<tr>
+<td>表单</td>
+<td>form</td>
+<td>fm</td>
+</tr>
+<tr>
+<td>热点</td>
+<td>hot</td>
+<td>hot</td>
+</tr>
+<tr>
+<td>排行</td>
+<td>top</td>
+<td>top</td>
+</tr>
+<tr>
+<td>登录</td>
+<td>login</td>
+<td>login</td>
+</tr>
+<tr>
+<td>标志</td>
+<td>logo</td>
+<td>logo</td>
+</tr>
+<tr>
+<td>广告</td>
+<td>advertise</td>
+<td>ad</td>
+</tr>
+<tr>
+<td>搜索</td>
+<td>search</td>
+<td>sch</td>
+</tr>
+<tr>
+<td>幻灯</td>
+<td>slide</td>
+<td>sld</td>
+</tr>
+<tr>
+<td>提示</td>
+<td>tips</td>
+<td>tips</td>
+</tr>
+<tr>
+<td>帮助</td>
+<td>help</td>
+<td>help</td>
+</tr>
+<tr>
+<td>新闻</td>
+<td>news</td>
+<td>news</td>
+</tr>
+<tr>
+<td>下载</td>
+<td>download</td>
+<td>download</td>
+</tr>
+<tr>
+<td>注册</td>
+<td>register</td>
+<td>reg</td>
+</tr>
+<tr>
+<td>投票</td>
+<td>vote</td>
+<td>vote</td>
+</tr>
+<tr>
+<td>版权</td>
+<td>copyright</td>
+<td>cprt</td>
+</tr>
+<tr>
+<td>结果</td>
+<td>result</td>
+<td>rst</td>
+</tr>
+<tr>
+<td>标题</td>
+<td>title</td>
+<td>title</td>
+</tr>
+<tr>
+<td>按钮</td>
+<td>button</td>
+<td>btn</td>
+</tr>
+<tr>
+<td>输入</td>
+<td>input</td>
+<td>input</td>
+</tr>
+</tbody>
+</table>
+<h4 id="功能（-f-）"><a href="#功能（-f-）" class="headerlink" title="功能（.f-）"></a>功能（.f-）</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>命名</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浮动清除</td>
+<td>clear</td>
+<td>clear</td>
+</tr>
+<tr>
+<td>向左浮动</td>
+<td>float-left</td>
+<td>fl</td>
+</tr>
+<tr>
+<td>向右浮动</td>
+<td>float-right</td>
+<td>fr</td>
+</tr>
+<tr>
+<td>内联块级</td>
+<td>inline-block</td>
+<td>ib</td>
+</tr>
+<tr>
+<td>文本居中</td>
+<td>text-align-center</td>
+<td>tac</td>
+</tr>
+<tr>
+<td>文本居右</td>
+<td>text-align-right</td>
+<td>tar</td>
+</tr>
+<tr>
+<td>文本居左</td>
+<td>text-align-left</td>
+<td>tal</td>
+</tr>
+<tr>
+<td>垂直居中</td>
+<td>vertical-align-middle</td>
+<td>vam</td>
+</tr>
+<tr>
+<td>溢出隐藏</td>
+<td>overflowhidden</td>
+<td>oh</td>
+</tr>
+<tr>
+<td>完全消失</td>
+<td>display-none</td>
+<td>dn</td>
+</tr>
+<tr>
+<td>字体大小</td>
+<td>fontsize</td>
+<td>fs</td>
+</tr>
+<tr>
+<td>字体粗细</td>
+<td>fontweight</td>
+<td>fw</td>
+</tr>
+</tbody>
+</table>
+<h4 id="状态（-z-）"><a href="#状态（-z-）" class="headerlink" title="状态（.z-）"></a>状态（.z-）</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>命名</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>选中</td>
+<td>selected</td>
+<td>sel</td>
+</tr>
+<tr>
+<td>当前</td>
+<td>current</td>
+<td>cur</td>
+</tr>
+<tr>
+<td>显示</td>
+<td>show</td>
+<td>show</td>
+</tr>
+<tr>
+<td>隐藏</td>
+<td>hide</td>
+<td>hide</td>
+</tr>
+<tr>
+<td>打开</td>
+<td>open</td>
+<td>open</td>
+</tr>
+<tr>
+<td>关闭</td>
+<td>close</td>
+<td>close</td>
+</tr>
+<tr>
+<td>出错</td>
+<td>error</td>
+<td>err</td>
+</tr>
+<tr>
+<td>不可用</td>
+<td>disabled</td>
+<td>disabled</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-5/" data-id="cjlc6xccl000ajs7t0rlyt1xw" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+ <script src="/blog/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/blog/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2018/08/27/2018-8-27-6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Javascript编码规范
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2018/08/27/2018-8-27-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">CSS编码规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#最佳选择器写法（模块）"><span class="toc-number">1.</span> <span class="toc-text">最佳选择器写法（模块）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#统一语义理解和命名"><span class="toc-number">2.</span> <span class="toc-text">统一语义理解和命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块（-m-）、元件（-u-）"><span class="toc-number">3.</span> <span class="toc-text">模块（.m-）、元件（.u-）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#功能（-f-）"><span class="toc-number">4.</span> <span class="toc-text">功能（.f-）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态（-z-）"><span class="toc-number">5.</span> <span class="toc-text">状态（.z-）</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2018 jet&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;532067334@qq.com
+    </div>
+  </div>
+</footer>
+ <script src="/blog/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">首页</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/blog/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js"></script>
+  
+
+
+ <script src="/blog/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+<script src="/blog/js/elevator.js"></script>
+  </div>
+</body>
+</html>
