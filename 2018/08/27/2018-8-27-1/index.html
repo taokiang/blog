@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jet&#39;s blog</title>
+  <title>基于Hexo搭建博客并部署到Github Pages | jet&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="jet&#39;s blog">
-<meta property="og:url" content="https://github.com/taokiang/blog/index.html">
+  <meta name="description" content="获取Github Pages  去Github官网注册账号 新建一个repo，注意名称一定是your_username.github.io这样的格式。比如你的用户名为zhangsan，Repository name里面就填上zhangsan.github.io 进入刚新建的仓库，点击Setting，一直拖到最下面，选择Automatic Page Generator，随便选个主题然后发布即可。详">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Hexo搭建博客并部署到Github Pages">
+<meta property="og:url" content="https://github.com/taokiang/blog/2018/08/27/2018-8-27-1/index.html">
 <meta property="og:site_name" content="jet&#39;s blog">
+<meta property="og:description" content="获取Github Pages  去Github官网注册账号 新建一个repo，注意名称一定是your_username.github.io这样的格式。比如你的用户名为zhangsan，Repository name里面就填上zhangsan.github.io 进入刚新建的仓库，点击Setting，一直拖到最下面，选择Automatic Page Generator，随便选个主题然后发布即可。详">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://taokiang.github.io/blog/2018/08/27/2018-8-27-1/hexo部署到github_360反馈意见截图16270904308053.png">
+<meta property="og:image" content="https://taokiang.github.io/blog/2018/08/27/2018-8-27-1/hexo部署到github_360反馈意见截图161908239992124.png">
+<meta property="og:image" content="https://taokiang.github.io/blog/2018/08/27/2018-8-27-1/hexo部署到github_360反馈意见截图16250103569193.png">
+<meta property="og:updated_time" content="2018-08-27T03:32:13.154Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jet&#39;s blog">
+<meta name="twitter:title" content="基于Hexo搭建博客并部署到Github Pages">
+<meta name="twitter:description" content="获取Github Pages  去Github官网注册账号 新建一个repo，注意名称一定是your_username.github.io这样的格式。比如你的用户名为zhangsan，Repository name里面就填上zhangsan.github.io 进入刚新建的仓库，点击Setting，一直拖到最下面，选择Automatic Page Generator，随便选个主题然后发布即可。详">
+<meta name="twitter:image" content="https://taokiang.github.io/blog/2018/08/27/2018-8-27-1/hexo部署到github_360反馈意见截图16270904308053.png">
   
     <link rel="alternate" href="/atom.xml" title="jet&#39;s blog" type="application/atom+xml">
   
@@ -64,9 +72,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-2018-8-27-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2018-8-27-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/08/27/2018-8-27-1/" class="article-date">
   <time datetime="2018-08-27T02:23:12.120Z" itemprop="datePublished">2018-08-27</time>
@@ -79,8 +85,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/08/27/2018-8-27-1/">基于Hexo搭建博客并部署到Github Pages</a>
+    <h1 class="article-title" itemprop="name">
+      基于Hexo搭建博客并部署到Github Pages
     </h1>
   
 
@@ -147,379 +153,74 @@
     </footer>
   </div>
   
-</article>
- 
-
-
-  
-    <article id="post-2018-8-23-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/08/23/2018-8-23-1/" class="article-date">
-  <time datetime="2018-08-23T09:51:32.257Z" itemprop="datePublished">2018-08-23</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/08/23/2018-8-23-1/">vue-cli搭建项目时，assets和static的区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br></p>
-<h2 id="Webpacked-Assets"><a href="#Webpacked-Assets" class="headerlink" title="Webpacked Assets"></a>Webpacked Assets</h2><hr>
-<p>为了回答这个问题，我们首先需要了解Webpack如何处理静态资产。在 *.vue 组件中，所有模板和CSS都会被 vue-html-loader 及 css-loader 解析，并查找资源URL。例如，在 <code>&lt;img src=&quot;./logo.png&quot;&gt;</code><br>和 <code>background: url(./logo.png)</code> 中，<code>&quot;./logo.png&quot;</code> 是相对的资源路径，将由Webpack解析为模块依赖。</p>
-<p>因为 logo.png 不是 JavaScript，当被视为模块依赖时，需要使用 url-loader 和 file-loader<br>处理它。vue-cli 的 webpack 脚手架已经配置了这些 loader，因此可以使用相对/模块路径。</p>
-<p>由于这些资源可能在构建过程中被内联/复制/重命名，所以它们基本上是源代码的一部分。这就是为什么建议将<br>Webpack 处理的静态资源放在 /src 目录中和其它源文件放一起的原因。事实上，甚至不必把它们全部放在 /src/assets：可以用模块/组件的组织方式来使用它们。例如，可以在每个放置组件的目录中存放静态资源。<br><br></p>
-<h2 id="“Real”-Static-Assets"><a href="#“Real”-Static-Assets" class="headerlink" title="“Real” Static Assets"></a>“Real” Static Assets</h2><hr>
-<p>相比之下，static/ 目录下的文件并不会被 Webpack 处理：它们会直接被复制到最终目录（默认是dist/static）下。必须使用绝对路径引用这些文件，这是通过在 config.js 文件中的 build.assetsPublicPath 和 build.assetsSubDirectory 连接来确定的。</p>
-<p>任何放在 static/ 中文件需要以绝对路径的形式引用：/static/[filename]。如果更改 assetSubDirectory 的值为 assets，那么路径需改为 /assets/[filename]。<br><br><br>请参考vue-cli作者的解释：<a href="http://vuejs-templates.github.io/webpack/static.html" title=" webpack 模板的文档 - Handing Static Assets" target="_blank" rel="noopener">http://vuejs-templates.github.io/webpack/static.html</a></p>
-
-      
+ <script src="/blog/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/blog/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/23/2018-8-23-1/" data-id="cjlbo94a80007u47tq8mea4qa" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
   </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/08/23/2018-8-23-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">vue-cli搭建项目时，assets和static的区别</div>
+    </a>
+  
+</nav>
+
   
 </article>
  
-
-
-  
-    <article id="post-2018-8-10-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/08/10/2018-8-10-1/" class="article-date">
-  <time datetime="2018-08-10T01:08:56.610Z" itemprop="datePublished">2018-08-10</time>
-</a>
+     
+  <div class="comments" id="comments">
     
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/08/10/2018-8-10-1/">ajax-post请求请求跨域，服务端解决方案</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br></p>
-<p><img src="https://taokiang.github.io/blog/2018/08/10/2018-8-10-1/access.png" alt="123"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/10/2018-8-10-1/" data-id="cjlbo94a40004u47tbuyxyyvf" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
  
-
-
-  
-    <article id="post-2018-7-18-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/07/18/2018-7-18-1/" class="article-date">
-  <time datetime="2018-07-18T06:24:08.000Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/07/18/2018-7-18-1/">常用pc分辨率统计图</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br></p>
-<p><img src="https://taokiang.github.io/blog/2018/07/18/2018-7-18-1/pc_size.jpg" alt="常用pc分辨率"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/07/18/2018-7-18-1/" data-id="cjlbo94a30003u47tgpfyxzjd" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-2018-6-28-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/28/2018-6-28-2/" class="article-date">
-  <time datetime="2018-06-28T07:07:11.920Z" itemprop="datePublished">2018-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/28/2018-6-28-2/">Vue2项目测试、发布root地址配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br><br>基本上所有的项目，在测试的时候和正式发布的时候根地址是不一样的，我们可以利用的WebPack给生产环境和正式环境配置不同地址<br><br><br>pro.env.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  API_ROOT: <span class="string">'"你正式发布的地址"'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>dev.env.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>)</span><br><span class="line"><span class="keyword">var</span> prodEnv = <span class="built_in">require</span>(<span class="string">'./prod.env'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = merge(prodEnv, &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"development"'</span>,</span><br><span class="line">  API_ROOT: <span class="string">'"你测试环境地址"'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>配置index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  build: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./prod.env'</span>),</span><br><span class="line">    <span class="comment">// ....... //</span></span><br><span class="line">  &#125;,</span><br><span class="line">  dev: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./dev.env'</span>),</span><br><span class="line">    <span class="comment">// ....... //</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>配置main.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.baseURL = process.env.API_ROOT</span><br></pre></td></tr></table></figure></p>
-<p>或者_root添加变量配置main.js，更加灵活<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _root = process.env.API_ROOT</span><br></pre></td></tr></table></figure></p>
-<p>以上在不同的环境中会取到不同的地址</p>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/28/2018-6-28-2/" data-id="cjlbo94a50005u47ttj1u2j0m" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-2018-6-28-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/28/2018-6-28-1/" class="article-date">
-  <time datetime="2018-06-28T03:01:57.448Z" itemprop="datePublished">2018-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/28/2018-6-28-1/">a标签实现发短信功能(苹果、安卓的兼容)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br><br>安卓系统上面的写法是：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:10086?body=你好Android"</span>&gt;</span>给 10086 发短信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>IOS系统上面的写法是：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:10086&amp;body=你好iphone"</span>&gt;</span>给 10086 发短信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/28/2018-6-28-1/" data-id="cjlbo94a70006u47ttniaj3ln" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-2018-6-27-3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/27/2018-6-27-3/" class="article-date">
-  <time datetime="2018-06-27T08:00:41.602Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/27/2018-6-27-3/">ios中input设置readonly，仍能聚焦</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br></p>
-<h5 id="页面内部代码如下："><a href="#页面内部代码如下：" class="headerlink" title="页面内部代码如下："></a>页面内部代码如下：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"number"</span> placeholder=<span class="string">""</span> v-model=<span class="string">"idNo"</span> @focus=<span class="string">"lostBlur"</span> readonly&gt;</span><br><span class="line"></span><br><span class="line"> methods: &#123;</span><br><span class="line">      lostBlur(el) &#123;</span><br><span class="line">        $(el.target).blur();</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-3/" data-id="cjlbo94a20002u47teuv3190u" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-2018-6-27-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/27/2018-6-27-1/" class="article-date">
-  <time datetime="2018-06-27T07:54:48.110Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/27/2018-6-27-1/">Vue2在低版本app，显示空白</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br><br>这是由于IE对promise的支持不好，我们需要安装：babel-polyfill和es6-promise:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-polyfill --save</span><br><span class="line">npm install es6-promise --save</span><br></pre></td></tr></table></figure></p>
-<p><br><br>main.js文件中引用:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Es6Promise <span class="keyword">from</span> <span class="string">'es6-promise'</span></span><br><span class="line">Es6Promise.polyfill()</span><br></pre></td></tr></table></figure></p>
-<p><br><br>build/webpack.base.conf.js 文件中配置如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">     entry: &#123;</span><br><span class="line">       app: [<span class="string">"babel-polyfill"</span>, <span class="string">"./src/main.js"</span>]</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">		  &#123;</span><br><span class="line">			test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">			loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">			<span class="comment">//include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],</span></span><br><span class="line">			exclude: <span class="regexp">/node_modules/</span>,<span class="comment">//除了node_modules文件夹以外的，均使用babel-loader转换</span></span><br><span class="line">			query: &#123;</span><br><span class="line">			  presets: [<span class="string">'es2015'</span>]</span><br><span class="line">			&#125;</span><br><span class="line">		  &#125;</span><br><span class="line">    	]</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><br><br>.babelrc 文件中配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;modules&quot;: false,</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;not ie &lt;= 8&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    &quot;es2015&quot;,</span><br><span class="line">    &quot;stage-2&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-vue-jsx&quot;, &quot;transform-runtime&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-1/" data-id="cjlbo949v0000u47tgf90ul80" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-2018-6-27-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/27/2018-6-27-2/" class="article-date">
-  <time datetime="2018-06-27T07:54:48.110Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/27/2018-6-27-2/">打包后css浏览器兼容前缀自动去除，导致某些版本的机型css不兼容</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br><br>由于vue cli这个脚手架在打包后把css统一用postCSS的autoprefixer 插件进行压缩，而autoprefixer插件会针对支持的浏览器进行CSS前缀的删除和追加。对于某些版本的浏览器可能会导致前缀被删除而产生不兼容，具体解决方法如下</p>
-<h5 id="package-json-文件中配置如下："><a href="#package-json-文件中配置如下：" class="headerlink" title="package.json 文件中配置如下："></a>package.json 文件中配置如下：</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"last 10 Chrome versions"</span>,</span><br><span class="line">    <span class="string">"last 5 Firefox versions"</span>,</span><br><span class="line">    <span class="string">"Safari &gt;= 6"</span>,</span><br><span class="line">    <span class="string">"ie &gt; 8"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-2/" data-id="cjlbo949z0001u47tpbjukxh7" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
   
 
 </section>
@@ -527,86 +228,32 @@
     <aside id="sidebar">
   
     
-  <div class="widget-wrap">
-     
-        <h3 class="follow-title ">联系我</h3>
-     
-    <div class="widget follow">
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
       
-              <a class="github" aria-hidden="true" href="https://github.com/taokiang" target="_blank" title="Github"></a>
-      
-      
-      
-      
-            <a class="email" aria-hidden="true"  href="mailto:532067334@qq.com" target="_blank" title="邮箱"></a>
-      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#获取Github-Pages"><span class="toc-number">1.</span> <span class="toc-text">获取Github Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo搭建静态博客"><span class="toc-number">2.</span> <span class="toc-text">Hexo搭建静态博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置SSH"><span class="toc-number">2.1.</span> <span class="toc-text">配置SSH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo"><span class="toc-number">2.2.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建文章"><span class="toc-number">2.3.</span> <span class="toc-text">新建文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到Github-Pages"><span class="toc-number">2.4.</span> <span class="toc-text">部署到Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#个性化你的博客"><span class="toc-number">2.5.</span> <span class="toc-text">个性化你的博客</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#全局配置"><span class="toc-number">2.5.1.</span> <span class="toc-text">全局配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题配置"><span class="toc-number">2.6.</span> <span class="toc-text">主题配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文章分类"><span class="toc-number">2.7.</span> <span class="toc-text">文章分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#新增导航"><span class="toc-number">2.7.1.</span> <span class="toc-text">新增导航</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#新增关于我页面"><span class="toc-number">2.7.2.</span> <span class="toc-text">新增关于我页面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公益404页面"><span class="toc-number">2.8.</span> <span class="toc-text">公益404页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继续美化博客"><span class="toc-number">2.9.</span> <span class="toc-text">继续美化博客</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#修改文章宽度"><span class="toc-number">2.9.1.</span> <span class="toc-text">修改文章宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配色与字体"><span class="toc-number">2.9.2.</span> <span class="toc-text">配色与字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字号与行高"><span class="toc-number">2.9.3.</span> <span class="toc-text">字号与行高</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配色"><span class="toc-number">2.9.4.</span> <span class="toc-text">配色</span></a></li></ol></li></ol></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
 
+  
+    
 
   
     
   
     
+  
+    
 
   
     
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/blog/2018/08/27/2018-8-27-1/">基于Hexo搭建博客并部署到Github Pages</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/08/23/2018-8-23-1/">vue-cli搭建项目时，assets和static的区别</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/08/10/2018-8-10-1/">ajax-post请求请求跨域，服务端解决方案</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/18/2018-7-18-1/">常用pc分辨率统计图</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/28/2018-6-28-2/">Vue2项目测试、发布root地址配置</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title archive">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a><span class="archive-list-count">5</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-<div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
-    <div class="widget">
-        <ul>
-            
-            <li>
-                <a href="http://www.ruanyifeng.com/home.html">ruanyifeng&#39;s blog</a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
   
     <!--微信公众号二维码-->
 
