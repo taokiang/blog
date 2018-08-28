@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端题目汇总 | 仇江涛的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="var/let/const区别何在？1. let添加了块级作用域我们知道，JavaScript是没有块级作用域的，如果在块内使用var声明一个变量，它在代码块外面仍旧是可见的1234if (true) &amp;#123;     var foo = 3;&amp;#125;console.log(foo);    // 3 块级作用域，let块级变量：1234if (true) &amp;#123;     let">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端题目汇总">
+<meta property="og:url" content="https://github.com/taokiang/blog/2018/08/28/2018-8-28-1/index.html">
+<meta property="og:site_name" content="仇江涛的博客">
+<meta property="og:description" content="var/let/const区别何在？1. let添加了块级作用域我们知道，JavaScript是没有块级作用域的，如果在块内使用var声明一个变量，它在代码块外面仍旧是可见的1234if (true) &amp;#123;     var foo = 3;&amp;#125;console.log(foo);    // 3 块级作用域，let块级变量：1234if (true) &amp;#123;     let">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://taokiang.github.io/blog/2018/08/28/2018-8-28-1/三者的异同.png">
+<meta property="og:image" content="https://taokiang.github.io/blog/2018/08/28/2018-8-28-1/738637-20160705144733717-309790212.png">
+<meta property="og:updated_time" content="2018-08-28T06:50:37.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端题目汇总">
+<meta name="twitter:description" content="var/let/const区别何在？1. let添加了块级作用域我们知道，JavaScript是没有块级作用域的，如果在块内使用var声明一个变量，它在代码块外面仍旧是可见的1234if (true) &amp;#123;     var foo = 3;&amp;#125;console.log(foo);    // 3 块级作用域，let块级变量：1234if (true) &amp;#123;     let">
+<meta name="twitter:image" content="https://taokiang.github.io/blog/2018/08/28/2018-8-28-1/三者的异同.png">
+  
+  
+    <link rel="icon" href="/blog/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/taokiang/blog"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">首页</a>
+        
+          <a class="main-nav-link" href="/blog/archives">归档</a>
+        
+          <a class="main-nav-link" href="/blog/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">仇江涛的博客</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-8-28-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/08/28/2018-8-28-1/" class="article-date">
+  <time datetime="2018-08-28T02:10:42.983Z" itemprop="datePublished">2018-08-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/总结/">总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端题目汇总
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><br></p>
+<hr>
+<h2 id="var-let-const区别何在？"><a href="#var-let-const区别何在？" class="headerlink" title="var/let/const区别何在？"></a><strong>var/let/const区别何在？</strong></h2><h3 id="1-let添加了块级作用域"><a href="#1-let添加了块级作用域" class="headerlink" title="1. let添加了块级作用域"></a>1. let添加了块级作用域</h3><p>我们知道，JavaScript是没有块级作用域的，如果在块内使用var声明一个变量，它在代码块外面仍旧是可见的<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">     var foo = 3;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foo);    // 3</span><br></pre></td></tr></table></figure></p>
+<p>块级作用域，let块级变量：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">     let foo = 3;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foo);   // Uncaught ReferenceError</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-let约束了变量提升"><a href="#2-let约束了变量提升" class="headerlink" title="2.let约束了变量提升"></a>2.let约束了变量提升</h3><p>不管是var还是let，预编译过程中，都发生了变量提升，但与var不同的是，ES6对let进行了约束，其规定，在真正的词法变量声明之前，以任何方式访问let变量都是不允许的，所以从开发人员角度来看，let禁止了变量提升这一行为。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function hoistVariable() &#123;</span><br><span class="line">    console.log(foo); // undefined</span><br><span class="line">    var foo = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hoistVariable();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function nonHoistingFunc() &#123;</span><br><span class="line">    console.log(foo); // Uncaught ReferenceError</span><br><span class="line">    let foo = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nonHoistingFunc();</span><br></pre></td></tr></table></figure>
+<p>正确的使用方式是，永远将变量声明置于当前作用域顶部</p>
+<h3 id="3-let有暂时性死区"><a href="#3-let有暂时性死区" class="headerlink" title="3. let有暂时性死区"></a>3. let有暂时性死区</h3><p>ES6规定如果块内存在let命令，那么这个块就会成为一个封闭的作用域，并要求let变量先声明才能使用，如果在声明之前就开始使用，它并不会引用外部的变量。<br>只要在块内存在let命令，那么这个变量就绑定到了当前块作用域，不再受外部变量的影响，下面代码将会引发一个错误：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var foo = 3;</span><br><span class="line"></span><br><span class="line">if (true) &#123;</span><br><span class="line">    foo = 5; // Uncaught ReferenceError</span><br><span class="line">    let foo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-let禁止重复声明变量"><a href="#4-let禁止重复声明变量" class="headerlink" title="4. let禁止重复声明变量"></a>4. let禁止重复声明变量</h3><p>如上面所述，使用var可以重复声明变量，但let不允许在相同作用域内重复声明同一个变量，下面的代码会引发错误：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// SyntaxError</span><br><span class="line">function func() &#123;</span><br><span class="line">    let foo = 3;</span><br><span class="line">    var foo = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SyntaxError</span><br><span class="line">function func() &#123;</span><br><span class="line">    let foo = 3;</span><br><span class="line">    let foo = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SyntaxError</span><br><span class="line">function func(arg) &#123;</span><br><span class="line">    let arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-let不会成为全局对象的属性"><a href="#5-let不会成为全局对象的属性" class="headerlink" title="5. let不会成为全局对象的属性"></a>5. let不会成为全局对象的属性</h3><p>我们在全局范围内使用var声明一个变量时，这个变量会自动成为全局对象的属性(在浏览器和Node.js环境下，这个全局对象分别是window和global)，但let是独立存在的变量，不会成为全局对象的属性：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 3;</span><br><span class="line">console.log(window.a); // 3</span><br><span class="line"></span><br><span class="line">let b = 5;</span><br><span class="line">console.log(window.b); // undefined</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-最后：const命令"><a href="#6-最后：const命令" class="headerlink" title="6. 最后：const命令"></a>6. 最后：const命令</h3><p>以上let所介绍的规则均适用于const命令，不同的是，const声明的变量不能重新赋值，也是由于这个规则，const变量声明时必须初始化，不能留到以后赋值，所以下面的代码是不合法的：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const a = 3;</span><br><span class="line"></span><br><span class="line">a = 5;   // Uncaught TypeError: Assignment to constant variable</span><br><span class="line"></span><br><span class="line">const b; // Uncaught SyntaxError: Missing initializer in const declaration</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="toString-和toLocaleString-有什么区别"><a href="#toString-和toLocaleString-有什么区别" class="headerlink" title="toString()和toLocaleString()有什么区别?"></a><strong>toString()和toLocaleString()有什么区别?</strong></h2><h3 id="1-当数字是四位数及以上时，有区别，区别看以下代码"><a href="#1-当数字是四位数及以上时，有区别，区别看以下代码" class="headerlink" title="1.当数字是四位数及以上时，有区别，区别看以下代码"></a>1.当数字是四位数及以上时，有区别，区别看以下代码</h3><p>当数字是四位及以上时，toLocaleString()会让数字三位三位一分隔，像我们有时候数字也会三位一个分号<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var e=123</span><br><span class="line"> </span><br><span class="line">e.toString()</span><br><span class="line">"123"</span><br><span class="line"> </span><br><span class="line">e.toLocaleString()</span><br><span class="line">"123"</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a=1234</span><br><span class="line"></span><br><span class="line">a.toString()</span><br><span class="line">"1234"</span><br><span class="line"></span><br><span class="line">a.toLocaleString()</span><br><span class="line">"1,234"</span><br></pre></td></tr></table></figure>
+<h3 id="2-当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码"><a href="#2-当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码" class="headerlink" title="2.当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码"></a>2.当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var aa=[1,2,3]</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">aa.toLocaleString()</span><br><span class="line">"1,2,3"</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">aa.toString()</span><br><span class="line">"1,2,3"</span><br></pre></td></tr></table></figure>
+<p><br><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var sd=new Date()</span><br><span class="line">sd</span><br><span class="line">Wed Feb 15 2017 11:21:31 GMT+0800 (CST)</span><br><span class="line"> </span><br><span class="line">sd.toLocaleString()</span><br><span class="line">"2017/2/15 上午11:21:31"</span><br><span class="line"> </span><br><span class="line">sd.toString()</span><br><span class="line">"Wed Feb 15 2017 11:21:31 GMT+0800 (CST)"</span><br></pre></td></tr></table></figure></p>
+<h2 id="Cookie、LocalStorage与SessionStorage有什么区别"><a href="#Cookie、LocalStorage与SessionStorage有什么区别" class="headerlink" title="Cookie、LocalStorage与SessionStorage有什么区别?"></a><strong>Cookie、LocalStorage与SessionStorage有什么区别?</strong></h2><p><img src="https://taokiang.github.io/blog/2018/08/28/2018-8-28-1/三者的异同.png" alt="三者的异同"></p>
+<h2 id="apply-与call-有什么区别"><a href="#apply-与call-有什么区别" class="headerlink" title="apply()与call()有什么区别?"></a><strong>apply()与call()有什么区别?</strong></h2><p>JavaScript中的每一个Function对象都有一个apply()方法和一个call()方法，它们的语法分别为<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/*apply()方法*/</span><br><span class="line">function.apply(thisObj[, argArray])</span><br><span class="line"></span><br><span class="line">/*call()方法*/</span><br><span class="line">function.call(thisObj[, arg1[, arg2[, [,...argN]]]]);</span><br></pre></td></tr></table></figure></p>
+<p>它们各自的定义：</p>
+<p>apply：调用一个对象的一个方法，用另一个对象替换当前对象。例如：B.apply(A, arguments);即A对象应用B对象的方法。</p>
+<p>call：调用一个对象的一个方法，用另一个对象替换当前对象。例如：B.call(A, args1,args2);即A对象调用B对象的方法。</p>
+<p>它们的不同之处：</p>
+<p>apply：最多只能有两个参数——新this对象和一个数组argArray。如果给该方法传递多个参数，则把参数都写进这个数组里面，当然，即使只有一个参数，也要写进数组里。如果argArray不是一个有效的数组或arguments对象，那么将导致一个TypeError。如果没有提供argArray和thisObj任何一个参数，那么Global对象将被用作thisObj，并且无法被传递任何参数。</p>
+<p>call：它可以接受多个参数，第一个参数与apply一样，后面则是一串参数列表。这个方法主要用在js对象各方法相互调用的时候，使当前this实例指针保持一致，或者在特殊情况下需要改变this指针。如果没有提供thisObj参数，那么 Global 对象被用作thisObj。 </p>
+<p><strong>实际上，apply和call的功能是一样的，只是传入的参数列表形式不同</strong></p>
+<p>（1）基本用法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function add(a,b)&#123;</span><br><span class="line">  return a+b;  </span><br><span class="line">&#125;</span><br><span class="line">function sub(a,b)&#123;</span><br><span class="line">  return a-b;  </span><br><span class="line">&#125;</span><br><span class="line">var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法</span><br><span class="line">var a2 = sub.apply(add,[4,2]);</span><br><span class="line">alert(a1);  //6     </span><br><span class="line">alert(a2);  //2</span><br><span class="line"></span><br><span class="line">/*call的用法*/</span><br><span class="line">var a1 = add.call(sub,4,2);</span><br></pre></td></tr></table></figure></p>
+<p>（2）实现继承<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Animal(name)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.showName = function()&#123;</span><br><span class="line">        alert(this.name);    </span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Cat(name)&#123;</span><br><span class="line">  Animal.apply(this,[name]);    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var cat = new Cat("咕咕");</span><br><span class="line">cat.showName();</span><br><span class="line"></span><br><span class="line">/*call的用法*/</span><br><span class="line">Animal.call(this,name);</span><br></pre></td></tr></table></figure></p>
+<p>（3）多重继承<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function Class10()&#123;</span><br><span class="line">  this.showSub = function(a,b)&#123;</span><br><span class="line">        alert(a - b);</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Class11()&#123;</span><br><span class="line">  this.showAdd = function(a,b)&#123;</span><br><span class="line">        alert(a + b);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Class12()&#123;</span><br><span class="line">  Class10.apply(this);</span><br><span class="line">  Class11.apply(this);   </span><br><span class="line">  // Class10.call(this);</span><br><span class="line">  //Class11.call(this);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var c2 = new Class12();</span><br><span class="line">c2.showSub(3,1);    //2</span><br><span class="line">c2.showAdd(3,1);    //4</span><br></pre></td></tr></table></figure></p>
+<p>apply的一些其他巧妙用法<br>（1）Math.max Math.min 可以实现得到数组中最大、最小的一项：<br><img src="https://taokiang.github.io/blog/2018/08/28/2018-8-28-1/738637-20160705144733717-309790212.png" alt="获取数组中的最大、最小值"><br>（2）Array.prototype.push可以实现两个数组的合并<br>同样push方法没有提供push一个数组，但是它提供了push(param1,param2…paramN)，同样也可以用apply来转换一下这个数组，即：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr1=new Array("1","2","3");</span><br><span class="line">var arr2=new Array("4","5","6");</span><br><span class="line">Array.prototype.push.apply(arr1,arr2);    //得到合并后数组的长度，因为push就是返回一个数组的长度</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/taokiang/blog/2018/08/28/2018-8-28-1/" data-id="cjld2rolg0002f87t9dy9ett3" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+ <script src="/blog/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/blog/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/08/27/2018-8-27-7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">SASS规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#var-let-const区别何在？"><span class="toc-number">1.</span> <span class="toc-text">var/let/const区别何在？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-let添加了块级作用域"><span class="toc-number">1.1.</span> <span class="toc-text">1. let添加了块级作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-let约束了变量提升"><span class="toc-number">1.2.</span> <span class="toc-text">2.let约束了变量提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-let有暂时性死区"><span class="toc-number">1.3.</span> <span class="toc-text">3. let有暂时性死区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-let禁止重复声明变量"><span class="toc-number">1.4.</span> <span class="toc-text">4. let禁止重复声明变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-let不会成为全局对象的属性"><span class="toc-number">1.5.</span> <span class="toc-text">5. let不会成为全局对象的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-最后：const命令"><span class="toc-number">1.6.</span> <span class="toc-text">6. 最后：const命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#toString-和toLocaleString-有什么区别"><span class="toc-number">2.</span> <span class="toc-text">toString()和toLocaleString()有什么区别?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-当数字是四位数及以上时，有区别，区别看以下代码"><span class="toc-number">2.1.</span> <span class="toc-text">1.当数字是四位数及以上时，有区别，区别看以下代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码"><span class="toc-number">2.2.</span> <span class="toc-text">2.当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie、LocalStorage与SessionStorage有什么区别"><span class="toc-number">3.</span> <span class="toc-text">Cookie、LocalStorage与SessionStorage有什么区别?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apply-与call-有什么区别"><span class="toc-number">4.</span> <span class="toc-text">apply()与call()有什么区别?</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2018 jet&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;532067334@qq.com
+    </div>
+  </div>
+</footer>
+ <script src="/blog/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">首页</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/blog/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js"></script>
+  
+
+
+ <script src="/blog/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+<script src="/blog/js/elevator.js"></script>
+  </div>
+</body>
+</html>

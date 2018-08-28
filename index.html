@@ -62,6 +62,79 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-8-28-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/08/28/2018-8-28-1/" class="article-date">
+  <time datetime="2018-08-28T02:10:42.983Z" itemprop="datePublished">2018-08-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/总结/">总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/08/28/2018-8-28-1/">前端题目汇总</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><br></p>
+<hr>
+<h2 id="var-let-const区别何在？"><a href="#var-let-const区别何在？" class="headerlink" title="var/let/const区别何在？"></a><strong>var/let/const区别何在？</strong></h2><h3 id="1-let添加了块级作用域"><a href="#1-let添加了块级作用域" class="headerlink" title="1. let添加了块级作用域"></a>1. let添加了块级作用域</h3><p>我们知道，JavaScript是没有块级作用域的，如果在块内使用var声明一个变量，它在代码块外面仍旧是可见的<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">     var foo = 3;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foo);    // 3</span><br></pre></td></tr></table></figure></p>
+<p>块级作用域，let块级变量：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">     let foo = 3;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foo);   // Uncaught ReferenceError</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-let约束了变量提升"><a href="#2-let约束了变量提升" class="headerlink" title="2.let约束了变量提升"></a>2.let约束了变量提升</h3><p>不管是var还是let，预编译过程中，都发生了变量提升，但与var不同的是，ES6对let进行了约束，其规定，在真正的词法变量声明之前，以任何方式访问let变量都是不允许的，所以从开发人员角度来看，let禁止了变量提升这一行为。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function hoistVariable() &#123;</span><br><span class="line">    console.log(foo); // undefined</span><br><span class="line">    var foo = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hoistVariable();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function nonHoistingFunc() &#123;</span><br><span class="line">    console.log(foo); // Uncaught ReferenceError</span><br><span class="line">    let foo = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nonHoistingFunc();</span><br></pre></td></tr></table></figure>
+<p>正确的使用方式是，永远将变量声明置于当前作用域顶部</p>
+<h3 id="3-let有暂时性死区"><a href="#3-let有暂时性死区" class="headerlink" title="3. let有暂时性死区"></a>3. let有暂时性死区</h3><p>ES6规定如果块内存在let命令，那么这个块就会成为一个封闭的作用域，并要求let变量先声明才能使用，如果在声明之前就开始使用，它并不会引用外部的变量。<br>只要在块内存在let命令，那么这个变量就绑定到了当前块作用域，不再受外部变量的影响，下面代码将会引发一个错误：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var foo = 3;</span><br><span class="line"></span><br><span class="line">if (true) &#123;</span><br><span class="line">    foo = 5; // Uncaught ReferenceError</span><br><span class="line">    let foo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-let禁止重复声明变量"><a href="#4-let禁止重复声明变量" class="headerlink" title="4. let禁止重复声明变量"></a>4. let禁止重复声明变量</h3><p>如上面所述，使用var可以重复声明变量，但let不允许在相同作用域内重复声明同一个变量，下面的代码会引发错误：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// SyntaxError</span><br><span class="line">function func() &#123;</span><br><span class="line">    let foo = 3;</span><br><span class="line">    var foo = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SyntaxError</span><br><span class="line">function func() &#123;</span><br><span class="line">    let foo = 3;</span><br><span class="line">    let foo = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SyntaxError</span><br><span class="line">function func(arg) &#123;</span><br><span class="line">    let arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-let不会成为全局对象的属性"><a href="#5-let不会成为全局对象的属性" class="headerlink" title="5. let不会成为全局对象的属性"></a>5. let不会成为全局对象的属性</h3><p>我们在全局范围内使用var声明一个变量时，这个变量会自动成为全局对象的属性(在浏览器和Node.js环境下，这个全局对象分别是window和global)，但let是独立存在的变量，不会成为全局对象的属性：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 3;</span><br><span class="line">console.log(window.a); // 3</span><br><span class="line"></span><br><span class="line">let b = 5;</span><br><span class="line">console.log(window.b); // undefined</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-最后：const命令"><a href="#6-最后：const命令" class="headerlink" title="6. 最后：const命令"></a>6. 最后：const命令</h3><p>以上let所介绍的规则均适用于const命令，不同的是，const声明的变量不能重新赋值，也是由于这个规则，const变量声明时必须初始化，不能留到以后赋值，所以下面的代码是不合法的：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const a = 3;</span><br><span class="line"></span><br><span class="line">a = 5;   // Uncaught TypeError: Assignment to constant variable</span><br><span class="line"></span><br><span class="line">const b; // Uncaught SyntaxError: Missing initializer in const declaration</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="toString-和toLocaleString-有什么区别"><a href="#toString-和toLocaleString-有什么区别" class="headerlink" title="toString()和toLocaleString()有什么区别?"></a><strong>toString()和toLocaleString()有什么区别?</strong></h2><h3 id="1-当数字是四位数及以上时，有区别，区别看以下代码"><a href="#1-当数字是四位数及以上时，有区别，区别看以下代码" class="headerlink" title="1.当数字是四位数及以上时，有区别，区别看以下代码"></a>1.当数字是四位数及以上时，有区别，区别看以下代码</h3><p>当数字是四位及以上时，toLocaleString()会让数字三位三位一分隔，像我们有时候数字也会三位一个分号<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var e=123</span><br><span class="line"> </span><br><span class="line">e.toString()</span><br><span class="line">"123"</span><br><span class="line"> </span><br><span class="line">e.toLocaleString()</span><br><span class="line">"123"</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a=1234</span><br><span class="line"></span><br><span class="line">a.toString()</span><br><span class="line">"1234"</span><br><span class="line"></span><br><span class="line">a.toLocaleString()</span><br><span class="line">"1,234"</span><br></pre></td></tr></table></figure>
+<h3 id="2-当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码"><a href="#2-当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码" class="headerlink" title="2.当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码"></a>2.当目标是标准时间格式时，用以上两种方法是有区别的，区别看以下代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var aa=[1,2,3]</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">aa.toLocaleString()</span><br><span class="line">"1,2,3"</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">aa.toString()</span><br><span class="line">"1,2,3"</span><br></pre></td></tr></table></figure>
+<p><br><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var sd=new Date()</span><br><span class="line">sd</span><br><span class="line">Wed Feb 15 2017 11:21:31 GMT+0800 (CST)</span><br><span class="line"> </span><br><span class="line">sd.toLocaleString()</span><br><span class="line">"2017/2/15 上午11:21:31"</span><br><span class="line"> </span><br><span class="line">sd.toString()</span><br><span class="line">"Wed Feb 15 2017 11:21:31 GMT+0800 (CST)"</span><br></pre></td></tr></table></figure></p>
+<h2 id="Cookie、LocalStorage与SessionStorage有什么区别"><a href="#Cookie、LocalStorage与SessionStorage有什么区别" class="headerlink" title="Cookie、LocalStorage与SessionStorage有什么区别?"></a><strong>Cookie、LocalStorage与SessionStorage有什么区别?</strong></h2><p><img src="https://taokiang.github.io/blog/2018/08/28/2018-8-28-1/三者的异同.png" alt="三者的异同"></p>
+<h2 id="apply-与call-有什么区别"><a href="#apply-与call-有什么区别" class="headerlink" title="apply()与call()有什么区别?"></a><strong>apply()与call()有什么区别?</strong></h2><p>JavaScript中的每一个Function对象都有一个apply()方法和一个call()方法，它们的语法分别为<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/*apply()方法*/</span><br><span class="line">function.apply(thisObj[, argArray])</span><br><span class="line"></span><br><span class="line">/*call()方法*/</span><br><span class="line">function.call(thisObj[, arg1[, arg2[, [,...argN]]]]);</span><br></pre></td></tr></table></figure></p>
+<p>它们各自的定义：</p>
+<p>apply：调用一个对象的一个方法，用另一个对象替换当前对象。例如：B.apply(A, arguments);即A对象应用B对象的方法。</p>
+<p>call：调用一个对象的一个方法，用另一个对象替换当前对象。例如：B.call(A, args1,args2);即A对象调用B对象的方法。</p>
+<p>它们的不同之处：</p>
+<p>apply：最多只能有两个参数——新this对象和一个数组argArray。如果给该方法传递多个参数，则把参数都写进这个数组里面，当然，即使只有一个参数，也要写进数组里。如果argArray不是一个有效的数组或arguments对象，那么将导致一个TypeError。如果没有提供argArray和thisObj任何一个参数，那么Global对象将被用作thisObj，并且无法被传递任何参数。</p>
+<p>call：它可以接受多个参数，第一个参数与apply一样，后面则是一串参数列表。这个方法主要用在js对象各方法相互调用的时候，使当前this实例指针保持一致，或者在特殊情况下需要改变this指针。如果没有提供thisObj参数，那么 Global 对象被用作thisObj。 </p>
+<p><strong>实际上，apply和call的功能是一样的，只是传入的参数列表形式不同</strong></p>
+<p>（1）基本用法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function add(a,b)&#123;</span><br><span class="line">  return a+b;  </span><br><span class="line">&#125;</span><br><span class="line">function sub(a,b)&#123;</span><br><span class="line">  return a-b;  </span><br><span class="line">&#125;</span><br><span class="line">var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法</span><br><span class="line">var a2 = sub.apply(add,[4,2]);</span><br><span class="line">alert(a1);  //6     </span><br><span class="line">alert(a2);  //2</span><br><span class="line"></span><br><span class="line">/*call的用法*/</span><br><span class="line">var a1 = add.call(sub,4,2);</span><br></pre></td></tr></table></figure></p>
+<p>（2）实现继承<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Animal(name)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.showName = function()&#123;</span><br><span class="line">        alert(this.name);    </span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Cat(name)&#123;</span><br><span class="line">  Animal.apply(this,[name]);    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var cat = new Cat("咕咕");</span><br><span class="line">cat.showName();</span><br><span class="line"></span><br><span class="line">/*call的用法*/</span><br><span class="line">Animal.call(this,name);</span><br></pre></td></tr></table></figure></p>
+<p>（3）多重继承<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function Class10()&#123;</span><br><span class="line">  this.showSub = function(a,b)&#123;</span><br><span class="line">        alert(a - b);</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Class11()&#123;</span><br><span class="line">  this.showAdd = function(a,b)&#123;</span><br><span class="line">        alert(a + b);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Class12()&#123;</span><br><span class="line">  Class10.apply(this);</span><br><span class="line">  Class11.apply(this);   </span><br><span class="line">  // Class10.call(this);</span><br><span class="line">  //Class11.call(this);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var c2 = new Class12();</span><br><span class="line">c2.showSub(3,1);    //2</span><br><span class="line">c2.showAdd(3,1);    //4</span><br></pre></td></tr></table></figure></p>
+<p>apply的一些其他巧妙用法<br>（1）Math.max Math.min 可以实现得到数组中最大、最小的一项：<br><img src="https://taokiang.github.io/blog/2018/08/28/2018-8-28-1/738637-20160705144733717-309790212.png" alt="获取数组中的最大、最小值"><br>（2）Array.prototype.push可以实现两个数组的合并<br>同样push方法没有提供push一个数组，但是它提供了push(param1,param2…paramN)，同样也可以用apply来转换一下这个数组，即：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr1=new Array("1","2","3");</span><br><span class="line">var arr2=new Array("4","5","6");</span><br><span class="line">Array.prototype.push.apply(arr1,arr2);    //得到合并后数组的长度，因为push就是返回一个数组的长度</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/taokiang/blog/2018/08/28/2018-8-28-1/" data-id="cjld2rolg0002f87t9dy9ett3" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-2018-8-27-7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/08/27/2018-8-27-7/" class="article-date">
@@ -112,12 +185,14 @@
 <p>标准的注释规范如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@charset &quot;UTF-8&quot;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @desc File Info</span><br><span class="line"> * @author liqinuo</span><br><span class="line"> * @date 2015-10-10</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">/* Module A</span><br><span class="line">----------------------------------------------------------------*/</span><br><span class="line">.mod_a &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* module A logo */</span><br><span class="line">.mod_a_logo &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* module A nav */</span><br><span class="line">.mod_a_nav &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* Module B</span><br><span class="line">----------------------------------------------------------------*/</span><br><span class="line">.mod_b &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* module B logo */</span><br><span class="line">.mod_b_logo &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* module B nav */</span><br><span class="line">.mod_b_nav &#123;&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="嵌套规范"><a href="#嵌套规范" class="headerlink" title="嵌套规范"></a>嵌套规范</h4><h5 id="选择器嵌套"><a href="#选择器嵌套" class="headerlink" title="选择器嵌套"></a>选择器嵌套</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc &#123;&#125;</span><br><span class="line">body .jdc &#123;&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    body &amp; &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc &#123;&#125;</span><br><span class="line">.jdc_cover &#123;&#125;</span><br><span class="line">.jdc_info &#123;&#125;</span><br><span class="line">.jdc_info_name &#123;&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    &amp;_cover &#123;&#125;</span><br><span class="line">    &amp;_info &#123;</span><br><span class="line">        &amp;_name &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="属性嵌套"><a href="#属性嵌套" class="headerlink" title="属性嵌套"></a>属性嵌套</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    background-color: red;</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-image: url(/img/icon.png);</span><br><span class="line">    background-position: 0 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    background: &#123;</span><br><span class="line">        color: red;</span><br><span class="line">        repeat: no-repeat;</span><br><span class="line">        image: url(/img/icon.png);</span><br><span class="line">        position: 0 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>可复用属性尽量抽离为页面变量，易于统一维护</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    color: red;</span><br><span class="line">    border-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">$color: red;</span><br><span class="line">.jdc &#123;</span><br><span class="line">    color: $color;</span><br><span class="line">    border-color: $color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="混合-mixin"><a href="#混合-mixin" class="headerlink" title="混合(mixin)"></a>混合(mixin)</h4><p>根据功能定义模块，然后在需要使用的地方通过 <code>@include</code> 调用，避免编码时重复输入代码段</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc_1 &#123;</span><br><span class="line">    -webkit-border-radius: 5px;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">&#125;</span><br><span class="line">.jdc_2 &#123;</span><br><span class="line">    -webkit-border-radius: 10px;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">@mixin radius($radius:5px) &#123;</span><br><span class="line">    -webkit-border-radius: $radius;</span><br><span class="line">    border-radius: $radius;</span><br><span class="line">&#125;</span><br><span class="line">.jdc_1 &#123;</span><br><span class="line">    @include radius; //参数使用默认值</span><br><span class="line">&#125;</span><br><span class="line">.jdc_2 &#123;</span><br><span class="line">    @include radius(10px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc_1 &#123;</span><br><span class="line">    background: url(/img/icon.png) no-repeat -10px 0;</span><br><span class="line">&#125;</span><br><span class="line">.jdc_2 &#123;</span><br><span class="line">    background: url(/img/icon.png) no-repeat -20px 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">@mixin icon($x:0, $y:0) &#123;</span><br><span class="line">    background: url(/img/icon.png) no-repeat $x, $y;</span><br><span class="line">&#125;</span><br><span class="line">.jdc_1 &#123;</span><br><span class="line">    @include icon(-10px, 0);</span><br><span class="line">&#125;</span><br><span class="line">.jdc_2 &#123;</span><br><span class="line">    @include icon(-20px, 0);</span><br><span class="line">&#125;</span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line">#### 占位选择器 %</span><br><span class="line"></span><br><span class="line">如果不调用则不会有任何多余的 css 文件，占位选择器以 `%` 标识定义，通过 `@extend` 调用</span><br></pre></td></tr></table></figure>
 <p>//scss<br>%borderbox {<br>    -webkit-box-sizing: border-box;<br>    box-sizing: border-box;<br>}<br>.jdc {<br>    @extend %borderbox;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### @extend 继承</span><br></pre></td></tr></table></figure></p>
 <p>// CSS<br>.jdc_1 {<br>    font-size: 12px;<br>    color: red;<br>}<br>.jdc_2 {<br>    font-size: 12px;<br>    color: red;<br>    font-weight: bold;<br>}</p>
@@ -1857,52 +1932,6 @@
 
 
   
-    <article id="post-2018-7-18-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/07/18/2018-7-18-1/" class="article-date">
-  <time datetime="2018-07-18T06:24:08.000Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/小知识/">小知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/07/18/2018-7-18-1/">常用pc分辨率统计图</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br></p>
-<p><img src="https://taokiang.github.io/blog/2018/07/18/2018-7-18-1/pc_size.jpg" alt="常用pc分辨率"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/07/18/2018-7-18-1/" data-id="cjlbo94a30003u47tgpfyxzjd" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
 
 
   <nav id="page-nav">
@@ -1937,7 +1966,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title categories">分类</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/vue/">vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/小知识/">小知识</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/总结/">总结</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/vue/">vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/小知识/">小知识</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/总结/">总结</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -1950,6 +1979,10 @@
     <h3 class="widget-title recent-posts">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2018/08/28/2018-8-28-1/">前端题目汇总</a>
+          </li>
         
           <li>
             <a href="/blog/2018/08/27/2018-8-27-7/">SASS规范</a>
@@ -1967,10 +2000,6 @@
             <a href="/blog/2018/08/27/2018-8-27-4/">CSS编码规范</a>
           </li>
         
-          <li>
-            <a href="/blog/2018/08/27/2018-8-27-3/">CSS命名规范</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1980,7 +2009,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
