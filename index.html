@@ -62,6 +62,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-09-04-01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/09/04/2018-09-04-01/" class="article-date">
+  <time datetime="2018-09-04T01:46:03.560Z" itemprop="datePublished">2018-09-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/书法作品收藏/">书法作品收藏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/04/2018-09-04-01/">测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><br></p>
+<hr>
+<p><img src="https://taokiang.github.io/blog/2018/09/03/2018-09-03/lantingjixu.jpg" alt="测试"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/taokiang/blog/2018/09/04/2018-09-04-01/" data-id="cjln20hpi0001k87tv6vkmuby" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-2018-09-03" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/09/03/2018-09-03/" class="article-date">
@@ -97,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/09/03/2018-09-03/" data-id="cjllqxc2z0000ns7twwyt4drv" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/09/03/2018-09-03/" data-id="cjln20hpe0000k87tl720uv0h" class="article-share-link">分享</a>
       
       
       
@@ -206,12 +253,12 @@
 <p>适合用事件委托的事件：click，mousedown，mouseup，keydown，keyup，keypress。</p>
 <p>值得注意的是，mouseover和mouseout虽然也有事件冒泡，但是处理它们的时候需要特别的注意，因为需要经常计算它们的位置，处理起来不太容易。</p>
 <p>不适合的就有很多了，举个例子，mousemove，每次都要计算它的位置，非常不好把控，在不如说focus，blur之类的，本身就没用冒泡的特性，自然就不能用事件委托了。</p>
-<h2 id="vue中的双向数据绑定的实现"><a href="#vue中的双向数据绑定的实现" class="headerlink" title="vue中的双向数据绑定的实现"></a><strong>vue中的双向数据绑定的实现</strong></h2><p>vue.js 则是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"userName"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"uName"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var obj=&#123;</span></span><br><span class="line"><span class="undefined">            pwd:"123456"</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined">        Object.defineProperty(obj,"userName",&#123;</span></span><br><span class="line"><span class="undefined">            get: function()&#123;</span></span><br><span class="line"><span class="undefined">                console.log("get init");</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            set: function(val)&#123;</span></span><br><span class="line"><span class="undefined">                console.log("set init");</span></span><br><span class="line"><span class="undefined">                document.getElementById("uName").innerText=val;</span></span><br><span class="line"><span class="undefined">                document.getElementById("userName").value=val;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        document.getElementById("userName").addEventListener("keyup",function()&#123;</span></span><br><span class="line"><span class="undefined">            obj.userName=event.target.value;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="vue中的双向数据绑定的实现"><a href="#vue中的双向数据绑定的实现" class="headerlink" title="vue中的双向数据绑定的实现"></a><strong>vue中的双向数据绑定的实现</strong></h2><p>vue.js 则是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"userName"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"uName"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> obj=&#123;</span></span><br><span class="line"><span class="javascript">            pwd:<span class="string">"123456"</span></span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"userName"</span>,&#123;</span></span><br><span class="line"><span class="javascript">            get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"get init"</span>);</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="javascript">            set: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"set init"</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.getElementById(<span class="string">"uName"</span>).innerText=val;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.getElementById(<span class="string">"userName"</span>).value=val;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.getElementById(<span class="string">"userName"</span>).addEventListener(<span class="string">"keyup"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">            obj.userName=event.target.value;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/28/2018-8-28-1/" data-id="cjld2rolg0002f87t9dy9ett3" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/28/2018-8-28-1/" data-id="cjln20hq8000tk87trfetlffg" class="article-share-link">分享</a>
       
       
       
@@ -299,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-7/" data-id="cjlc71yfj000ijs7tmcvgw5kt" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-7/" data-id="cjln20hq5000pk87tt1hgtahs" class="article-share-link">分享</a>
       
       
       
@@ -911,7 +958,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-6/" data-id="cjlc6z3ld000ejs7tqfss5pci" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-6/" data-id="cjln20hq7000sk87tvgmckus1" class="article-share-link">分享</a>
       
       
       
@@ -1286,7 +1333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-5/" data-id="cjlc6xccl000ajs7t0rlyt1xw" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-5/" data-id="cjln20hq9000wk87t70bivp8d" class="article-share-link">分享</a>
       
       
       
@@ -1516,7 +1563,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-4/" data-id="cjlc6vofs0006js7tcetuzvuq" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-4/" data-id="cjln20hq3000kk87txlfm1hdw" class="article-share-link">分享</a>
       
       
       
@@ -1614,7 +1661,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-3/" data-id="cjlc6tlmn0002js7tnobiwov0" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-3/" data-id="cjln20hq4000nk87tymxuony8" class="article-share-link">分享</a>
       
       
       
@@ -1820,7 +1867,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-2/" data-id="cjlc6r27c0000uo7twv8iiba3" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-2/" data-id="cjln20hq2000jk87torxfs2ax" class="article-share-link">分享</a>
       
       
       
@@ -1910,59 +1957,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-1/" data-id="cjlbo94a90008u47tf9zrubjj" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-2018-8-23-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/08/23/2018-8-23-1/" class="article-date">
-  <time datetime="2018-08-23T09:51:32.257Z" itemprop="datePublished">2018-08-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/vue/">vue</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/08/23/2018-8-23-1/">vue-cli搭建项目时，assets和static的区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><br></p>
-<h2 id="Webpacked-Assets"><a href="#Webpacked-Assets" class="headerlink" title="Webpacked Assets"></a>Webpacked Assets</h2><hr>
-<p>为了回答这个问题，我们首先需要了解Webpack如何处理静态资产。在 *.vue 组件中，所有模板和CSS都会被 vue-html-loader 及 css-loader 解析，并查找资源URL。例如，在 <code>&lt;img src=&quot;./logo.png&quot;&gt;</code><br>和 <code>background: url(./logo.png)</code> 中，<code>&quot;./logo.png&quot;</code> 是相对的资源路径，将由Webpack解析为模块依赖。</p>
-<p>因为 logo.png 不是 JavaScript，当被视为模块依赖时，需要使用 url-loader 和 file-loader<br>处理它。vue-cli 的 webpack 脚手架已经配置了这些 loader，因此可以使用相对/模块路径。</p>
-<p>由于这些资源可能在构建过程中被内联/复制/重命名，所以它们基本上是源代码的一部分。这就是为什么建议将<br>Webpack 处理的静态资源放在 /src 目录中和其它源文件放一起的原因。事实上，甚至不必把它们全部放在 /src/assets：可以用模块/组件的组织方式来使用它们。例如，可以在每个放置组件的目录中存放静态资源。<br><br></p>
-<h2 id="“Real”-Static-Assets"><a href="#“Real”-Static-Assets" class="headerlink" title="“Real” Static Assets"></a>“Real” Static Assets</h2><hr>
-<p>相比之下，static/ 目录下的文件并不会被 Webpack 处理：它们会直接被复制到最终目录（默认是dist/static）下。必须使用绝对路径引用这些文件，这是通过在 config.js 文件中的 build.assetsPublicPath 和 build.assetsSubDirectory 连接来确定的。</p>
-<p>任何放在 static/ 中文件需要以绝对路径的形式引用：/static/[filename]。如果更改 assetSubDirectory 的值为 assets，那么路径需改为 /assets/[filename]。<br><br><br>请参考vue-cli作者的解释：<a href="http://vuejs-templates.github.io/webpack/static.html" title=" webpack 模板的文档 - Handing Static Assets" target="_blank" rel="noopener">http://vuejs-templates.github.io/webpack/static.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/23/2018-8-23-1/" data-id="cjlbo94a80007u47tq8mea4qa" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-1/" data-id="cjln20hpz000gk87t1j2032ym" class="article-share-link">分享</a>
       
       
       
@@ -2008,7 +2003,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title categories">分类</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/vue/">vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/书法作品收藏/">书法作品收藏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/小知识/">小知识</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/总结/">总结</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/vue/">vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/书法作品收藏/">书法作品收藏</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/小知识/">小知识</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/总结/">总结</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -2021,6 +2016,10 @@
     <h3 class="widget-title recent-posts">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2018/09/04/2018-09-04-01/">测试</a>
+          </li>
         
           <li>
             <a href="/blog/2018/09/03/2018-09-03/">兰亭集序</a>
@@ -2038,10 +2037,6 @@
             <a href="/blog/2018/08/27/2018-8-27-6/">Javascript编码规范</a>
           </li>
         
-          <li>
-            <a href="/blog/2018/08/27/2018-8-27-5/">CSS编码和命名样例</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -2051,7 +2046,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
