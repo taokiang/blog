@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/taokiang/blog/"/>
-  <updated>2018-09-03T03:53:35.700Z</updated>
+  <updated>2018-09-06T01:56:08.508Z</updated>
   <id>https://github.com/taokiang/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git常用命令合集</title>
+    <link href="https://github.com/taokiang/blog/2018/09/05/2018-09-05/"/>
+    <id>https://github.com/taokiang/blog/2018/09/05/2018-09-05/</id>
+    <published>2018-09-05T08:21:14.676Z</published>
+    <updated>2018-09-06T01:56:08.508Z</updated>
+    
+    <content type="html"><![CDATA[<p><br></p><hr><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">git init                                                  # 初始化本地git仓库（创建新仓库） </span><br><span class="line">git config --global user.name "xxx"                       # 配置用户名 </span><br><span class="line">git config --global user.email "xxx@xxx.com"              # 配置邮件</span><br><span class="line">git config  user.name                                     # 查看用户名 </span><br><span class="line">git config  user.email                                    # 查看邮件</span><br><span class="line"></span><br><span class="line">git status                                                # 查看当前版本状态（是否修改） </span><br><span class="line">git branch                                                # 显示本地分支</span><br><span class="line">git fetch                                                 # 获取所有远程分支（不更新本地分支，另需merge）</span><br><span class="line">git pull                                                  # 本地与服务器端同步</span><br><span class="line">git pull origin master                                    # 获取远程分支master并merge到当前分支</span><br><span class="line">git reset --hard HEAD                                     # 回退到上个版本</span><br><span class="line">git reset --hard                                          # 回退到历史版本</span><br><span class="line">git log                                                   # 看你commit的日志</span><br><span class="line">git diff                                                  # 比较的是暂存区和工作区的差异</span><br><span class="line">git remote -v                                             # 查看远程仓库</span><br><span class="line">git remote rm origin                                      # 删除远程仓库</span><br><span class="line">git rm </span><br><span class="line"></span><br><span class="line">git clone                                                 # 克隆一份</span><br><span class="line">git checkout [name]                                       # 切换分支</span><br><span class="line">git branch [name]                                         # 创建新分支</span><br><span class="line">git checkout -b [name]                                    # 创建新分支并立即切换到新分支</span><br><span class="line">git branch -d [name]                                      # 删除分支 [-d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项]</span><br><span class="line">git merge [name]                                          # 合并分支 将名称为[name]的分支与当前分支合并</span><br><span class="line">git push origin [name]                                    # 创建远程分支(本地分支push到远程)</span><br><span class="line">git push origin :[name] 或 gitpush origin :[name]         # 删除远程分支</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span
+      
+    
+    </summary>
+    
+      <category term="小知识" scheme="https://github.com/taokiang/blog/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>兰亭集序</title>
