@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>仇江涛的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="仇江涛的博客">
+<meta property="og:url" content="https://github.com/taokiang/blog/page/17/index.html">
+<meta property="og:site_name" content="仇江涛的博客">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="仇江涛的博客">
+  
+  
+    <link rel="icon" href="/blog/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/taokiang/blog"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">首页</a>
+        
+          <a class="main-nav-link" href="/blog/archives">归档</a>
+        
+          <a class="main-nav-link" href="/blog/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">仇江涛的博客</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2018-6-27-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/27/2018-6-27-1/" class="article-date">
+  <time datetime="2018-06-27T07:54:48.110Z" itemprop="datePublished">2018-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/vue/">vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/27/2018-6-27-1/">Vue2在低版本app，显示空白</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><br><br>这是由于IE对promise的支持不好，我们需要安装：babel-polyfill和es6-promise:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-polyfill --save</span><br><span class="line">npm install es6-promise --save</span><br></pre></td></tr></table></figure></p>
+<p><br><br>main.js文件中引用:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Es6Promise <span class="keyword">from</span> <span class="string">'es6-promise'</span></span><br><span class="line">Es6Promise.polyfill()</span><br></pre></td></tr></table></figure></p>
+<p><br><br>build/webpack.base.conf.js 文件中配置如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">     entry: &#123;</span><br><span class="line">       app: [<span class="string">"babel-polyfill"</span>, <span class="string">"./src/main.js"</span>]</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">		  &#123;</span><br><span class="line">			test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">			loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">			<span class="comment">//include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],</span></span><br><span class="line">			exclude: <span class="regexp">/node_modules/</span>,<span class="comment">//除了node_modules文件夹以外的，均使用babel-loader转换</span></span><br><span class="line">			query: &#123;</span><br><span class="line">			  presets: [<span class="string">'es2015'</span>]</span><br><span class="line">			&#125;</span><br><span class="line">		  &#125;</span><br><span class="line">    	]</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><br><br>.babelrc 文件中配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;modules&quot;: false,</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;not ie &lt;= 8&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    &quot;es2015&quot;,</span><br><span class="line">    &quot;stage-2&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-vue-jsx&quot;, &quot;transform-runtime&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<blockquote>
+<p>作者：仇江涛</p>
+</blockquote>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-1/" data-id="cjloupnek0003ig7t79okfu5y" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/blog/page/16/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/15/">15</a><a class="page-number" href="/blog/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/blog/page/18/">18</a><a class="extend next" rel="next" href="/blog/page/18/">下一页&raquo;</a>
+  </nav>
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title recent-posts">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2018/09/05/2018-09-05/">git常用命令合集</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/03/2018-09-03/">兰亭集序</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/28/2018-8-28-1/">前端题目汇总</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/27/2018-8-27-7/">SASS规范</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/27/2018-8-27-6/">Javascript编码规范</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2018 jet&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;532067334@qq.com
+    </div>
+  </div>
+</footer>
+ <script src="/blog/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">首页</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/blog/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js"></script>
+  
+
+
+ <script src="/blog/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+<script src="/blog/js/elevator.js"></script>
+  </div>
+</body>
+</html>
