@@ -17,6 +17,8 @@
 <meta name="twitter:title" content="打包后css浏览器兼容前缀自动去除，导致某些版本的机型css不兼容">
 <meta name="twitter:description" content="由于vue cli这个脚手架在打包后把css统一用postCSS的autoprefixer 插件进行压缩，而autoprefixer插件会针对支持的浏览器进行CSS前缀的删除和追加。对于某些版本的浏览器可能会导致前缀被删除而产生不兼容，具体解决方法如下 package.json 文件中配置如下：12345678910&amp;#123;    &quot;browserslist&quot;: [    &quot;&amp;gt; 1%&quot;,">
   
+    <link rel="alternate" href="/atom.xml" title="仇江涛的博客" type="application/atom+xml">
+  
   
     <link rel="icon" href="/blog/favicon.png">
   
@@ -37,6 +39,8 @@
     
     <div id="header-inner" class="inner">
       <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
@@ -245,7 +249,7 @@
     <a href="/blog/about" class="mobile-nav-link">关于</a>
   
 </nav>
-    <img class="back-to-top-btn" src="/blog/images/fly-to-top.png"/>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
 <script>
 // Elevator script included on the page, already.
 window.onload = function() {
@@ -305,7 +309,7 @@ window.onload = function() {
         }
       })
     </script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
