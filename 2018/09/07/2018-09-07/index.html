@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>仇江涛的博客</title>
+  <title>Web页面加载，如何进行优化？ | 仇江涛的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="仇江涛的博客">
-<meta property="og:url" content="https://github.com/taokiang/blog/index.html">
+  <meta name="description" content="浏览器加载过程 建立连接过程   浏览器查找域名的IP地址 浏览器给web服务器发送一个HTTP请求 服务器发送永久重定向响应 浏览器跟踪重定向地址 服务器“处理”请求 服务器发回一个HTML响应   浏览器渲染   解析HTML 构建DOM树 渲染树构建 渲染树布局 绘制渲染树  优化方法 启用浏览器缓存  浏览器要根据域名找出IP地址，而DNS查找过程的第一步是在浏览器缓存中查找，根据Ch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web页面加载，如何进行优化？">
+<meta property="og:url" content="https://github.com/taokiang/blog/2018/09/07/2018-09-07/index.html">
 <meta property="og:site_name" content="仇江涛的博客">
+<meta property="og:description" content="浏览器加载过程 建立连接过程   浏览器查找域名的IP地址 浏览器给web服务器发送一个HTTP请求 服务器发送永久重定向响应 浏览器跟踪重定向地址 服务器“处理”请求 服务器发回一个HTML响应   浏览器渲染   解析HTML 构建DOM树 渲染树构建 渲染树布局 绘制渲染树  优化方法 启用浏览器缓存  浏览器要根据域名找出IP地址，而DNS查找过程的第一步是在浏览器缓存中查找，根据Ch">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-07T08:26:41.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仇江涛的博客">
+<meta name="twitter:title" content="Web页面加载，如何进行优化？">
+<meta name="twitter:description" content="浏览器加载过程 建立连接过程   浏览器查找域名的IP地址 浏览器给web服务器发送一个HTTP请求 服务器发送永久重定向响应 浏览器跟踪重定向地址 服务器“处理”请求 服务器发回一个HTML响应   浏览器渲染   解析HTML 构建DOM树 渲染树构建 渲染树布局 绘制渲染树  优化方法 启用浏览器缓存  浏览器要根据域名找出IP地址，而DNS查找过程的第一步是在浏览器缓存中查找，根据Ch">
   
     <link rel="alternate" href="/atom.xml" title="仇江涛的博客" type="application/atom+xml">
   
@@ -64,9 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-2018-09-07" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2018-09-07" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/09/07/2018-09-07/" class="article-date">
   <time datetime="2018-09-07T08:09:57.722Z" itemprop="datePublished">2018-09-07</time>
@@ -83,8 +85,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
+    <h1 class="article-title" itemprop="name">
+      Web页面加载，如何进行优化？
     </h1>
   
 
@@ -183,92 +185,104 @@
     </footer>
   </div>
   
-</article>
- 
+    
+ <script src="/blog/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/blog/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
 
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/09/05/2018-09-05/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">git常用命令合集</div>
+    </a>
+  
+</nav>
 
   
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
 
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/19/">19</a><a class="extend next" rel="next" href="/blog/page/2/">下一页&raquo;</a>
-  </nav>
 </section>
            
     <aside id="sidebar">
   
     
-  <div class="widget-wrap">
-     
-        <h3 class="follow-title ">联系我</h3>
-     
-    <div class="widget follow">
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
       
-              <a class="github" aria-hidden="true" href="https://github.com/taokiang" target="_blank" title="Github"></a>
-      
-      
-      
-      
-            <a class="email" aria-hidden="true"  href="mailto:532067334@qq.com" target="_blank" title="邮箱"></a>
-      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器加载过程"><span class="toc-number">1.</span> <span class="toc-text">浏览器加载过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化方法"><span class="toc-number">2.</span> <span class="toc-text">优化方法</span></a></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
 
+  
+    
 
   
     
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title categories">分类</h3>
-    <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/vue/">vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/书法作品收藏/">书法作品收藏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/小知识/">小知识</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/总结/">总结</a><span class="category-list-count">7</span></li></ul>
-    </div>
-  </div>
-
-
   
     
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/05/2018-09-05/">git常用命令合集</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/03/2018-09-03/">兰亭集序</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/08/28/2018-8-28-1/">前端题目汇总</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/08/27/2018-8-27-7/">SASS规范</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title archive">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">5</span></li></ul>
-    </div>
-  </div>
-
 
   
     

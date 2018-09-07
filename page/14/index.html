@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-6-28-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-7-18-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/06/28/2018-6-28-2/" class="article-date">
-  <time datetime="2018-06-28T07:07:11.920Z" itemprop="datePublished">2018-06-28</time>
+    <a href="/blog/2018/07/18/2018-7-18-1/" class="article-date">
+  <time datetime="2018-07-18T06:24:08.000Z" itemprop="datePublished">2018-07-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/vue/">vue</a>
+    <a class="article-category-link" href="/blog/categories/小知识/">小知识</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/28/2018-6-28-2/">Vue2项目测试、发布root地址配置</a>
+      <a class="article-title" href="/blog/2018/07/18/2018-7-18-1/">常用pc分辨率统计图</a>
     </h1>
   
 
@@ -94,21 +94,13 @@
       
         <!-- Table of Contents -->
         
-        <p><br><br>基本上所有的项目，在测试的时候和正式发布的时候根地址是不一样的，我们可以利用的WebPack给生产环境和正式环境配置不同地址<br><br><br>pro.env.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  API_ROOT: <span class="string">'"你正式发布的地址"'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>dev.env.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>)</span><br><span class="line"><span class="keyword">var</span> prodEnv = <span class="built_in">require</span>(<span class="string">'./prod.env'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = merge(prodEnv, &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"development"'</span>,</span><br><span class="line">  API_ROOT: <span class="string">'"你测试环境地址"'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>配置index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  build: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./prod.env'</span>),</span><br><span class="line">    <span class="comment">// ....... //</span></span><br><span class="line">  &#125;,</span><br><span class="line">  dev: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./dev.env'</span>),</span><br><span class="line">    <span class="comment">// ....... //</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>配置main.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.baseURL = process.env.API_ROOT</span><br></pre></td></tr></table></figure></p>
-<p>或者_root添加变量配置main.js，更加灵活<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _root = process.env.API_ROOT</span><br></pre></td></tr></table></figure></p>
-<p>以上在不同的环境中会取到不同的地址</p>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
+        <p><br></p>
+<p><img src="https://taokiang.github.io/blog/2018/07/18/2018-7-18-1/pc_size.jpg" alt="常用pc分辨率"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/28/2018-6-28-2/" data-id="cjloupneo0005ig7tt53zhvhc" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/07/18/2018-7-18-1/" data-id="cjloupner0007ig7tvdhye9ar" class="article-share-link">分享</a>
       
       
       
@@ -123,7 +115,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/page/13/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/12/">12</a><a class="page-number" href="/blog/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/blog/page/15/">15</a><a class="page-number" href="/blog/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/18/">18</a><a class="extend next" rel="next" href="/blog/page/15/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/13/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/12/">12</a><a class="page-number" href="/blog/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/blog/page/15/">15</a><a class="page-number" href="/blog/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/19/">19</a><a class="extend next" rel="next" href="/blog/page/15/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -146,6 +138,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/09/05/2018-09-05/">git常用命令合集</a>
           </li>
         
@@ -159,10 +155,6 @@
         
           <li>
             <a href="/blog/2018/08/27/2018-8-27-7/">SASS规范</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/08/27/2018-8-27-6/">Javascript编码规范</a>
           </li>
         
       </ul>
