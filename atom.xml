@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/taokiang/blog/"/>
-  <updated>2018-09-07T08:26:41.562Z</updated>
+  <updated>2018-09-18T02:48:09.626Z</updated>
   <id>https://github.com/taokiang/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue-cli开发环境实现跨域请求</title>
+    <link href="https://github.com/taokiang/blog/2018/09/18/2018-09-18-01/"/>
+    <id>https://github.com/taokiang/blog/2018/09/18/2018-09-18-01/</id>
+    <published>2018-09-18T02:42:14.706Z</published>
+    <updated>2018-09-18T02:48:09.626Z</updated>
+    
+    <content type="html"><![CDATA[<p><br></p><h2 id="配置config-index-js"><a href="#配置config-index-js" class="headerlink" title="配置config/index.js"></a>配置config/index.js</h2><hr><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    dev:&#123;</span><br><span class="line">        proxyTable:&#123;//将http://172.3.2.1:8000映射为/api</span><br><span class="line">            '/api':&#123;</span><br><span class="line">                target: 'http://172.3.2.1:8000',</span><br><span class="line">secure: false,  //如果是https接口，需要配置这个参数</span><br><span class="line">                changeOrigin: true,//是否跨域</span><br><span class="line">                pathRewrite: &#123;</span><br><span class="line">                  '^/api': '' </span><br><span class="line">//如果本身的接口地址就有'/api'这种通用前缀，也就是说https://http://172.3.2.1:8000/api，就可以把pathRewrite删掉</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;配置config-index-js&quot;&gt;&lt;a href=&quot;#配置config-index-js&quot; class=&quot;headerlink&quot; title=&quot;配置config/index.js&quot;&gt;&lt;/a&gt;配置config/index.js&lt;/h2&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://github.com/taokiang/blog/categories/vue/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Web页面加载，如何进行优化？</title>
