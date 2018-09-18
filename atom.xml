@@ -417,30 +417,6 @@
   </entry>
   
   <entry>
-    <title>ios中input设置readonly，仍能聚焦</title>
-    <link href="https://github.com/taokiang/blog/2018/06/27/2018-6-27-3/"/>
-    <id>https://github.com/taokiang/blog/2018/06/27/2018-6-27-3/</id>
-    <published>2018-06-27T08:00:41.602Z</published>
-    <updated>2018-08-27T05:49:02.770Z</updated>
-    
-    <content type="html"><![CDATA[<p><br></p><h5 id="页面内部代码如下："><a href="#页面内部代码如下：" class="headerlink" title="页面内部代码如下："></a>页面内部代码如下：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"number"</span> placeholder=<span class="string">""</span> v-model=<span class="string">"idNo"</span> @focus=<span class="string">"lostBlur"</span> readonly&gt;</span><br><span class="line"></span><br><span class="line"> methods: &#123;</span><br><span class="line">      lostBlur(el) &#123;</span><br><span class="line">        $(el.target).blur();</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><p><br></p><blockquote><p>作者：仇江涛</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h5 id=&quot;页面内部代码如下：&quot;&gt;&lt;a href=&quot;#页面内部代码如下：&quot; class=&quot;headerlink&quot; title=&quot;页面内部代码如下：&quot;&gt;&lt;/a&gt;页面内部代码如下：&lt;/h5&gt;&lt;figure class=&quot;highlight javascri
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://github.com/taokiang/blog/categories/vue/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Vue2在低版本app，显示空白</title>
     <link href="https://github.com/taokiang/blog/2018/06/27/2018-6-27-1/"/>
     <id>https://github.com/taokiang/blog/2018/06/27/2018-6-27-1/</id>
