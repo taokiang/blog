@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-6-28-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-6-28-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/06/28/2018-6-28-1/" class="article-date">
-  <time datetime="2018-06-28T03:01:57.448Z" itemprop="datePublished">2018-06-28</time>
+    <a href="/blog/2018/06/28/2018-6-28-2/" class="article-date">
+  <time datetime="2018-06-28T07:07:11.920Z" itemprop="datePublished">2018-06-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/html/">html</a>
+    <a class="article-category-link" href="/blog/categories/vue/">vue</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/28/2018-6-28-1/">a标签实现发短信功能(苹果、安卓的兼容)</a>
+      <a class="article-title" href="/blog/2018/06/28/2018-6-28-2/">Vue-cli项目开发、生产地址配置</a>
     </h1>
   
 
@@ -94,8 +94,11 @@
       
         <!-- Table of Contents -->
         
-        <p><br><br>安卓系统上面的写法是：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:10086?body=你好Android"</span>&gt;</span>给 10086 发短信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>IOS系统上面的写法是：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:10086&amp;body=你好iphone"</span>&gt;</span>给 10086 发短信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+        <p><br><br>基本上所有的项目，在测试的时候和正式发布的时候根地址是不一样的，我们可以利用的WebPack给生产环境和正式环境配置不同地址<br><br><br>pro.env.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  API_ROOT: <span class="string">'"//10.138.60.142:7000"'</span> <span class="comment">//生产地址(新增配置)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>dev.env.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>)</span><br><span class="line"><span class="keyword">var</span> prodEnv = <span class="built_in">require</span>(<span class="string">'./prod.env'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = merge(prodEnv, &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"development"'</span>,</span><br><span class="line">  API_ROOT: <span class="string">'"/development"'</span> <span class="comment">//开发地址(新增配置)</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>配置index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  build: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./prod.env'</span>),<span class="comment">//(新增配置)</span></span><br><span class="line">    <span class="comment">// ....... //</span></span><br><span class="line">  &#125;,</span><br><span class="line">  dev: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./dev.env'</span>),<span class="comment">//(新增配置)</span></span><br><span class="line">    <span class="comment">// ....... //</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>配置main.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.baseURL = process.env.API_ROOT</span><br></pre></td></tr></table></figure></p>
+<p>以上在不同的环境中会取到不同的地址</p>
 <p><br></p>
 <blockquote>
 <p>作者：仇江涛</p>
@@ -104,7 +107,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/28/2018-6-28-1/" data-id="cjloupnem0004ig7t7znneuh0" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/06/28/2018-6-28-2/" data-id="cjloupneo0005ig7tt53zhvhc" class="article-share-link">分享</a>
       
       
       
@@ -119,7 +122,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/page/16/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/15/">15</a><a class="page-number" href="/blog/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/blog/page/18/">18</a><a class="page-number" href="/blog/page/19/">19</a><a class="extend next" rel="next" href="/blog/page/18/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/16/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/15/">15</a><a class="page-number" href="/blog/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/blog/page/18/">18</a><a class="page-number" href="/blog/page/19/">19</a><a class="page-number" href="/blog/page/20/">20</a><a class="extend next" rel="next" href="/blog/page/18/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -142,7 +145,11 @@
       <ul>
         
           <li>
-            <a href="/blog/2018/09/18/2018-09-18-01/">vue-cli开发环境实现跨域请求</a>
+            <a href="/blog/2018/09/19/2018-09-18/">vue-cli开发环境实现跨域请求</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/18/2018-09-19/">.vue组件中, scss中添加背景图路径问题</a>
           </li>
         
           <li>
@@ -155,10 +162,6 @@
         
           <li>
             <a href="/blog/2018/09/03/2018-09-03/">兰亭集序</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/08/28/2018-8-28-1/">前端题目汇总</a>
           </li>
         
       </ul>
