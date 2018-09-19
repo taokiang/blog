@@ -66,10 +66,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-09-18" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-09-19-03" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/09/19/2018-09-18/" class="article-date">
-  <time datetime="2018-09-19T03:11:16.681Z" itemprop="datePublished">2018-09-19</time>
+    <a href="/blog/2018/09/19/2018-09-19-03/" class="article-date">
+  <time datetime="2018-09-19T03:24:15.113Z" itemprop="datePublished">2018-09-19</time>
 </a>
     
   <div class="article-category">
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/09/19/2018-09-18/">vue-cli开发环境实现跨域请求</a>
+      <a class="article-title" href="/blog/2018/09/19/2018-09-19-03/">config/index.js 配置文件详解</a>
     </h1>
   
 
@@ -95,13 +95,13 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<h2 id="配置config-index-js"><a href="#配置config-index-js" class="headerlink" title="配置config/index.js"></a>配置config/index.js</h2><hr>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    dev:&#123;</span><br><span class="line">        proxyTable:&#123;//将http://172.3.2.1:8000映射为/api</span><br><span class="line">            '/api':&#123;</span><br><span class="line">                target: 'http://172.3.2.1:8000',</span><br><span class="line">                secure: false,//如果是https接口，需要配置这个参数</span><br><span class="line">                changeOrigin: true,//是否跨域</span><br><span class="line">                pathRewrite: &#123;</span><br><span class="line">                  '^/api': '' </span><br><span class="line">                  //如果本身的接口地址就有'/api'这种通用前缀，</span><br><span class="line">                  也就是说https://http://172.3.2.1:8000/api，就可以把pathRewrite删掉</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="config-index-js-配置文件详解"><a href="#config-index-js-配置文件详解" class="headerlink" title="config/index.js 配置文件详解"></a>config/index.js 配置文件详解</h2><hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var path = require('path')</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  build: &#123; // production 环境</span><br><span class="line">    env: require('./prod.env'), // 使用 config/prod.env.js 中定义的编译环境</span><br><span class="line">    index: path.resolve(__dirname, '../dist/index.html'), // 编译输入的 index.html 文件</span><br><span class="line">    assetsRoot: path.resolve(__dirname, '../dist'), // 编译输出的静态资源路径</span><br><span class="line">    assetsSubDirectory: 'static', // 编译输出的二级目录</span><br><span class="line">    assetsPublicPath: '/', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名</span><br><span class="line">    productionSourceMap: true, // 是否开启 cssSourceMap</span><br><span class="line">    // Gzip off by default as many popular static hosts such as</span><br><span class="line">    // Surge or Netlify already gzip all static assets for you.</span><br><span class="line">    // Before setting to `true`, make sure to:</span><br><span class="line">    // npm install --save-dev compression-webpack-plugin</span><br><span class="line">    productionGzip: false, // 是否开启 gzip</span><br><span class="line">    productionGzipExtensions: ['js', 'css'] // 需要使用 gzip 压缩的文件扩展名</span><br><span class="line">  &#125;,</span><br><span class="line">  dev: &#123; // dev 环境</span><br><span class="line">    env: require('./dev.env'), // 使用 config/dev.env.js 中定义的编译环境</span><br><span class="line">    port: 8080, // 运行测试页面的端口</span><br><span class="line">    assetsSubDirectory: 'static', // 编译输出的二级目录</span><br><span class="line">    assetsPublicPath: '/', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名</span><br><span class="line">    proxyTable: &#123;&#125;, // 需要 proxyTable 代理的接口（可跨域）</span><br><span class="line">    // CSS Sourcemaps off by default because relative paths are "buggy"</span><br><span class="line">    // with this option, according to the CSS-Loader README</span><br><span class="line">    // (https://github.com/webpack/css-loader#sourcemaps)</span><br><span class="line">    // In our experience, they generally work as expected,</span><br><span class="line">    // just be aware of this issue when enabling this option.</span><br><span class="line">    cssSourceMap: false // 是否开启 cssSourceMap</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/09/19/2018-09-18/" data-id="cjm8kr8zd0000ac7tlmj8zjuc" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/09/19/2018-09-19-03/" data-id="cjm8l6zus0000as7tdvu4uxjj" class="article-share-link">分享</a>
       
       
       
@@ -116,7 +116,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/20/">20</a><a class="extend next" rel="next" href="/blog/page/2/">下一页&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/22/">22</a><a class="extend next" rel="next" href="/blog/page/2/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -147,7 +147,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title categories">分类</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/书法作品收藏/">书法作品收藏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/小知识/">小知识</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/总结/">总结</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/书法作品收藏/">书法作品收藏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/小知识/">小知识</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/总结/">总结</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -162,23 +162,23 @@
       <ul>
         
           <li>
+            <a href="/blog/2018/09/19/2018-09-19-03/">config/index.js 配置文件详解</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/19/2018-09-19-02/">build/webpack.base.conf.js配置文件详解</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/09/19/2018-09-18/">vue-cli开发环境实现跨域请求</a>
           </li>
         
           <li>
-            <a href="/blog/2018/09/18/2018-09-19/">.vue组件中, scss中添加背景图路径问题</a>
+            <a href="/blog/2018/09/18/2018-09-19-01/">.vue组件中, scss中添加背景图路径问题</a>
           </li>
         
           <li>
             <a href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/05/2018-09-05/">git常用命令合集</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/03/2018-09-03/">兰亭集序</a>
           </li>
         
       </ul>
@@ -190,7 +190,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 

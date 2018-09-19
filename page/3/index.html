@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-09-07" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-09-18" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/09/07/2018-09-07/" class="article-date">
-  <time datetime="2018-09-07T08:09:57.722Z" itemprop="datePublished">2018-09-07</time>
+    <a href="/blog/2018/09/19/2018-09-18/" class="article-date">
+  <time datetime="2018-09-19T03:11:16.681Z" itemprop="datePublished">2018-09-19</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/小知识/">小知识</a>
+    <a class="article-category-link" href="/blog/categories/vue/">vue</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
+      <a class="article-title" href="/blog/2018/09/19/2018-09-18/">vue-cli开发环境实现跨域请求</a>
     </h1>
   
 
@@ -95,88 +95,13 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<hr>
-<h2 id="浏览器加载过程"><a href="#浏览器加载过程" class="headerlink" title="浏览器加载过程"></a>浏览器加载过程</h2><ol>
-<li>建立连接过程</li>
-</ol>
-<ul>
-<li>浏览器查找域名的IP地址</li>
-<li>浏览器给web服务器发送一个HTTP请求</li>
-<li>服务器发送永久重定向响应</li>
-<li>浏览器跟踪重定向地址</li>
-<li>服务器“处理”请求</li>
-<li>服务器发回一个HTML响应</li>
-</ul>
-<ol start="2">
-<li>浏览器渲染</li>
-</ol>
-<ul>
-<li>解析HTML</li>
-<li>构建DOM树</li>
-<li>渲染树构建</li>
-<li>渲染树布局</li>
-<li>绘制渲染树</li>
-</ul>
-<h2 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h2><ol>
-<li>启用浏览器缓存</li>
-</ol>
-<p>浏览器要根据域名找出IP地址，而DNS查找过程的第一步是在浏览器缓存中查找，根据Chrome的PageSpeed给出的建议：要利用浏览器缓存存储可缓存的资源。在 HTTP 标头中为静态资源设置有效期或最长存在时间，可指示浏览器从本地磁盘中加载以前下载的资源而不是从网络中加载。<br>HTTP 1.1提供的缓存方法主要有两种：</p>
-<ul>
-<li>Expires和Cache-Control：max-age. 即内容在缓存中的生命有效期。第一次请求后将在生命有效期之内直接从本地缓存中拿取。</li>
-<li>Last-Modified和ETag.：Last-Modified标记文件最后一次修改的时间，浏览器请求是在头部加入上次请求缓存下来的Last-Modified时间，若两次请求期间服务器的内容没有修改，服务器返回304 Not Modified，则不下载资源，浏览器直接使用本地缓存；否则，服务器会返回200以及更新后的版本。ETag是服务器对于文件生成的Hash散列，其生成算法与最后一次修改的时间相关。浏览器第二次请求发送上次的ETag信息，服务器通过简单的比对就知道是否应该返回304还是200。PageSpeed建议，要为资源指定Last-Modified或ETag标头，以便启动缓存验证</li>
-</ul>
-<ol start="2">
-<li>页面内容组织</li>
-</ol>
-<ul>
-<li>为 HTML 文档指定字符集，可让浏览器立即开始执行脚本。</li>
-<li>将内嵌样式块和 <link> 元素从文档主体移至文档标题，可改善显示性能。</li>
-<li>将小型样式表或者脚本内嵌到主 HTML 网页中，可减少在下载其他资源时的往返时间 (RTT) 和延迟时间。</li>
-<li>正确地排列外部样式表与外部和内嵌脚本的顺序，可增加下载时同时加载的数据量，并提高浏览器显示网页的速度。为确保能够并行下载这CSS 文件，始终将外部 CSS 文件排在外部 JavaScript 文件前面。</li>
-</ul>
-<ol start="3">
-<li>HTML</li>
-</ol>
-<ul>
-<li>使用HTML5新标签，例如header、footer、section、nav、article。因为它们语义化，速度快，结构合理，浏览器上识别能力强。</li>
-<li>减少HTML标签嵌套深度，嵌套越深，在移动端的Web页面渲染速度以及滚动流畅度都会有所减低。</li>
-<li>为图片指定大小，减少重排。</li>
-<li>压缩HTML。</li>
-</ul>
-<ol start="4">
-<li>CSS</li>
-</ol>
-<ul>
-<li>使用CssSprite将零星的背景图包含到一张图中，通过background-position来使它显示在正确的位置；只请求一张图，减少了HTTP请求的次数。</li>
-<li>模块化、精简css，提高复用率。</li>
-<li>减少渐变、阴影的使用。</li>
-<li>合理使用CSS3高性能动画，Translate3d支持硬件加速。</li>
-<li>避免使用滤镜。</li>
-<li>不使用@import。</li>
-<li>合并和压缩CSS代码。</li>
-</ul>
-<ol start="5">
-<li>JavaScript</li>
-</ol>
-<ul>
-<li>暂缓 JavaScript 解析，暂缓解析不需要的 JavaScript（等到需要执行时再进行解析），可以提高网页的初始加载速度。</li>
-<li>使用事件委托机制，避免频繁操作DOM节点。</li>
-<li>模块化代码：SeaJs。</li>
-<li>合并和压缩JavaScript代码。</li>
-<li>压缩工具：YUI Compressor或JSMin等。</li>
-</ul>
-<ol start="6">
-<li>图片优化</li>
-</ol>
-<ul>
-<li>图片时页面大部分加载时间所花的地方，在图片设计的时候应该考虑相应的图片大小和格式。</li>
-<li>压缩图片。</li>
-</ul>
+<h2 id="配置config-index-js"><a href="#配置config-index-js" class="headerlink" title="配置config/index.js"></a>配置config/index.js</h2><hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    dev:&#123;</span><br><span class="line">        proxyTable:&#123;//将http://172.3.2.1:8000映射为/api</span><br><span class="line">            '/api':&#123;</span><br><span class="line">                target: 'http://172.3.2.1:8000',</span><br><span class="line">                secure: false,//如果是https接口，需要配置这个参数</span><br><span class="line">                changeOrigin: true,//是否跨域</span><br><span class="line">                pathRewrite: &#123;</span><br><span class="line">                  '^/api': '' </span><br><span class="line">                  //如果本身的接口地址就有'/api'这种通用前缀，</span><br><span class="line">                  也就是说https://http://172.3.2.1:8000/api，就可以把pathRewrite删掉</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/09/07/2018-09-07/" data-id="cjlrqasdw0000mw7tknuaa4d0" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/09/19/2018-09-18/" data-id="cjm8kr8zd0000ac7tlmj8zjuc" class="article-share-link">分享</a>
       
       
       
@@ -191,7 +116,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/20/">20</a><a class="extend next" rel="next" href="/blog/page/4/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/22/">22</a><a class="extend next" rel="next" href="/blog/page/4/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -214,23 +139,23 @@
       <ul>
         
           <li>
+            <a href="/blog/2018/09/19/2018-09-19-03/">config/index.js 配置文件详解</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/19/2018-09-19-02/">build/webpack.base.conf.js配置文件详解</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/09/19/2018-09-18/">vue-cli开发环境实现跨域请求</a>
           </li>
         
           <li>
-            <a href="/blog/2018/09/18/2018-09-19/">.vue组件中, scss中添加背景图路径问题</a>
+            <a href="/blog/2018/09/18/2018-09-19-01/">.vue组件中, scss中添加背景图路径问题</a>
           </li>
         
           <li>
             <a href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/05/2018-09-05/">git常用命令合集</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/03/2018-09-03/">兰亭集序</a>
           </li>
         
       </ul>

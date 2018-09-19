@@ -66,10 +66,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-8-27-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-8-27-5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/08/27/2018-8-27-3/" class="article-date">
-  <time datetime="2018-08-27T11:16:32.826Z" itemprop="datePublished">2018-08-27</time>
+    <a href="/blog/2018/08/27/2018-8-27-5/" class="article-date">
+  <time datetime="2018-08-27T11:19:28.762Z" itemprop="datePublished">2018-08-27</time>
 </a>
     
   <div class="article-category">
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/08/27/2018-8-27-3/">CSS命名规范</a>
+      <a class="article-title" href="/blog/2018/08/27/2018-8-27-5/">CSS编码和命名样例</a>
     </h1>
   
 
@@ -95,64 +95,341 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<h2 id="一-分类命名"><a href="#一-分类命名" class="headerlink" title="一.分类命名"></a>一.分类命名</h2><hr>
-<p>项目是以团队为单位，代码规范应同出一门。</p>
-<p><br></p>
-<h3 id="1-CSS文件的分类和引用顺序"><a href="#1-CSS文件的分类和引用顺序" class="headerlink" title="1. CSS文件的分类和引用顺序"></a>1. CSS文件的分类和引用顺序</h3><p>通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。</p>
-<p>我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。</p>
-<ol>
-<li><p><code>公共型样式</code>：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局”、“通用模块和其扩展”、“元件和其扩展”、“功能类样式”、“皮肤类样式”。</p>
-</li>
-<li><p><code>特殊型样式</code>：当某个栏目或页面的样式与网站整体差异较大或者维护率较高时，可以独立引用一个样式：“特殊的布局、模块和元件及扩展”、“特殊的功能、颜色和背景”，也可以是某个大型控件或模块的独立样式。</p>
-</li>
-<li><p><code>皮肤型样式</code>：如果产品需要换肤功能，那么我们需要将颜色、背景等抽离出来放在这里。</p>
-</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"assets/css/global.css"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"assets/css/index.css"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"assets/css/skin.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-CSS内部的分类及其顺序"><a href="#2-CSS内部的分类及其顺序" class="headerlink" title="2. CSS内部的分类及其顺序"></a>2. CSS内部的分类及其顺序</h3><ul>
-<li><p><code>重置（reset）和默认（base）（tags）</code>：消除默认样式和浏览器差异，并设置部分标签的初始样式，以减少后面的重复劳动！你可以根据你的网站需求设置！</p>
-</li>
-<li><p><code>统一处理</code>：建议在这个位置统一调用背景图（这里指多个布局或模块或元件共用的图）和清除浮动（这里指通用性较高的布局、模块、元件内的清除）等统一设置处理的样式！</p>
-</li>
-<li><p><code>布局（grid）（.xxx-）</code>：xxx代表项目名称（英文单词或拼音缩写），将页面分割为几个大块，通常有头部、主体、主栏、侧栏、尾部等！</p>
-</li>
-<li><p><code>模块（module）（.m-）</code>：通常是一个语义化的可以重复使用的较大的整体！m代表模块名称英文单词或拼音缩写，比如借款，还款，征信，提现等</p>
-</li>
-<li><p><code>组件（unit）（.ui-）</code>：通常是一个不可再分的较为小巧的个体，通常被重复用于各种模块中！比如按钮、输入框、loading、图标等！</p>
-</li>
-<li><p><code>功能（function）</code>：为方便一些常用样式的使用，我们将这些使用率较高的样式剥离出来，按需使用，通常这些选择器具有固定样式表现，比如清除浮动等！不可滥用！</p>
-</li>
-<li><p><code>皮肤（skin）（.skin-）</code>：如果你需要把皮肤型的样式抽离出来，通常为文字色、背景色（图）、边框色等，非换肤型网站通常只提取文字色！非换肤型网站不可滥用此类！</p>
-</li>
-</ul>
-<p><code>**其中xxx是项目的英文名或拼音简写**</code></p>
-<h2 id="二-命名规则"><a href="#二-命名规则" class="headerlink" title="二. 命名规则"></a>二. 命名规则</h2><hr>
-<h3 id="1-分类的命名方法：使用单个字母-”-“为前缀"><a href="#1-分类的命名方法：使用单个字母-”-“为前缀" class="headerlink" title="1. 分类的命名方法：使用单个字母+”-“为前缀"></a>1. 分类的命名方法：使用单个字母+”-“为前缀</h3><ol>
-<li><code>布局（grid）（.xxx-）；</code></li>
-<li><code>模块（module）（.m-）；</code></li>
-<li>`元件（</li>
-</ol>
-<p>）（.ui-）；`</p>
-<ol start="4">
-<li><code>功能（function）；</code></li>
-<li><code>皮肤（skin）（.skin-）；</code></li>
-</ol>
-<p>对以上的解释详情参见：分类方法中的“CSS内部的分类及其顺序”。</p>
-<h3 id="2-模块和元件的扩展类的命名方法"><a href="#2-模块和元件的扩展类的命名方法" class="headerlink" title="2. 模块和元件的扩展类的命名方法"></a>2. 模块和元件的扩展类的命名方法</h3><p><code>当A、B、C、...它们类型相同且外形相似区别不大，那么就以它们中出现率最高的做成基类，其他做成基类的扩展。</code></p>
-<p>方法：+“-”+数字或字母（如：.m-list的扩展类为.m-list-1、.m-list-2等）。</p>
-<p><code>补充</code>：基类自身可以独立使用（如：class=”m-list”即可），扩展类必须基于基类使用（如：class=”m-list m-list-2”）。</p>
-<p>如果你的扩展类是表示不同状态，那么你可以这样命名：ui-btn-dis，ui-btn-hov，m-box-sel，m-box-hov等等，然后像这样使用：class=”ui-btn ui-btn-disabled”。</p>
-<h3 id="3-相同语义的不同类命名"><a href="#3-相同语义的不同类命名" class="headerlink" title="3. 相同语义的不同类命名"></a>3. 相同语义的不同类命名</h3><p>方法：直接加数字或字母区分即可（如：.m-list、.m-list-2、.m-list-3等，都是列表模块，但是是完全不一样的模块）。</p>
-<p>其他举例：.s-fb0、.s-fb1、.m-logo2、.m-logo3、ui-btn、ui-btn2等等。</p>
-<h3 id="4-相同的CSS样式要合并"><a href="#4-相同的CSS样式要合并" class="headerlink" title="4. 相同的CSS样式要合并"></a>4. 相同的CSS样式要合并</h3><p>有时候虽然两个同类型的模块很相似，但是你希望他们之间不要有依赖关系，也就是说你不希望使用扩展的方法，那么你可以通过合并选择器来设置共性的样式。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 两个元件共性的样式 */</span></span><br><span class="line"><span class="selector-class">.ui-tip1</span>,<span class="selector-class">.ui-tip2</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.ui-tip1</span> <span class="selector-class">.item</span>,<span class="selector-class">.ui-tip2</span> <span class="selector-class">.item</span>&#123;&#125;</span><br><span class="line"><span class="comment">/* 在分别是两个元件各自的样式 */</span></span><br><span class="line"><span class="comment">/* tip1 */</span></span><br><span class="line"><span class="selector-class">.ui-tip1</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.ui-tip1</span> <span class="selector-class">.item</span>&#123;&#125;</span><br><span class="line"><span class="comment">/* tip2 */</span></span><br><span class="line"><span class="selector-class">.ui-tip2</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.ui-tip2</span> <span class="selector-class">.item</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>使用本方法的前提是：相同类型、功能和外观都相似，写在同一片代码区域方便维护。</p>
-<h3 id="5-防止污染和被污染"><a href="#5-防止污染和被污染" class="headerlink" title="5. 防止污染和被污染"></a>5. 防止污染和被污染</h3><p>当模块或元件之间互相嵌套，且使用了相同的标签选择器或其他后代选择器，那么里面的选择器就会被外面相同的选择器所影响。</p>
-<p>所以，如果你的模块或元件可能嵌套或被嵌套于其他模块或元件，那么要慎用标签选择器，必要时采用类选择器，并注意命名方式，可以采用.m-layer .layerxxx、.m-list2 .list2xxx的形式来降低后代选择器的污染性。</p>
+<h4 id="最佳选择器写法（模块）"><a href="#最佳选择器写法（模块）" class="headerlink" title="最佳选择器写法（模块）"></a>最佳选择器写法（模块）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这是某个模块 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span>&#123;&#125;<span class="comment">/* 模块容器 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">li</span>,<span class="selector-class">.m-nav</span> <span class="selector-tag">a</span>&#123;&#125;<span class="comment">/* 先共性  优化组合 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">li</span>&#123;&#125;<span class="comment">/* 后个性  语义化标签选择器 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">a</span>&#123;&#125;<span class="comment">/* 后个性中的共性 按结构顺序 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">a</span><span class="selector-class">.a1</span>&#123;&#125;<span class="comment">/* 后个性中的个性 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-tag">a</span><span class="selector-class">.a2</span>&#123;&#125;<span class="comment">/* 后个性中的个性 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.z-crt</span> <span class="selector-tag">a</span>&#123;&#125;<span class="comment">/* 交互状态变化 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.z-crt</span> <span class="selector-tag">a</span><span class="selector-class">.a1</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.z-crt</span> <span class="selector-tag">a</span><span class="selector-class">.a2</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.btn</span>&#123;&#125;<span class="comment">/* 典型后代选择器 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.btn-1</span>&#123;&#125;<span class="comment">/* 典型后代选择器扩展 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.btn-disabled</span>&#123;&#125;<span class="comment">/* 典型后代选择器扩展（状态） */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.btn</span><span class="selector-class">.z-disabled</span>&#123;&#125;<span class="comment">/* 作用同上，请二选一（如果可以不兼容IE6时使用） */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.m-sch</span>&#123;&#125;<span class="comment">/* 控制内部其他模块位置 */</span></span><br><span class="line"><span class="selector-class">.m-nav</span> <span class="selector-class">.u-sel</span>&#123;&#125;<span class="comment">/* 控制内部其他元件位置 */</span></span><br><span class="line"><span class="selector-class">.m-nav-1</span>&#123;&#125;<span class="comment">/* 模块扩展 */</span></span><br><span class="line"><span class="selector-class">.m-nav-1</span> <span class="selector-tag">li</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-nav-disabled</span>&#123;&#125;<span class="comment">/* 模块扩展（状态） */</span></span><br><span class="line"><span class="selector-class">.m-nav</span><span class="selector-class">.z-disabled</span>&#123;&#125;<span class="comment">/* 作用同上，请二选一（如果可以不兼容IE6时使用） */</span></span><br></pre></td></tr></table></figure>
+<h4 id="统一语义理解和命名"><a href="#统一语义理解和命名" class="headerlink" title="统一语义理解和命名"></a>统一语义理解和命名</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>命名</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文档</td>
+<td>doc</td>
+<td>doc</td>
+</tr>
+<tr>
+<td>主体</td>
+<td>body</td>
+<td>bd</td>
+</tr>
+<tr>
+<td>头部</td>
+<td>header</td>
+<td>hd</td>
+</tr>
+<tr>
+<td>尾部</td>
+<td>foot</td>
+<td>ft</td>
+</tr>
+<tr>
+<td>主栏</td>
+<td>main</td>
+<td>main</td>
+</tr>
+<tr>
+<td>侧栏</td>
+<td>sidebar</td>
+<td>sidebar</td>
+</tr>
+<tr>
+<td>栏目</td>
+<td>column</td>
+<td>column</td>
+</tr>
+<tr>
+<td>页面最外层控制整体布局</td>
+<td>wrapper</td>
+<td>wrapper</td>
+</tr>
+</tbody>
+</table>
+<h4 id="模块（-m-）、元件（-u-）"><a href="#模块（-m-）、元件（-u-）" class="headerlink" title="模块（.m-）、元件（.u-）"></a>模块（.m-）、元件（.u-）</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>命名</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>导航</td>
+<td>nav</td>
+<td>nav</td>
+</tr>
+<tr>
+<td>子导航</td>
+<td>subnav</td>
+<td>snav</td>
+</tr>
+<tr>
+<td>面包屑</td>
+<td>crumb</td>
+<td>crm</td>
+</tr>
+<tr>
+<td>菜单</td>
+<td>menu</td>
+<td>menu</td>
+</tr>
+<tr>
+<td>选项卡</td>
+<td>tab</td>
+<td>tab</td>
+</tr>
+<tr>
+<td>标题区</td>
+<td>head/title</td>
+<td>hd/title</td>
+</tr>
+<tr>
+<td>摘要</td>
+<td>summary</td>
+<td>summary</td>
+</tr>
+<tr>
+<td>内容区</td>
+<td>body/content</td>
+<td>bd/ct</td>
+</tr>
+<tr>
+<td>列表</td>
+<td>list</td>
+<td>list</td>
+</tr>
+<tr>
+<td>表格</td>
+<td>table</td>
+<td>tb</td>
+</tr>
+<tr>
+<td>表单</td>
+<td>form</td>
+<td>fm</td>
+</tr>
+<tr>
+<td>热点</td>
+<td>hot</td>
+<td>hot</td>
+</tr>
+<tr>
+<td>排行</td>
+<td>top</td>
+<td>top</td>
+</tr>
+<tr>
+<td>登录</td>
+<td>login</td>
+<td>login</td>
+</tr>
+<tr>
+<td>标志</td>
+<td>logo</td>
+<td>logo</td>
+</tr>
+<tr>
+<td>广告</td>
+<td>advertise</td>
+<td>ad</td>
+</tr>
+<tr>
+<td>搜索</td>
+<td>search</td>
+<td>sch</td>
+</tr>
+<tr>
+<td>幻灯</td>
+<td>slide</td>
+<td>sld</td>
+</tr>
+<tr>
+<td>提示</td>
+<td>tips</td>
+<td>tips</td>
+</tr>
+<tr>
+<td>帮助</td>
+<td>help</td>
+<td>help</td>
+</tr>
+<tr>
+<td>新闻</td>
+<td>news</td>
+<td>news</td>
+</tr>
+<tr>
+<td>下载</td>
+<td>download</td>
+<td>download</td>
+</tr>
+<tr>
+<td>注册</td>
+<td>register</td>
+<td>reg</td>
+</tr>
+<tr>
+<td>投票</td>
+<td>vote</td>
+<td>vote</td>
+</tr>
+<tr>
+<td>版权</td>
+<td>copyright</td>
+<td>cprt</td>
+</tr>
+<tr>
+<td>结果</td>
+<td>result</td>
+<td>rst</td>
+</tr>
+<tr>
+<td>标题</td>
+<td>title</td>
+<td>title</td>
+</tr>
+<tr>
+<td>按钮</td>
+<td>button</td>
+<td>btn</td>
+</tr>
+<tr>
+<td>输入</td>
+<td>input</td>
+<td>input</td>
+</tr>
+</tbody>
+</table>
+<h4 id="功能（-f-）"><a href="#功能（-f-）" class="headerlink" title="功能（.f-）"></a>功能（.f-）</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>命名</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浮动清除</td>
+<td>clear</td>
+<td>clear</td>
+</tr>
+<tr>
+<td>向左浮动</td>
+<td>float-left</td>
+<td>fl</td>
+</tr>
+<tr>
+<td>向右浮动</td>
+<td>float-right</td>
+<td>fr</td>
+</tr>
+<tr>
+<td>内联块级</td>
+<td>inline-block</td>
+<td>ib</td>
+</tr>
+<tr>
+<td>文本居中</td>
+<td>text-align-center</td>
+<td>tac</td>
+</tr>
+<tr>
+<td>文本居右</td>
+<td>text-align-right</td>
+<td>tar</td>
+</tr>
+<tr>
+<td>文本居左</td>
+<td>text-align-left</td>
+<td>tal</td>
+</tr>
+<tr>
+<td>垂直居中</td>
+<td>vertical-align-middle</td>
+<td>vam</td>
+</tr>
+<tr>
+<td>溢出隐藏</td>
+<td>overflowhidden</td>
+<td>oh</td>
+</tr>
+<tr>
+<td>完全消失</td>
+<td>display-none</td>
+<td>dn</td>
+</tr>
+<tr>
+<td>字体大小</td>
+<td>fontsize</td>
+<td>fs</td>
+</tr>
+<tr>
+<td>字体粗细</td>
+<td>fontweight</td>
+<td>fw</td>
+</tr>
+</tbody>
+</table>
+<h4 id="状态（-z-）"><a href="#状态（-z-）" class="headerlink" title="状态（.z-）"></a>状态（.z-）</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>命名</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>选中</td>
+<td>selected</td>
+<td>sel</td>
+</tr>
+<tr>
+<td>当前</td>
+<td>current</td>
+<td>cur</td>
+</tr>
+<tr>
+<td>显示</td>
+<td>show</td>
+<td>show</td>
+</tr>
+<tr>
+<td>隐藏</td>
+<td>hide</td>
+<td>hide</td>
+</tr>
+<tr>
+<td>打开</td>
+<td>open</td>
+<td>open</td>
+</tr>
+<tr>
+<td>关闭</td>
+<td>close</td>
+<td>close</td>
+</tr>
+<tr>
+<td>出错</td>
+<td>error</td>
+<td>err</td>
+</tr>
+<tr>
+<td>不可用</td>
+<td>disabled</td>
+<td>disabled</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-3/" data-id="cjloupnf1000gig7t49i9xhpr" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-5/" data-id="cjloupnf6000kig7th943snh2" class="article-share-link">分享</a>
       
       
       
@@ -167,7 +444,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/page/10/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><a class="page-number" href="/blog/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/blog/page/12/">12</a><a class="page-number" href="/blog/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/20/">20</a><a class="extend next" rel="next" href="/blog/page/12/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/10/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><a class="page-number" href="/blog/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/blog/page/12/">12</a><a class="page-number" href="/blog/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/22/">22</a><a class="extend next" rel="next" href="/blog/page/12/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -190,23 +467,23 @@
       <ul>
         
           <li>
+            <a href="/blog/2018/09/19/2018-09-19-03/">config/index.js 配置文件详解</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/19/2018-09-19-02/">build/webpack.base.conf.js配置文件详解</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/09/19/2018-09-18/">vue-cli开发环境实现跨域请求</a>
           </li>
         
           <li>
-            <a href="/blog/2018/09/18/2018-09-19/">.vue组件中, scss中添加背景图路径问题</a>
+            <a href="/blog/2018/09/18/2018-09-19-01/">.vue组件中, scss中添加背景图路径问题</a>
           </li>
         
           <li>
             <a href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/05/2018-09-05/">git常用命令合集</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/03/2018-09-03/">兰亭集序</a>
           </li>
         
       </ul>

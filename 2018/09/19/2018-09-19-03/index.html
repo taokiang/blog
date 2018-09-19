@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>.vue组件中, scss中添加背景图路径问题 | 仇江涛的博客</title>
+  <title>config/index.js 配置文件详解 | 仇江涛的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="build/utils.js 12345678910if (options.extract) &amp;#123;      return ExtractTextPlugin.extract(&amp;#123;        use: loaders,        publicPath: &apos;../../&apos;, //注意: 此处根据路径, 自动更改（新增配置）        fallback: &apos;vue-sty">
+  <meta name="description" content="config/index.js 配置文件详解 12345678910111213141516171819202122232425262728293031var path = require(&apos;path&apos;)module.exports = &amp;#123;  build: &amp;#123; // production 环境    env: require(&apos;./prod.env&apos;), // 使用 conf">
 <meta property="og:type" content="article">
-<meta property="og:title" content=".vue组件中, scss中添加背景图路径问题">
-<meta property="og:url" content="https://github.com/taokiang/blog/2018/09/18/2018-09-19/index.html">
+<meta property="og:title" content="config&#x2F;index.js 配置文件详解">
+<meta property="og:url" content="https://github.com/taokiang/blog/2018/09/19/2018-09-19-03/index.html">
 <meta property="og:site_name" content="仇江涛的博客">
-<meta property="og:description" content="build/utils.js 12345678910if (options.extract) &amp;#123;      return ExtractTextPlugin.extract(&amp;#123;        use: loaders,        publicPath: &apos;../../&apos;, //注意: 此处根据路径, 自动更改（新增配置）        fallback: &apos;vue-sty">
+<meta property="og:description" content="config/index.js 配置文件详解 12345678910111213141516171819202122232425262728293031var path = require(&apos;path&apos;)module.exports = &amp;#123;  build: &amp;#123; // production 环境    env: require(&apos;./prod.env&apos;), // 使用 conf">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-19T03:14:35.672Z">
+<meta property="og:updated_time" content="2018-09-19T03:25:54.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=".vue组件中, scss中添加背景图路径问题">
-<meta name="twitter:description" content="build/utils.js 12345678910if (options.extract) &amp;#123;      return ExtractTextPlugin.extract(&amp;#123;        use: loaders,        publicPath: &apos;../../&apos;, //注意: 此处根据路径, 自动更改（新增配置）        fallback: &apos;vue-sty">
+<meta name="twitter:title" content="config&#x2F;index.js 配置文件详解">
+<meta name="twitter:description" content="config/index.js 配置文件详解 12345678910111213141516171819202122232425262728293031var path = require(&apos;path&apos;)module.exports = &amp;#123;  build: &amp;#123; // production 环境    env: require(&apos;./prod.env&apos;), // 使用 conf">
   
     <link rel="alternate" href="/atom.xml" title="仇江涛的博客" type="application/atom+xml">
   
@@ -68,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2018-09-19" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2018-09-19-03" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/09/18/2018-09-19/" class="article-date">
-  <time datetime="2018-09-18T02:42:14.706Z" itemprop="datePublished">2018-09-18</time>
+    <a href="/blog/2018/09/19/2018-09-19-03/" class="article-date">
+  <time datetime="2018-09-19T03:24:15.113Z" itemprop="datePublished">2018-09-19</time>
 </a>
     
   <div class="article-category">
@@ -86,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      .vue组件中, scss中添加背景图路径问题
+      config/index.js 配置文件详解
     </h1>
   
 
@@ -97,13 +97,13 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<h2 id="build-utils-js"><a href="#build-utils-js" class="headerlink" title="build/utils.js"></a>build/utils.js</h2><hr>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (options.extract) &#123;</span><br><span class="line">      return ExtractTextPlugin.extract(&#123;</span><br><span class="line">        use: loaders,</span><br><span class="line">        publicPath: '../../', //注意: 此处根据路径, 自动更改（新增配置）</span><br><span class="line">        fallback: 'vue-style-loader'</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return ['vue-style-loader'].concat(loaders)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="config-index-js-配置文件详解"><a href="#config-index-js-配置文件详解" class="headerlink" title="config/index.js 配置文件详解"></a>config/index.js 配置文件详解</h2><hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var path = require('path')</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  build: &#123; // production 环境</span><br><span class="line">    env: require('./prod.env'), // 使用 config/prod.env.js 中定义的编译环境</span><br><span class="line">    index: path.resolve(__dirname, '../dist/index.html'), // 编译输入的 index.html 文件</span><br><span class="line">    assetsRoot: path.resolve(__dirname, '../dist'), // 编译输出的静态资源路径</span><br><span class="line">    assetsSubDirectory: 'static', // 编译输出的二级目录</span><br><span class="line">    assetsPublicPath: '/', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名</span><br><span class="line">    productionSourceMap: true, // 是否开启 cssSourceMap</span><br><span class="line">    // Gzip off by default as many popular static hosts such as</span><br><span class="line">    // Surge or Netlify already gzip all static assets for you.</span><br><span class="line">    // Before setting to `true`, make sure to:</span><br><span class="line">    // npm install --save-dev compression-webpack-plugin</span><br><span class="line">    productionGzip: false, // 是否开启 gzip</span><br><span class="line">    productionGzipExtensions: ['js', 'css'] // 需要使用 gzip 压缩的文件扩展名</span><br><span class="line">  &#125;,</span><br><span class="line">  dev: &#123; // dev 环境</span><br><span class="line">    env: require('./dev.env'), // 使用 config/dev.env.js 中定义的编译环境</span><br><span class="line">    port: 8080, // 运行测试页面的端口</span><br><span class="line">    assetsSubDirectory: 'static', // 编译输出的二级目录</span><br><span class="line">    assetsPublicPath: '/', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名</span><br><span class="line">    proxyTable: &#123;&#125;, // 需要 proxyTable 代理的接口（可跨域）</span><br><span class="line">    // CSS Sourcemaps off by default because relative paths are "buggy"</span><br><span class="line">    // with this option, according to the CSS-Loader README</span><br><span class="line">    // (https://github.com/webpack/css-loader#sourcemaps)</span><br><span class="line">    // In our experience, they generally work as expected,</span><br><span class="line">    // just be aware of this issue when enabling this option.</span><br><span class="line">    cssSourceMap: false // 是否开启 cssSourceMap</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/09/18/2018-09-19/" data-id="cjm8kr8zm0001ac7t4v8rxsi7" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/09/19/2018-09-19-03/" data-id="cjm8l6zus0000as7tdvu4uxjj" class="article-share-link">分享</a>
       
       
       
@@ -155,19 +155,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2018/09/19/2018-09-18/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          vue-cli开发环境实现跨域请求
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2018/09/07/2018-09-07/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2018/09/19/2018-09-19-02/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Web页面加载，如何进行优化？</div>
+      <div class="article-nav-title">build/webpack.base.conf.js配置文件详解</div>
     </a>
   
 </nav>
@@ -203,7 +194,7 @@
       
         <strong class="toc-title">文章目录</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#build-utils-js"><span class="toc-number">1.</span> <span class="toc-text">build/utils.js</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#config-index-js-配置文件详解"><span class="toc-number">1.</span> <span class="toc-text">config/index.js 配置文件详解</span></a></li></ol>
           </div>
       </div>
     </div>
