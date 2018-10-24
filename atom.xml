@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/taokiang/blog/"/>
-  <updated>2018-10-23T08:33:50.659Z</updated>
+  <updated>2018-10-24T02:07:27.459Z</updated>
   <id>https://github.com/taokiang/blog/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://github.com/taokiang/blog/2018/10/23/2018-10-23-01/"/>
     <id>https://github.com/taokiang/blog/2018/10/23/2018-10-23-01/</id>
     <published>2018-10-23T08:12:37.453Z</published>
-    <updated>2018-10-23T08:33:50.659Z</updated>
+    <updated>2018-10-24T02:07:27.459Z</updated>
     
-    <content type="html"><![CDATA[<p><br></p><hr><h3 id="一般面试流程"><a href="#一般面试流程" class="headerlink" title="一般面试流程"></a>一般面试流程</h3><p>组员面 –&gt; 组长面 –&gt; 总监面 –&gt; hr面</p><h3 id="组员面"><a href="#组员面" class="headerlink" title="组员面"></a>组员面</h3><h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><ul><li>html5加了什么？</li><li>html语义化是什么？</li><li>seo怎么整？</li><li>html5新标签有哪些？</li><li>doctype？<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4></li><li>居中方案</li><li>flex布局</li><li>grid布局</li></ul><h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><ul><li>闭包</li><li>原形</li><li>this</li><li>settimeout</li><li>可能要手写一些比较常见的函数，debounce,new,Object.create,promise,bind</li><li>设计模式</li><li>各种继承方法</li></ul><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><ul><li>https</li><li>缓存</li><li>跨域</li><li>网络安全</li><li>状态码</li></ul><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul><li>访问页面的过程</li><li>性能优化</li><li>移动端自适应(我的方案是REM布局)</li><li>vue源码，双向绑定等等(我有个关于虚拟dom的分享)</li><li>离职原因</li><li>团队协作管理</li><li>算法，准备一下各种排序，背包问题，二叉树，应该够了。</li><li>pwa，小程序</li></ul><h3 id="组长面"><a href="#组长面" class="headerlink" title="组长面"></a>组长面</h3><ul><li>项目部署</li><li>项目监控</li><li>错误处理</li><li>nodejs</li><li>职业规划</li></ul><h4 id="我会问的问题"><a href="#我会问的问题" class="headerlink" title="我会问的问题"></a>我会问的问题</h4><ul><li>项目有多少人</li><li>项目要做些什么</li><li>项目的前景</li><li>如果我进去了可能做什么</li><li>前端在这个项目的重要性</li><li>你们想要招个怎样的人</li></ul><h3 id="总监面"><a href="#总监面" class="headerlink" title="总监面"></a>总监面</h3><ul><li>自我介绍</li><li>项目介绍</li><li>未来规划</li><li>前端的了解</li></ul><h3 id="HR"><a href="#HR" class="headerlink" title="HR"></a>HR</h3><ul><li>薪资</li><li>加班时间及相关制度</li><li>福利</li></ul>]]></content>
+    <content type="html"><![CDATA[<p><br></p><hr><h3 id="一般面试流程"><a href="#一般面试流程" class="headerlink" title="一般面试流程"></a>一般面试流程</h3><p>组员面 –&gt; 组长面 –&gt; 总监面 –&gt; hr面</p><h3 id="组员面"><a href="#组员面" class="headerlink" title="组员面"></a>组员面</h3><h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><ul><li>html5加了什么？</li><li>html语义化是什么？</li><li>seo怎么整？</li><li>html5新标签有哪些？</li><li>doctype？<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4></li><li>居中方案</li><li>flex布局</li><li>grid布局</li></ul><h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><ul><li>闭包</li><li>原形</li><li>this</li><li>settimeout</li><li>可能要手写一些比较常见的函数，debounce,new,Object.create,promise,bind</li><li>设计模式</li><li>各种继承方法</li></ul><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><ul><li>https</li><li>缓存</li><li>跨域</li><li>网络安全</li><li>状态码</li></ul><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul><li>访问页面的过程</li><li>性能优化</li><li>移动端自适应(我的方案是REM布局)</li><li>vue源码，双向绑定等等(我有个关于虚拟dom的分享)</li><li>离职原因</li><li>团队协作管理</li><li>算法，准备一下各种排序，背包问题，二叉树，应该够了。</li><li>pwa，小程序</li></ul><h3 id="组长面"><a href="#组长面" class="headerlink" title="组长面"></a>组长面</h3><ul><li>项目部署</li><li>项目监控</li><li>错误处理</li><li>nodejs</li><li>职业规划</li></ul><h4 id="我会问的问题"><a href="#我会问的问题" class="headerlink" title="我会问的问题"></a>我会问的问题</h4><ul><li>项目有多少人</li><li>项目要做些什么</li><li>项目的前景</li><li>如果我进去了可能做什么</li><li>前端在这个项目的重要性</li><li>你们想要招个怎样的人</li></ul><h3 id="总监面"><a href="#总监面" class="headerlink" title="总监面"></a>总监面</h3><ul><li>自我介绍</li><li>项目介绍</li><li>未来规划</li><li>前端的了解</li></ul><h3 id="HR"><a href="#HR" class="headerlink" title="HR"></a>HR</h3><ul><li>薪资、福利</li><li>加班时间及相关制度</li></ul>]]></content>
     
     <summary type="html">
     
