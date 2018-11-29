@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-09-19-03" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-10-23-01" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/09/19/2018-09-19-03/" class="article-date">
-  <time datetime="2018-09-19T03:24:15.113Z" itemprop="datePublished">2018-09-19</time>
+    <a href="/blog/2018/10/23/2018-10-23-01/" class="article-date">
+  <time datetime="2018-10-23T08:12:37.453Z" itemprop="datePublished">2018-10-23</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/vue/">vue</a>
+    <a class="article-category-link" href="/blog/categories/面试总结/">面试总结</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/09/19/2018-09-19-03/">config/index.js 配置文件详解</a>
+      <a class="article-title" href="/blog/2018/10/23/2018-10-23-01/">相关注意事项</a>
     </h1>
   
 
@@ -95,13 +95,74 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<h2 id="config-index-js-配置文件详解"><a href="#config-index-js-配置文件详解" class="headerlink" title="config/index.js 配置文件详解"></a>config/index.js 配置文件详解</h2><hr>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var path = require('path')</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  build: &#123; // production 环境</span><br><span class="line">    env: require('./prod.env'), // 使用 config/prod.env.js 中定义的编译环境</span><br><span class="line">    index: path.resolve(__dirname, '../dist/index.html'), // 编译输入的 index.html 文件</span><br><span class="line">    assetsRoot: path.resolve(__dirname, '../dist'), // 编译输出的静态资源路径</span><br><span class="line">    assetsSubDirectory: 'static', // 编译输出的二级目录</span><br><span class="line">    assetsPublicPath: '/', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名</span><br><span class="line">    productionSourceMap: true, // 是否开启 cssSourceMap</span><br><span class="line">    // Gzip off by default as many popular static hosts such as</span><br><span class="line">    // Surge or Netlify already gzip all static assets for you.</span><br><span class="line">    // Before setting to `true`, make sure to:</span><br><span class="line">    // npm install --save-dev compression-webpack-plugin</span><br><span class="line">    productionGzip: false, // 是否开启 gzip</span><br><span class="line">    productionGzipExtensions: ['js', 'css'] // 需要使用 gzip 压缩的文件扩展名</span><br><span class="line">  &#125;,</span><br><span class="line">  dev: &#123; // dev 环境</span><br><span class="line">    env: require('./dev.env'), // 使用 config/dev.env.js 中定义的编译环境</span><br><span class="line">    port: 8080, // 运行测试页面的端口</span><br><span class="line">    assetsSubDirectory: 'static', // 编译输出的二级目录</span><br><span class="line">    assetsPublicPath: '/', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名</span><br><span class="line">    proxyTable: &#123;&#125;, // 需要 proxyTable 代理的接口（可跨域）</span><br><span class="line">    // CSS Sourcemaps off by default because relative paths are "buggy"</span><br><span class="line">    // with this option, according to the CSS-Loader README</span><br><span class="line">    // (https://github.com/webpack/css-loader#sourcemaps)</span><br><span class="line">    // In our experience, they generally work as expected,</span><br><span class="line">    // just be aware of this issue when enabling this option.</span><br><span class="line">    cssSourceMap: false // 是否开启 cssSourceMap</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="一般面试流程"><a href="#一般面试流程" class="headerlink" title="一般面试流程"></a>一般面试流程</h3><p>组员面 –&gt; 组长面 –&gt; 总监面 –&gt; hr面</p>
+<h3 id="组员面"><a href="#组员面" class="headerlink" title="组员面"></a>组员面</h3><h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><ul>
+<li>html5加了什么？</li>
+<li>html语义化是什么？</li>
+<li>seo怎么整？</li>
+<li>html5新标签有哪些？</li>
+<li>doctype？<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4></li>
+<li>居中方案</li>
+<li>flex布局</li>
+<li>grid布局</li>
+</ul>
+<h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><ul>
+<li>闭包</li>
+<li>原形</li>
+<li>this</li>
+<li>settimeout</li>
+<li>可能要手写一些比较常见的函数，debounce,new,Object.create,promise,bind</li>
+<li>设计模式</li>
+<li>各种继承方法</li>
+</ul>
+<h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><ul>
+<li>https</li>
+<li>缓存</li>
+<li>跨域</li>
+<li>网络安全</li>
+<li>状态码</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li>访问页面的过程</li>
+<li>性能优化</li>
+<li>移动端自适应(我的方案是REM布局)</li>
+<li>vue源码，双向绑定等等(我有个关于虚拟dom的分享)</li>
+<li>离职原因</li>
+<li>团队协作管理</li>
+<li>算法，准备一下各种排序，背包问题，二叉树，应该够了。</li>
+<li>pwa，小程序</li>
+</ul>
+<h3 id="组长面"><a href="#组长面" class="headerlink" title="组长面"></a>组长面</h3><ul>
+<li>项目部署</li>
+<li>项目监控</li>
+<li>错误处理</li>
+<li>nodejs</li>
+<li>职业规划</li>
+</ul>
+<h4 id="我会问的问题"><a href="#我会问的问题" class="headerlink" title="我会问的问题"></a>我会问的问题</h4><ul>
+<li>项目有多少人</li>
+<li>项目要做些什么</li>
+<li>项目的前景</li>
+<li>如果我进去了可能做什么</li>
+<li>前端在这个项目的重要性</li>
+<li>你们想要招个怎样的人</li>
+</ul>
+<h3 id="总监面"><a href="#总监面" class="headerlink" title="总监面"></a>总监面</h3><ul>
+<li>自我介绍</li>
+<li>项目介绍</li>
+<li>未来规划</li>
+<li>前端的了解</li>
+</ul>
+<h3 id="HR"><a href="#HR" class="headerlink" title="HR"></a>HR</h3><ul>
+<li>薪资、福利</li>
+<li>加班时间及相关制度</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/09/19/2018-09-19-03/" data-id="cjm8l6zus0000as7tdvu4uxjj" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/10/23/2018-10-23-01/" data-id="cjnlh9lpt0000ko7t8dwe6n64" class="article-share-link">分享</a>
       
       
       
@@ -116,7 +177,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/23/">23</a><a class="extend next" rel="next" href="/blog/page/3/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/24/">24</a><a class="extend next" rel="next" href="/blog/page/3/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -139,6 +200,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2018/11/29/2018-11-29/">旁门左道css</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/10/23/2018-10-23-01/">相关注意事项</a>
           </li>
         
@@ -152,10 +217,6 @@
         
           <li>
             <a href="/blog/2018/09/19/2018-09-18/">vue-cli开发环境实现跨域请求</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/18/2018-09-19-01/">.vue组件中, scss中添加背景图路径问题</a>
           </li>
         
       </ul>

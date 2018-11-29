@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/taokiang/blog/"/>
-  <updated>2018-10-24T02:07:27.459Z</updated>
+  <updated>2018-11-29T08:04:12.029Z</updated>
   <id>https://github.com/taokiang/blog/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>旁门左道css</title>
+    <link href="https://github.com/taokiang/blog/2018/11/29/2018-11-29/"/>
+    <id>https://github.com/taokiang/blog/2018/11/29/2018-11-29/</id>
+    <published>2018-11-29T07:51:33.251Z</published>
+    <updated>2018-11-29T08:04:12.029Z</updated>
+    
+    <content type="html"><![CDATA[<p><br><br>模拟1px虚线<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: 100%;</span><br><span class="line"><span class="selector-tag">height</span>: 1<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>, <span class="selector-id">#ccc</span> 0%, <span class="selector-id">#ccc</span> 50%, <span class="selector-tag">transparent</span> 50%);</span><br><span class="line"><span class="selector-tag">background-size</span>: 8<span class="selector-tag">px</span> 1<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">background-repeat</span>: <span class="selector-tag">repeat-x</span>;</span><br></pre></td></tr></table></figure></p><p>单行文本超出省略号<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:nowrap</span>;</span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;</span><br><span class="line"><span class="selector-tag">width</span><span class="selector-pseudo">:50</span>%;</span><br></pre></td></tr></table></figure></p><p>多行文本超出省略号<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: 50%;</span><br><span class="line"><span class="selector-tag">word-break</span>: <span class="selector-tag">break-all</span>;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;</span><br><span class="line"><span class="selector-tag">-webkit-line-clamp</span>: 2;</span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;</span><br></pre></td></tr></table></figure></p><p><br></p><blockquote><p>作者：仇江涛</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;br&gt;&lt;br&gt;模拟1px虚线&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/
+      
+    
+    </summary>
+    
+      <category term="css" scheme="https://github.com/taokiang/blog/categories/css/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>相关注意事项</title>
@@ -488,29 +511,6 @@
     </summary>
     
       <category term="小知识" scheme="https://github.com/taokiang/blog/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Vue-cli项目开发、生产地址配置</title>
-    <link href="https://github.com/taokiang/blog/2018/06/28/2018-6-28-2/"/>
-    <id>https://github.com/taokiang/blog/2018/06/28/2018-6-28-2/</id>
-    <published>2018-06-28T07:07:11.920Z</published>
-    <updated>2018-09-18T02:35:39.867Z</updated>
-    
-    <content type="html"><![CDATA[<p><br><br>基本上所有的项目，在测试的时候和正式发布的时候根地址是不一样的，我们可以利用的WebPack给生产环境和正式环境配置不同地址<br><br><br>pro.env.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  API_ROOT: <span class="string">'"//10.138.60.142:7000"'</span> <span class="comment">//生产地址(新增配置)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>dev.env.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>)</span><br><span class="line"><span class="keyword">var</span> prodEnv = <span class="built_in">require</span>(<span class="string">'./prod.env'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = merge(prodEnv, &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"development"'</span>,</span><br><span class="line">  API_ROOT: <span class="string">'"/development"'</span> <span class="comment">//开发地址(新增配置)</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>配置index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  build: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./prod.env'</span>),<span class="comment">//(新增配置)</span></span><br><span class="line">    <span class="comment">// ....... //</span></span><br><span class="line">  &#125;,</span><br><span class="line">  dev: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./dev.env'</span>),<span class="comment">//(新增配置)</span></span><br><span class="line">    <span class="comment">// ....... //</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>配置main.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.baseURL = process.env.API_ROOT</span><br></pre></td></tr></table></figure></p><p>以上在不同的环境中会取到不同的地址</p><p><br></p><blockquote><p>作者：仇江涛</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;br&gt;&lt;br&gt;基本上所有的项目，在测试的时候和正式发布的时候根地址是不一样的，我们可以利用的WebPack给生产环境和正式环境配置不同地址&lt;br&gt;&lt;br&gt;&lt;br&gt;pro.env.js：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;ta
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://github.com/taokiang/blog/categories/vue/"/>
     
     
   </entry>
