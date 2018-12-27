@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/taokiang/blog/"/>
-  <updated>2018-11-29T08:04:12.029Z</updated>
+  <updated>2018-12-27T10:07:33.675Z</updated>
   <id>https://github.com/taokiang/blog/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>禁止页面滑动</title>
+    <link href="https://github.com/taokiang/blog/2018/12/27/2018-12-27/"/>
+    <id>https://github.com/taokiang/blog/2018/12/27/2018-12-27/</id>
+    <published>2018-12-27T09:58:13.807Z</published>
+    <updated>2018-12-27T10:07:33.675Z</updated>
+    
+    <content type="html"><![CDATA[<p><br><br>禁止页面滑动<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">'touchmove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        e.stopPropagation();</span><br><span class="line">    &#125;, &#123; <span class="attr">passive</span>: <span class="literal">false</span> &#125;);</span><br></pre></td></tr></table></figure></p><p><br></p><blockquote><p>作者：仇江涛</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;br&gt;&lt;br&gt;禁止页面滑动&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;lin
+      
+    
+    </summary>
+    
+      <category term="js" scheme="https://github.com/taokiang/blog/categories/js/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>旁门左道css</title>
@@ -480,31 +503,6 @@
       
         &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://taokiang.github.io/blog/2018/08/10/2018-8-10-1/access.png&quot; alt=&quot;123&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="小知识" scheme="https://github.com/taokiang/blog/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>常用pc分辨率统计图</title>
-    <link href="https://github.com/taokiang/blog/2018/07/18/2018-7-18-1/"/>
-    <id>https://github.com/taokiang/blog/2018/07/18/2018-7-18-1/</id>
-    <published>2018-07-18T06:24:08.000Z</published>
-    <updated>2018-08-27T05:49:46.128Z</updated>
-    
-    <content type="html"><![CDATA[<p><br></p><p><img src="https://taokiang.github.io/blog/2018/07/18/2018-7-18-1/pc_size.jpg" alt="常用pc分辨率"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://taokiang.github.io/blog/2018/07/18/2018-7-18-1/pc_size.jpg&quot; alt=&quot;常用pc分辨率&quot;&gt;&lt;/p&gt;
 
       
     
