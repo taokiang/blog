@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-6-27-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-6-28-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/06/27/2018-6-27-1/" class="article-date">
-  <time datetime="2018-06-27T07:54:48.110Z" itemprop="datePublished">2018-06-27</time>
+    <a href="/blog/2018/06/28/2018-6-28-1/" class="article-date">
+  <time datetime="2018-06-28T03:01:57.448Z" itemprop="datePublished">2018-06-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/vue/">vue</a>
+    <a class="article-category-link" href="/blog/categories/html/">html</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/27/2018-6-27-1/">Vue2在低版本app，显示空白</a>
+      <a class="article-title" href="/blog/2018/06/28/2018-6-28-1/">a标签实现发短信功能(苹果、安卓的兼容)</a>
     </h1>
   
 
@@ -94,20 +94,17 @@
       
         <!-- Table of Contents -->
         
-        <p><br><br>这是由于IE对promise的支持不好，我们需要安装：babel-polyfill和es6-promise:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-polyfill --save</span><br><span class="line">npm install es6-promise --save</span><br><span class="line">npm install babel-preset-es2015 --save</span><br></pre></td></tr></table></figure></p>
-<p><br><br>main.js文件中引用:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Es6Promise <span class="keyword">from</span> <span class="string">'es6-promise'</span></span><br><span class="line">Es6Promise.polyfill()</span><br></pre></td></tr></table></figure></p>
-<p><br><br>build/webpack.base.conf.js 文件中配置如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">     entry: &#123;</span><br><span class="line">       app: [<span class="string">"babel-polyfill"</span>, <span class="string">"./src/main.js"</span>]</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">		  &#123;</span><br><span class="line">			test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">			loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">			<span class="comment">//include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],</span></span><br><span class="line">			exclude: <span class="regexp">/node_modules/</span>,<span class="comment">//除了node_modules文件夹以外的，均使用babel-loader转换</span></span><br><span class="line">			query: &#123;</span><br><span class="line">			  presets: [<span class="string">'es2015'</span>]</span><br><span class="line">			&#125;</span><br><span class="line">		  &#125;</span><br><span class="line">    	]</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><br><br>.babelrc 文件中配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;modules&quot;: false,</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;not ie &lt;= 8&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    &quot;es2015&quot;,</span><br><span class="line">    &quot;stage-2&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-vue-jsx&quot;, &quot;transform-runtime&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p><br><br>安卓系统上面的写法是：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:10086?body=你好Android"</span>&gt;</span>给 10086 发短信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>IOS系统上面的写法是：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:10086&amp;body=你好iphone"</span>&gt;</span>给 10086 发短信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p><br></p>
 <blockquote>
 <p>作者：仇江涛</p>
 </blockquote>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/06/27/2018-6-27-1/" data-id="cjloupnek0003ig7t79okfu5y" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/06/28/2018-6-28-1/" data-id="cjloupnem0004ig7t7znneuh0" class="article-share-link">分享</a>
       
       
       
@@ -122,7 +119,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/page/23/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/22/">22</a><a class="page-number" href="/blog/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/blog/page/25/">25</a><a class="extend next" rel="next" href="/blog/page/25/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/23/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/22/">22</a><a class="page-number" href="/blog/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/blog/page/25/">25</a><a class="page-number" href="/blog/page/26/">26</a><a class="extend next" rel="next" href="/blog/page/25/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -145,6 +142,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2019/02/19/2019-02-19/">常用的js方法</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/12/27/2018-12-27/">禁止页面滑动</a>
           </li>
         
@@ -153,15 +154,11 @@
           </li>
         
           <li>
-            <a href="/blog/2018/10/23/2018-10-23-01/">相关注意事项</a>
+            <a href="/blog/2018/10/23/2018-10-23/">相关注意事项</a>
           </li>
         
           <li>
             <a href="/blog/2018/09/19/2018-09-19-03/">config/index.js 配置文件详解</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/19/2018-09-19-02/">build/webpack.base.conf.js配置文件详解</a>
           </li>
         
       </ul>

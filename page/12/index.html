@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-8-27-7" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-8-28-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/08/27/2018-8-27-7/" class="article-date">
-  <time datetime="2018-08-27T11:23:04.117Z" itemprop="datePublished">2018-08-27</time>
+    <a href="/blog/2018/08/28/2018-8-28-1/" class="article-date">
+  <time datetime="2018-08-28T02:10:42.983Z" itemprop="datePublished">2018-08-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/前端开发规范/">前端开发规范</a>
+    <a class="article-category-link" href="/blog/categories/前端面试总结/">前端面试总结</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/08/27/2018-8-27-7/">SASS规范</a>
+      <a class="article-title" href="/blog/2018/08/28/2018-8-28-1/">前端题目汇总</a>
     </h1>
   
 
@@ -92,57 +92,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- Table of Contents -->
-        
         <p><br></p>
-<h4 id="语法选用"><a href="#语法选用" class="headerlink" title="语法选用"></a>语法选用</h4><p>SASS有两种语法格式，一种是 SCSS (Sassy CSS)，另一种是缩进格式（Indented Syntax），有时称之为 Sass。</p>
-<h5 id="SCSS"><a href="#SCSS" class="headerlink" title="SCSS"></a>SCSS</h5><p>SCSS语法基于 CSS 语法扩展，每一个有效的 CSS 文件都是一个有效的具有相同含义的 SCSS 文件，换种说法就是 SCSS 能识别大多数的 CSS hacks 写法和浏览器前缀写法以及早期的 IE 滤镜写法，这种格式以 .scss 作为扩展名。</p>
-<h5 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a>Sass</h5><p>Sass 使用 “缩进” 代替 “花括号” 表示属性属于某个选择器，用 “换行” 代替 “分号” 分隔属性，很多人认为这样做比 SCSS 更容易阅读，书写也更快速。缩进格式也可以使用 Sass 的全部功能，只是与 SCSS 相比个别地方采取了不同的表达方式，具体请查看 <a href="http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html" target="_blank" rel="noopener">the indented syntax reference</a>。这种格式以 .sass 作为拓展名。</p>
-<p>更详细的用法请阅读 <a href="https://www.sass.hk/" target="_blank" rel="noopener">SASS中文文档</a></p>
-<h3 id="团队约定"><a href="#团队约定" class="headerlink" title="团队约定"></a>团队约定</h3><h3 id="考虑到-SCSS-语法对-CSS-语法友好的兼容性和扩展性，我们在使用-SASS-编写样式的时候，统一使用-SCSS-语法"><a href="#考虑到-SCSS-语法对-CSS-语法友好的兼容性和扩展性，我们在使用-SASS-编写样式的时候，统一使用-SCSS-语法" class="headerlink" title="考虑到 SCSS 语法对 CSS 语法友好的兼容性和扩展性，我们在使用 SASS 编写样式的时候，统一使用 SCSS 语法"></a><code>考虑到 SCSS 语法对 CSS 语法友好的兼容性和扩展性，我们在使用 SASS 编写样式的时候，统一使用 SCSS 语法</code></h3><h4 id="SASS注释规范"><a href="#SASS注释规范" class="headerlink" title="SASS注释规范"></a>SASS注释规范</h4><p>SASS支持 CSS 标准的多行注释 <code>/* */</code>，同时也支持单行注释 <code>//</code>。</p>
-<ul>
-<li>多行注释在使用非 Compressed 模式进行编译后的输出文件中会保留下来，单行注释 <code>//</code> 侧会被移除</li>
-<li>多行注释和单行注释在 SASS 编译后输出的压缩 CSS 文件都会被移除</li>
-<li>当多行注释内容第一个字符是感叹号 “!” 的时候，即 <code>/*! */</code>，SASS 无论用哪一种编译方式编译注释都会保留</li>
-<li>注释内容可以加入 SASS 变量</li>
-</ul>
-<p>###团队约定</p>
-<p>SCSS 文件内</p>
-<ul>
-<li><code>全部遵循 CSS 注释规范</code></li>
-<li><code>不使用 /*! */ 注释方式</code></li>
-<li><code>注释内不放 SASS 变量</code></li>
-</ul>
-<p>标准的注释规范如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@charset &quot;UTF-8&quot;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @desc File Info</span><br><span class="line"> * @author liqinuo</span><br><span class="line"> * @date 2015-10-10</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">/* Module A</span><br><span class="line">----------------------------------------------------------------*/</span><br><span class="line">.mod_a &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* module A logo */</span><br><span class="line">.mod_a_logo &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* module A nav */</span><br><span class="line">.mod_a_nav &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* Module B</span><br><span class="line">----------------------------------------------------------------*/</span><br><span class="line">.mod_b &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* module B logo */</span><br><span class="line">.mod_b_logo &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* module B nav */</span><br><span class="line">.mod_b_nav &#123;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="嵌套规范"><a href="#嵌套规范" class="headerlink" title="嵌套规范"></a>嵌套规范</h4><h5 id="选择器嵌套"><a href="#选择器嵌套" class="headerlink" title="选择器嵌套"></a>选择器嵌套</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc &#123;&#125;</span><br><span class="line">body .jdc &#123;&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    body &amp; &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc &#123;&#125;</span><br><span class="line">.jdc_cover &#123;&#125;</span><br><span class="line">.jdc_info &#123;&#125;</span><br><span class="line">.jdc_info_name &#123;&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    &amp;_cover &#123;&#125;</span><br><span class="line">    &amp;_info &#123;</span><br><span class="line">        &amp;_name &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="属性嵌套"><a href="#属性嵌套" class="headerlink" title="属性嵌套"></a>属性嵌套</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    background-color: red;</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-image: url(/img/icon.png);</span><br><span class="line">    background-position: 0 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    background: &#123;</span><br><span class="line">        color: red;</span><br><span class="line">        repeat: no-repeat;</span><br><span class="line">        image: url(/img/icon.png);</span><br><span class="line">        position: 0 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>可复用属性尽量抽离为页面变量，易于统一维护</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc &#123;</span><br><span class="line">    color: red;</span><br><span class="line">    border-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">$color: red;</span><br><span class="line">.jdc &#123;</span><br><span class="line">    color: $color;</span><br><span class="line">    border-color: $color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="混合-mixin"><a href="#混合-mixin" class="headerlink" title="混合(mixin)"></a>混合(mixin)</h4><p>根据功能定义模块，然后在需要使用的地方通过 <code>@include</code> 调用，避免编码时重复输入代码段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc_1 &#123;</span><br><span class="line">    -webkit-border-radius: 5px;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">&#125;</span><br><span class="line">.jdc_2 &#123;</span><br><span class="line">    -webkit-border-radius: 10px;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">@mixin radius($radius:5px) &#123;</span><br><span class="line">    -webkit-border-radius: $radius;</span><br><span class="line">    border-radius: $radius;</span><br><span class="line">&#125;</span><br><span class="line">.jdc_1 &#123;</span><br><span class="line">    @include radius; //参数使用默认值</span><br><span class="line">&#125;</span><br><span class="line">.jdc_2 &#123;</span><br><span class="line">    @include radius(10px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// CSS</span><br><span class="line">.jdc_1 &#123;</span><br><span class="line">    background: url(/img/icon.png) no-repeat -10px 0;</span><br><span class="line">&#125;</span><br><span class="line">.jdc_2 &#123;</span><br><span class="line">    background: url(/img/icon.png) no-repeat -20px 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// SCSS</span><br><span class="line">@mixin icon($x:0, $y:0) &#123;</span><br><span class="line">    background: url(/img/icon.png) no-repeat $x, $y;</span><br><span class="line">&#125;</span><br><span class="line">.jdc_1 &#123;</span><br><span class="line">    @include icon(-10px, 0);</span><br><span class="line">&#125;</span><br><span class="line">.jdc_2 &#123;</span><br><span class="line">    @include icon(-20px, 0);</span><br><span class="line">&#125;</span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line">#### 占位选择器 %</span><br><span class="line"></span><br><span class="line">如果不调用则不会有任何多余的 css 文件，占位选择器以 `%` 标识定义，通过 `@extend` 调用</span><br></pre></td></tr></table></figure>
-<p>//scss<br>%borderbox {<br>    -webkit-box-sizing: border-box;<br>    box-sizing: border-box;<br>}<br>.jdc {<br>    @extend %borderbox;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### @extend 继承</span><br></pre></td></tr></table></figure></p>
-<p>// CSS<br>.jdc_1 {<br>    font-size: 12px;<br>    color: red;<br>}<br>.jdc_2 {<br>    font-size: 12px;<br>    color: red;<br>    font-weight: bold;<br>}</p>
-<p>// SCSS<br>.jdc_1 {<br>    font-size: 12px;<br>    color: red;<br>}<br>.jdc_2 {<br>    @extend .jdc_1;<br>    font-weight: bold;<br>}</p>
-<p>// 或者<br>%font_red {<br>    font-size: 12px;<br>    color: red;<br>}<br>.jdc_1 {<br>    @extend %font_red;<br>}<br>.jdc_2 {<br>    @extend %font_red;<br>    font-weight: bold;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### @for 循环</span><br></pre></td></tr></table></figure></p>
-<p>// CSS<br>.jdc_1 {background-position: 0 -20px;}<br>.jdc_2 {background-position: 0 -40px;}<br>.jdc_3 {background-position: 0 -60px;}</p>
-<p>// SCSS<br>@for $i from 1 through 3 {<br>    .jdc_#{$i} {<br>        background-position: 0 (-20px) * $i;<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意：`#&#123;&#125;` 是连接符，变量连接使用时需要依赖</span><br><span class="line"></span><br><span class="line">#### @each 循环</span><br></pre></td></tr></table></figure></p>
-<p>// CSS<br>.jdc_list {<br>    background-image: url(/img/jdc_list.png);<br>}<br>.jdc_detail {<br>    background-image: url(/img/jdc_detail.png);<br>}</p>
-<p>// SCSS<br>@each $name in list, detail {<br>    .jdc_#{$name} {<br>        background-image: url(/img/jdc_#{$name}.png);<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>// CSS<br>.jdc_list {<br>    background-image: url(/img/jdc_list.png);<br>    background-color: red;<br>}<br>.jdc_detail {<br>    background-image: url(/img/jdc_detail.png);<br>    background-color: blue;<br>}</p>
-<p>// SCSS<br>@each $name, $color in (list, red), (detail, blue) {<br>    .jdc_#{$name} {<br>        background-image: url(/img/jdc_#{$name}.png);<br>        background-color: $color;<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### @function 函数</span><br></pre></td></tr></table></figure></p>
-<p>@function pxToRem($px) {<br>    @return $px / 10px * 1rem;<br>}<br>.jdc {<br>    font-size: pxToRem(12px);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 运算规范</span><br><span class="line"></span><br><span class="line">运算符之间空出一个空格</span><br></pre></td></tr></table></figure></p>
-<p>.jdc {<br>    width: 100px - 50px;<br>    height: 30px / 5;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">注意运算单位，单位同时参与运算，所以 10px 不等于 10，乘除运算时需要特别注意</span><br></pre></td></tr></table></figure></p>
-<p>// 正确的运算格式<br>.jdc {<br>    width: 100px - 50px;<br>    width: 100px + 50px;<br>    width: 100px * 2;<br>    width: 100px / 2;<br>}<br><code>`</code></p>
-
+<hr>
+<h2 id="var-let-const区别何在？"><a href="#var-let-const区别何在？" class="headerlink" title="var/let/const区别何在？"></a><strong>var/let/const区别何在？</strong></h2><h3 id="1-let添加了块级作用域"><a href="#1-let添加了块级作用域" class="headerlink" title="1. let添加了块级作用域"></a>1. let添加了块级作用域</h3><p>我们知道，JavaScript是没有块级作用域的，如果在块内使用var声明一个变量，它在代码块外面仍旧是可见的<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">     var foo = 3;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foo);    // 3</span><br></pre></td></tr></table></figure></p>
+<p>块级作用域，let块级变量：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">     let foo = 3;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foo);   // Uncaught ReferenceError</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/08/28/2018-8-28-1/#more">继续阅读全文 »</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-7/" data-id="cjloupnf8000mig7tv9kzgxs0" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/28/2018-8-28-1/" data-id="cjloupnfa000pig7t1si18eft" class="article-share-link">分享</a>
       
       
       
@@ -157,7 +119,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/page/11/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/10/">10</a><a class="page-number" href="/blog/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/blog/page/13/">13</a><a class="page-number" href="/blog/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/25/">25</a><a class="extend next" rel="next" href="/blog/page/13/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/11/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/10/">10</a><a class="page-number" href="/blog/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/blog/page/13/">13</a><a class="page-number" href="/blog/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/26/">26</a><a class="extend next" rel="next" href="/blog/page/13/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -180,6 +142,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2019/02/19/2019-02-19/">常用的js方法</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/12/27/2018-12-27/">禁止页面滑动</a>
           </li>
         
@@ -188,15 +154,11 @@
           </li>
         
           <li>
-            <a href="/blog/2018/10/23/2018-10-23-01/">相关注意事项</a>
+            <a href="/blog/2018/10/23/2018-10-23/">相关注意事项</a>
           </li>
         
           <li>
             <a href="/blog/2018/09/19/2018-09-19-03/">config/index.js 配置文件详解</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/19/2018-09-19-02/">build/webpack.base.conf.js配置文件详解</a>
           </li>
         
       </ul>
