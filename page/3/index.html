@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-12-27" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-11-29" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/12/27/2018-12-27/" class="article-date">
-  <time datetime="2018-12-27T09:58:13.807Z" itemprop="datePublished">2018-12-27</time>
+    <a href="/blog/2018/11/29/2018-11-29/" class="article-date">
+  <time datetime="2018-11-29T07:51:33.251Z" itemprop="datePublished">2018-11-29</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/js/">js</a>
+    <a class="article-category-link" href="/blog/categories/css/">css</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/12/27/2018-12-27/">禁止页面滑动</a>
+      <a class="article-title" href="/blog/2018/11/29/2018-11-29/">旁门左道css</a>
     </h1>
   
 
@@ -94,7 +94,9 @@
       
         <!-- Table of Contents -->
         
-        <p><br><br>禁止页面滑动<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">'touchmove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        e.stopPropagation();</span><br><span class="line">    &#125;, &#123; <span class="attr">passive</span>: <span class="literal">false</span> &#125;);</span><br></pre></td></tr></table></figure></p>
+        <p><br><br>模拟1px虚线<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: 100%;</span><br><span class="line"><span class="selector-tag">height</span>: 1<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>, <span class="selector-id">#ccc</span> 0%, <span class="selector-id">#ccc</span> 50%, <span class="selector-tag">transparent</span> 50%);</span><br><span class="line"><span class="selector-tag">background-size</span>: 8<span class="selector-tag">px</span> 1<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">background-repeat</span>: <span class="selector-tag">repeat-x</span>;</span><br></pre></td></tr></table></figure></p>
+<p>单行文本超出省略号<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:nowrap</span>;</span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;</span><br><span class="line"><span class="selector-tag">width</span><span class="selector-pseudo">:50</span>%;</span><br></pre></td></tr></table></figure></p>
+<p>多行文本超出省略号<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: 50%;</span><br><span class="line"><span class="selector-tag">word-break</span>: <span class="selector-tag">break-all</span>;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;</span><br><span class="line"><span class="selector-tag">-webkit-line-clamp</span>: 2;</span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;</span><br></pre></td></tr></table></figure></p>
 <p><br></p>
 <blockquote>
 <p>作者：仇江涛</p>
@@ -103,7 +105,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/12/27/2018-12-27/" data-id="cjxbkgju0000cn4nzyop5pj8e" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/11/29/2018-11-29/" data-id="cjxbkgjv4000qn4nzz9dagwl0" class="article-share-link">分享</a>
       
       
       
@@ -118,7 +120,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/27/">27</a><a class="extend next" rel="next" href="/blog/page/4/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/16/">16</a><a class="extend next" rel="next" href="/blog/page/4/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -149,15 +151,15 @@
           </li>
         
           <li>
-            <a href="/blog/2018/12/27/2018-12-27/">禁止页面滑动</a>
-          </li>
-        
-          <li>
             <a href="/blog/2018/11/29/2018-11-29/">旁门左道css</a>
           </li>
         
           <li>
-            <a href="/blog/2018/10/23/2018-10-23/">相关注意事项</a>
+            <a href="/blog/2018/09/19/2018-09-19-02/">build/webpack.base.conf.js配置文件详解</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
           </li>
         
       </ul>

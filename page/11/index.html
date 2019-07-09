@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2018-09-05" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-8-27-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/09/05/2018-09-05/" class="article-date">
-  <time datetime="2018-09-05T08:21:14.676Z" itemprop="datePublished">2018-09-05</time>
+    <a href="/blog/2018/08/27/2018-8-27-3/" class="article-date">
+  <time datetime="2018-08-27T11:16:32.826Z" itemprop="datePublished">2018-08-27</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/小知识/">小知识</a>
+    <a class="article-category-link" href="/blog/categories/前端开发规范/">前端开发规范</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/09/05/2018-09-05/">git常用命令合集</a>
+      <a class="article-title" href="/blog/2018/08/27/2018-8-27-3/">CSS命名规范</a>
     </h1>
   
 
@@ -95,14 +95,64 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<hr>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "xxx"                       # 配置用户名 </span><br><span class="line">git config --global user.email "xxx@xxx.com"              # 配置邮件</span><br><span class="line">git config  user.name                                     # 查看用户名 </span><br><span class="line">git config  user.email                                    # 查看邮件</span><br><span class="line"></span><br><span class="line">git clone [git地址]                                        # 克隆到本地</span><br><span class="line">git remote -v                                             # 查看远程仓库</span><br><span class="line">git remote rm origin                                      # 删除远程仓库</span><br><span class="line">git remote add [name] [git地址]                            # 创建并关联本地远程仓库	</span><br><span class="line">git fetch [name]                                          # 获取所有远程分支（不更新本地分支，另需merge）</span><br><span class="line">git merge [name]                                          # 合并分支 将名称为[name]的分支与当前分支合并</span><br><span class="line">git pull [name]                                           # 本地与服务器端同步</span><br><span class="line">git pull origin master                                    # 获取远程分支master并merge到当前分支</span><br><span class="line"></span><br><span class="line">git branch                                                # 查看本地分支</span><br><span class="line">git branch [name]                                         # 创建新分支</span><br><span class="line">git checkout [name]                                       # 切换分支</span><br><span class="line">git checkout -b [name]                                    # 创建新分支并立即切换到新分支</span><br><span class="line">git branch -d [name]                                      # 删除分支 [-d选项只能删除已经参与了合并的分支]</span><br><span class="line">git branch -D [name]                                      # 强制删除分支</span><br><span class="line"></span><br><span class="line">git status                                                # 查看当前版本状态（是否修改） </span><br><span class="line">git diff                                                  # 比较的是暂存区和工作区的差异</span><br><span class="line">git add .                                                 # 把修改的内容全部提交到暂存区</span><br><span class="line">git commit -m ''                                          # 提交注释</span><br><span class="line">git push -u origin master                                 # 首次推送到远程默认分支  </span><br><span class="line">git push origin [name]                                    # 创建远程分支(本地分支push到远程)</span><br><span class="line">git push origin --delete [name]                         # 删除远程分支</span><br><span class="line"></span><br><span class="line">git init                                                  # 初始化本地git仓库（创建新仓库）</span><br><span class="line">git reset --hard HEAD                                     # 回退到上个版本</span><br><span class="line">git reset --hard [版本号] 								  # 强制提交</span><br><span class="line">git push -f origin master                                 # 回退到历史版本</span><br><span class="line">git log                                                   # 看你commit的日志</span><br><span class="line">git rm [name]                                             # 删除[name]文件</span><br><span class="line"></span><br><span class="line">.gitignore 配置不起作用的解决方案</span><br><span class="line"></span><br><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure>
-<p>建议：<br>1.在本地修改与远程代码无冲突的情况下，优先使用：pull-&gt;commit-&gt;push<br>2.在本地修改与远程代码有冲突的情况下，优先使用：commit-&gt;pull-&gt;push</p>
+<h2 id="一-分类命名"><a href="#一-分类命名" class="headerlink" title="一.分类命名"></a>一.分类命名</h2><hr>
+<p>项目是以团队为单位，代码规范应同出一门。</p>
+<p><br></p>
+<h3 id="1-CSS文件的分类和引用顺序"><a href="#1-CSS文件的分类和引用顺序" class="headerlink" title="1. CSS文件的分类和引用顺序"></a>1. CSS文件的分类和引用顺序</h3><p>通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。</p>
+<p>我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。</p>
+<ol>
+<li><p><code>公共型样式</code>：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局”、“通用模块和其扩展”、“元件和其扩展”、“功能类样式”、“皮肤类样式”。</p>
+</li>
+<li><p><code>特殊型样式</code>：当某个栏目或页面的样式与网站整体差异较大或者维护率较高时，可以独立引用一个样式：“特殊的布局、模块和元件及扩展”、“特殊的功能、颜色和背景”，也可以是某个大型控件或模块的独立样式。</p>
+</li>
+<li><p><code>皮肤型样式</code>：如果产品需要换肤功能，那么我们需要将颜色、背景等抽离出来放在这里。</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"assets/css/global.css"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"assets/css/index.css"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"assets/css/skin.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-CSS内部的分类及其顺序"><a href="#2-CSS内部的分类及其顺序" class="headerlink" title="2. CSS内部的分类及其顺序"></a>2. CSS内部的分类及其顺序</h3><ul>
+<li><p><code>重置（reset）和默认（base）（tags）</code>：消除默认样式和浏览器差异，并设置部分标签的初始样式，以减少后面的重复劳动！你可以根据你的网站需求设置！</p>
+</li>
+<li><p><code>统一处理</code>：建议在这个位置统一调用背景图（这里指多个布局或模块或元件共用的图）和清除浮动（这里指通用性较高的布局、模块、元件内的清除）等统一设置处理的样式！</p>
+</li>
+<li><p><code>布局（grid）（.xxx-）</code>：xxx代表项目名称（英文单词或拼音缩写），将页面分割为几个大块，通常有头部、主体、主栏、侧栏、尾部等！</p>
+</li>
+<li><p><code>模块（module）（.m-）</code>：通常是一个语义化的可以重复使用的较大的整体！m代表模块名称英文单词或拼音缩写，比如借款，还款，征信，提现等</p>
+</li>
+<li><p><code>组件（unit）（.ui-）</code>：通常是一个不可再分的较为小巧的个体，通常被重复用于各种模块中！比如按钮、输入框、loading、图标等！</p>
+</li>
+<li><p><code>功能（function）</code>：为方便一些常用样式的使用，我们将这些使用率较高的样式剥离出来，按需使用，通常这些选择器具有固定样式表现，比如清除浮动等！不可滥用！</p>
+</li>
+<li><p><code>皮肤（skin）（.skin-）</code>：如果你需要把皮肤型的样式抽离出来，通常为文字色、背景色（图）、边框色等，非换肤型网站通常只提取文字色！非换肤型网站不可滥用此类！</p>
+</li>
+</ul>
+<p><code>**其中xxx是项目的英文名或拼音简写**</code></p>
+<h2 id="二-命名规则"><a href="#二-命名规则" class="headerlink" title="二. 命名规则"></a>二. 命名规则</h2><hr>
+<h3 id="1-分类的命名方法：使用单个字母-”-“为前缀"><a href="#1-分类的命名方法：使用单个字母-”-“为前缀" class="headerlink" title="1. 分类的命名方法：使用单个字母+”-“为前缀"></a>1. 分类的命名方法：使用单个字母+”-“为前缀</h3><ol>
+<li><code>布局（grid）（.xxx-）；</code></li>
+<li><code>模块（module）（.m-）；</code></li>
+<li>`元件（</li>
+</ol>
+<p>）（.ui-）；`</p>
+<ol start="4">
+<li><code>功能（function）；</code></li>
+<li><code>皮肤（skin）（.skin-）；</code></li>
+</ol>
+<p>对以上的解释详情参见：分类方法中的“CSS内部的分类及其顺序”。</p>
+<h3 id="2-模块和元件的扩展类的命名方法"><a href="#2-模块和元件的扩展类的命名方法" class="headerlink" title="2. 模块和元件的扩展类的命名方法"></a>2. 模块和元件的扩展类的命名方法</h3><p><code>当A、B、C、...它们类型相同且外形相似区别不大，那么就以它们中出现率最高的做成基类，其他做成基类的扩展。</code></p>
+<p>方法：+“-”+数字或字母（如：.m-list的扩展类为.m-list-1、.m-list-2等）。</p>
+<p><code>补充</code>：基类自身可以独立使用（如：class=”m-list”即可），扩展类必须基于基类使用（如：class=”m-list m-list-2”）。</p>
+<p>如果你的扩展类是表示不同状态，那么你可以这样命名：ui-btn-dis，ui-btn-hov，m-box-sel，m-box-hov等等，然后像这样使用：class=”ui-btn ui-btn-disabled”。</p>
+<h3 id="3-相同语义的不同类命名"><a href="#3-相同语义的不同类命名" class="headerlink" title="3. 相同语义的不同类命名"></a>3. 相同语义的不同类命名</h3><p>方法：直接加数字或字母区分即可（如：.m-list、.m-list-2、.m-list-3等，都是列表模块，但是是完全不一样的模块）。</p>
+<p>其他举例：.s-fb0、.s-fb1、.m-logo2、.m-logo3、ui-btn、ui-btn2等等。</p>
+<h3 id="4-相同的CSS样式要合并"><a href="#4-相同的CSS样式要合并" class="headerlink" title="4. 相同的CSS样式要合并"></a>4. 相同的CSS样式要合并</h3><p>有时候虽然两个同类型的模块很相似，但是你希望他们之间不要有依赖关系，也就是说你不希望使用扩展的方法，那么你可以通过合并选择器来设置共性的样式。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 两个元件共性的样式 */</span></span><br><span class="line"><span class="selector-class">.ui-tip1</span>,<span class="selector-class">.ui-tip2</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.ui-tip1</span> <span class="selector-class">.item</span>,<span class="selector-class">.ui-tip2</span> <span class="selector-class">.item</span>&#123;&#125;</span><br><span class="line"><span class="comment">/* 在分别是两个元件各自的样式 */</span></span><br><span class="line"><span class="comment">/* tip1 */</span></span><br><span class="line"><span class="selector-class">.ui-tip1</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.ui-tip1</span> <span class="selector-class">.item</span>&#123;&#125;</span><br><span class="line"><span class="comment">/* tip2 */</span></span><br><span class="line"><span class="selector-class">.ui-tip2</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.ui-tip2</span> <span class="selector-class">.item</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用本方法的前提是：相同类型、功能和外观都相似，写在同一片代码区域方便维护。</p>
+<h3 id="5-防止污染和被污染"><a href="#5-防止污染和被污染" class="headerlink" title="5. 防止污染和被污染"></a>5. 防止污染和被污染</h3><p>当模块或元件之间互相嵌套，且使用了相同的标签选择器或其他后代选择器，那么里面的选择器就会被外面相同的选择器所影响。</p>
+<p>所以，如果你的模块或元件可能嵌套或被嵌套于其他模块或元件，那么要慎用标签选择器，必要时采用类选择器，并注意命名方式，可以采用.m-layer .layerxxx、.m-list2 .list2xxx的形式来降低后代选择器的污染性。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/09/05/2018-09-05/" data-id="cjxbkgjr10000n4nz3kt4pnl2" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/08/27/2018-8-27-3/" data-id="cjxbkgjv9000yn4nzb0b0gs3n" class="article-share-link">分享</a>
       
       
       
@@ -117,7 +167,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/page/10/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><a class="page-number" href="/blog/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/blog/page/12/">12</a><a class="page-number" href="/blog/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/27/">27</a><a class="extend next" rel="next" href="/blog/page/12/">下一页&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/10/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><a class="page-number" href="/blog/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/blog/page/12/">12</a><a class="page-number" href="/blog/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/16/">16</a><a class="extend next" rel="next" href="/blog/page/12/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -148,15 +198,15 @@
           </li>
         
           <li>
-            <a href="/blog/2018/12/27/2018-12-27/">禁止页面滑动</a>
-          </li>
-        
-          <li>
             <a href="/blog/2018/11/29/2018-11-29/">旁门左道css</a>
           </li>
         
           <li>
-            <a href="/blog/2018/10/23/2018-10-23/">相关注意事项</a>
+            <a href="/blog/2018/09/19/2018-09-19-02/">build/webpack.base.conf.js配置文件详解</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
           </li>
         
       </ul>
