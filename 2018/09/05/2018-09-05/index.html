@@ -5,17 +5,17 @@
   
   <title>git常用命令合集 | 仇江涛的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344git config --global user.name &quot;xxx&quot;                       # 配置用户名 git config --global user.email &quot;xxx@xxx.com&quot;">
+  <meta name="description" content="命令 用途备注     git init 初始化仓库    git config --global user.name [用户名] 配置用户名    git config --global user.email [邮箱] 配置邮箱    git config  user.name 查看用户名    git config  user.email 查看邮箱    git clone [仓库地址">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git常用命令合集">
 <meta property="og:url" content="https://github.com/taokiang/blog/2018/09/05/2018-09-05/index.html">
 <meta property="og:site_name" content="仇江涛的博客">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344git config --global user.name &quot;xxx&quot;                       # 配置用户名 git config --global user.email &quot;xxx@xxx.com&quot;">
+<meta property="og:description" content="命令 用途备注     git init 初始化仓库    git config --global user.name [用户名] 配置用户名    git config --global user.email [邮箱] 配置邮箱    git config  user.name 查看用户名    git config  user.email 查看邮箱    git clone [仓库地址">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T03:24:39.914Z">
+<meta property="og:updated_time" content="2019-07-16T06:29:44.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令合集">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344git config --global user.name &quot;xxx&quot;                       # 配置用户名 git config --global user.email &quot;xxx@xxx.com&quot;">
+<meta name="twitter:description" content="命令 用途备注     git init 初始化仓库    git config --global user.name [用户名] 配置用户名    git config --global user.email [邮箱] 配置邮箱    git config  user.name 查看用户名    git config  user.email 查看邮箱    git clone [仓库地址">
   
     <link rel="alternate" href="/atom.xml" title="仇江涛的博客" type="application/atom+xml">
   
@@ -75,7 +75,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/小知识/">小知识</a>
+    <a class="article-category-link" href="/blog/categories/GIT/">GIT</a>
   </div>
 
   </div>
@@ -97,14 +97,167 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<hr>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "xxx"                       # 配置用户名 </span><br><span class="line">git config --global user.email "xxx@xxx.com"              # 配置邮件</span><br><span class="line">git config  user.name                                     # 查看用户名 </span><br><span class="line">git config  user.email                                    # 查看邮件</span><br><span class="line"></span><br><span class="line">git clone [git地址]                                        # 克隆到本地</span><br><span class="line">git remote -v                                             # 查看远程仓库</span><br><span class="line">git remote rm origin                                      # 删除远程仓库</span><br><span class="line">git remote add [name] [git地址]                            # 创建并关联本地远程仓库	</span><br><span class="line">git fetch [name]                                          # 获取所有远程分支（不更新本地分支，另需merge）</span><br><span class="line">git merge [name]                                          # 合并分支 将名称为[name]的分支与当前分支合并</span><br><span class="line">git pull [name]                                           # 本地与服务器端同步</span><br><span class="line">git pull origin master                                    # 获取远程分支master并merge到当前分支</span><br><span class="line"></span><br><span class="line">git branch                                                # 查看本地分支</span><br><span class="line">git branch [name]                                         # 创建新分支</span><br><span class="line">git checkout [name]                                       # 切换分支</span><br><span class="line">git checkout -b [name]                                    # 创建新分支并立即切换到新分支</span><br><span class="line">git branch -d [name]                                      # 删除分支 [-d选项只能删除已经参与了合并的分支]</span><br><span class="line">git branch -D [name]                                      # 强制删除分支</span><br><span class="line"></span><br><span class="line">git status                                                # 查看当前版本状态（是否修改） </span><br><span class="line">git diff                                                  # 比较的是暂存区和工作区的差异</span><br><span class="line">git add .                                                 # 把修改的内容全部提交到暂存区</span><br><span class="line">git commit -m ''                                          # 提交注释</span><br><span class="line">git push -u origin master                                 # 首次推送到远程默认分支  </span><br><span class="line">git push origin [name]                                    # 创建远程分支(本地分支push到远程)</span><br><span class="line">git push origin --delete [name]                           # 删除远程分支</span><br><span class="line"></span><br><span class="line">git init                                                  # 初始化本地git仓库（创建新仓库）</span><br><span class="line">git merge [name] 										  # 合并分支</span><br><span class="line">git reflog												  # 查看commit版本号</span><br><span class="line">git reset --hard HEAD                                     # 回退到上个版本</span><br><span class="line">git reset --hard [版本号]								  # 强制提交</span><br><span class="line">git push -f origin master                                 # 回退到历史版本</span><br><span class="line"></span><br><span class="line">git log                                                   # 看你commit的日志</span><br><span class="line">git rm [name]                                             # 删除[name]文件</span><br><span class="line"></span><br><span class="line">.gitignore 配置不起作用的解决方案</span><br><span class="line"></span><br><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git init</code></td>
+<td>初始化仓库</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git config --global user.name [用户名]</code></td>
+<td>配置用户名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git config --global user.email [邮箱]</code></td>
+<td>配置邮箱</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git config  user.name</code></td>
+<td>查看用户名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git config  user.email</code></td>
+<td>查看邮箱</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git clone [仓库地址]</code></td>
+<td>克隆到本地</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git remote -v</code></td>
+<td>查看远程仓库</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git remote add [分支名称] [仓库地址]</code></td>
+<td>创建并关联本地到远程仓库</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git remote rm origin</code></td>
+<td>删除远程仓库</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git pull [分支名称]</code></td>
+<td>同步分支</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git merge [分支名称]</code></td>
+<td>合并分支</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git fetch [分支名称]</code></td>
+<td>不更新本地分支，另需merge</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git reflog</code></td>
+<td>查看commit版本号</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git reset --hard HEAD</code></td>
+<td>回退到上个版本</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git reset --hard [版本号]</code></td>
+<td>回退到某个版本</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git push -f origin master</code></td>
+<td>强制提交</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git branch</code></td>
+<td>查看本地分支</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git checkout -b [分支名称]</code></td>
+<td>创建新分支并切换到新分支</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git branch -D [分支名称]</code></td>
+<td>强制删除分支</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git push origin --delete [分支名称]</code></td>
+<td>删除远程分支</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git add .</code></td>
+<td>变更内容全部提交到暂存区</td>
+<td></td>
+</tr>
+<tr>
+<td><code>commit -m [备注]</code></td>
+<td>提交备注</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git -u origin master [分支名称]</code></td>
+<td>第一次本地推送到远程分支</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git push origin [分支名称]</code></td>
+<td>本地推送到远程分支</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git log</code></td>
+<td>查看commit日志</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git rm [文件名]</code></td>
+<td>删除某文件</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git status</code></td>
+<td>查看当前版本是否修改</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git diff</code></td>
+<td>查看暂存区和工作区的差异</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git rm -r --cached .</code></td>
+<td>清除缓存（.gitignore配置失效）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>建议：<br>1.在本地修改与远程代码无冲突的情况下，优先使用：pull-&gt;commit-&gt;push<br>2.在本地修改与远程代码有冲突的情况下，优先使用：commit-&gt;pull-&gt;push</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/09/05/2018-09-05/" data-id="cjxbkgjr10000n4nz3kt4pnl2" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2018/09/05/2018-09-05/" data-id="cjy5i7mr00000bwnz9ygmq1jf" class="article-share-link">分享</a>
       
       
       
@@ -223,7 +376,7 @@
           </li>
         
           <li>
-            <a href="/blog/2018/09/19/2018-09-19-02/">build/webpack.base.conf.js配置文件详解</a>
+            <a href="/blog/2018/09/19/2018-09-19/">webpack.base.conf.js配置文件详解</a>
           </li>
         
           <li>
