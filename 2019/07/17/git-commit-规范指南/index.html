@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>常用pc分辨率统计图 | 仇江涛的博客</title>
+  <title>git-commit-规范指南 | 仇江涛的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="常用pc分辨率统计图">
-<meta property="og:url" content="https://github.com/taokiang/blog/2018/07/18/2018-7-18/index.html">
+  <meta name="description" content="Angular.js commit 规范 commit message的格式包括三个部分：header、body（可选）和footer（可选）12345&amp;lt;type&amp;gt;(&amp;lt;scope&amp;gt;): &amp;lt;subject&amp;gt;&amp;lt;BLANK LINE&amp;gt;&amp;lt;body&amp;gt;&amp;lt;BLANK LINE&amp;gt;&amp;lt;footer&amp;gt; Headertype(必选)c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git-commit-规范指南">
+<meta property="og:url" content="https://github.com/taokiang/blog/2019/07/17/git-commit-规范指南/index.html">
 <meta property="og:site_name" content="仇江涛的博客">
+<meta property="og:description" content="Angular.js commit 规范 commit message的格式包括三个部分：header、body（可选）和footer（可选）12345&amp;lt;type&amp;gt;(&amp;lt;scope&amp;gt;): &amp;lt;subject&amp;gt;&amp;lt;BLANK LINE&amp;gt;&amp;lt;body&amp;gt;&amp;lt;BLANK LINE&amp;gt;&amp;lt;footer&amp;gt; Headertype(必选)c">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/blog/2018/07/18/2018-7-18/pc_size.jpg">
-<meta property="og:updated_time" content="2019-07-16T07:38:07.069Z">
+<meta property="og:image" content="https://github.com/blog/2019/07/17/git-commit-规范指南/3827973-fd58eb2b9c5f5ded.webp">
+<meta property="og:updated_time" content="2019-07-17T03:23:28.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用pc分辨率统计图">
-<meta name="twitter:image" content="https://github.com/blog/2018/07/18/2018-7-18/pc_size.jpg">
+<meta name="twitter:title" content="git-commit-规范指南">
+<meta name="twitter:description" content="Angular.js commit 规范 commit message的格式包括三个部分：header、body（可选）和footer（可选）12345&amp;lt;type&amp;gt;(&amp;lt;scope&amp;gt;): &amp;lt;subject&amp;gt;&amp;lt;BLANK LINE&amp;gt;&amp;lt;body&amp;gt;&amp;lt;BLANK LINE&amp;gt;&amp;lt;footer&amp;gt; Headertype(必选)c">
+<meta name="twitter:image" content="https://github.com/blog/2019/07/17/git-commit-规范指南/3827973-fd58eb2b9c5f5ded.webp">
   
     <link rel="alternate" href="/atom.xml" title="仇江涛的博客" type="application/atom+xml">
   
@@ -67,14 +70,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2018-7-18" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git-commit-规范指南" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/07/18/2018-7-18/" class="article-date">
-  <time datetime="2018-07-18T06:24:08.000Z" itemprop="datePublished">2018-07-18</time>
+    <a href="/blog/2019/07/17/git-commit-规范指南/" class="article-date">
+  <time datetime="2019-07-17T02:54:09.000Z" itemprop="datePublished">2019-07-17</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/优秀方案收藏/">优秀方案收藏</a>
+    <a class="article-category-link" href="/blog/categories/GIT/">GIT</a>
   </div>
 
   </div>
@@ -85,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      常用pc分辨率统计图
+      git-commit-规范指南
     </h1>
   
 
@@ -96,12 +99,26 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<img src="/blog/2018/07/18/2018-7-18/pc_size.jpg">
+<img src="/blog/2019/07/17/git-commit-规范指南/3827973-fd58eb2b9c5f5ded.webp" title="Angular.js commit 规范">
+<p><center>Angular.js commit 规范</center></p>
+<h2 id="commit-message的格式"><a href="#commit-message的格式" class="headerlink" title="commit message的格式"></a>commit message的格式</h2><p>包括三个部分：header、body（可选）和footer（可选）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h2><h3 id="type-必选"><a href="#type-必选" class="headerlink" title="type(必选)"></a>type(必选)</h3><p>commit type的类别，只允许使用下面7个标识:</p>
+<ul>
+<li>feat：新功能（feature）</li>
+<li>fix：修补bug</li>
+<li>docs：文档（documentation）</li>
+<li>style： 格式（不影响代码运行的变动）</li>
+<li>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动</li>
+</ul>
+<h3 id="scope（可选）"><a href="#scope（可选）" class="headerlink" title="scope（可选）"></a>scope（可选）</h3><p>用于说明 commit 影响的范围，比如数据层、控制层、视图层等等：<br>例（Angular）：$location, $browser, $compile, $rootScope, ngHref, ngClick, ngView, *（影响不止一个）等。</p>
+<h3 id="subject-必选"><a href="#subject-必选" class="headerlink" title="subject(必选)"></a>subject(必选)</h3><p>简短描述，不超过50个字符</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2018/07/18/2018-7-18/" data-id="cjy6nmorr0007pgnzrbgi533s" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2019/07/17/git-commit-规范指南/" data-id="cjy6nmosd000opgnzpd0tn3kx" class="article-share-link">分享</a>
       
       
       
@@ -153,19 +170,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2018/08/10/2018-8-10/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          异步请求跨域，服务端解决方案
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2018/06/28/2018-6-28-1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2019/04/19/2019-04-19/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">a标签实现发短信功能(苹果、安卓的兼容)</div>
+      <div class="article-nav-title">js柯里化函数</div>
     </a>
   
 </nav>
@@ -195,42 +203,24 @@
 
   
     
-  
+    <div class="widget-wrap">
     
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/blog/2019/07/17/git-commit-规范指南/">git-commit-规范指南</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/04/19/2019-04-19/">js柯里化函数</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/02/19/2019-02-19/">常用的js方法</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/11/29/2018-11-29/">旁门左道css</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/09/19/2018-09-19/">webpack.base.conf.js配置文件详解</a>
-          </li>
-        
-      </ul>
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#commit-message的格式"><span class="toc-number">1.</span> <span class="toc-text">commit message的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Header"><span class="toc-number">2.</span> <span class="toc-text">Header</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#type-必选"><span class="toc-number">2.1.</span> <span class="toc-text">type(必选)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scope（可选）"><span class="toc-number">2.2.</span> <span class="toc-text">scope（可选）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#subject-必选"><span class="toc-number">2.3.</span> <span class="toc-text">subject(必选)</span></a></li></ol></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
 
+  
+    
+
+  
+    
+  
+    
   
     
 

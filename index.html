@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2019-04-19" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-git-commit-规范指南" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2019/04/19/2019-04-19/" class="article-date">
-  <time datetime="2019-04-19T10:16:34.295Z" itemprop="datePublished">2019-04-19</time>
+    <a href="/blog/2019/07/17/git-commit-规范指南/" class="article-date">
+  <time datetime="2019-07-17T02:54:09.000Z" itemprop="datePublished">2019-07-17</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JS/">JS</a>
+    <a class="article-category-link" href="/blog/categories/GIT/">GIT</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/04/19/2019-04-19/">js柯里化函数</a>
+      <a class="article-title" href="/blog/2019/07/17/git-commit-规范指南/">git-commit-规范指南</a>
     </h1>
   
 
@@ -95,20 +95,26 @@
         <!-- Table of Contents -->
         
         <p><br></p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>在计算机科学中，柯里化（Currying）是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数且返回结果的新函数的技术。</p>
-<p>函数柯里化的主要作用和特点就是参数复用、提前返回和延迟执行。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es5写法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span>  _argLen = fn.length</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">wrap</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> _args = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">act</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            _args = _args.concat([].slice.call(<span class="built_in">arguments</span>))</span><br><span class="line">            <span class="keyword">if</span>(_args.length === _argLen) &#123;</span><br><span class="line">                <span class="keyword">return</span> fn.apply(<span class="literal">null</span>, _args)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">arguments</span>.callee</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(_args.length === _argLen) &#123;</span><br><span class="line">                <span class="keyword">return</span> fn.apply(<span class="literal">null</span>, _args)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        act.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> fn.toString()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> act</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> wrap</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//es6写法</span></span><br><span class="line"><span class="keyword">const</span> curry = <span class="function">(<span class="params">fn, arr = []</span>) =&gt;</span> (...args) =&gt; (</span><br><span class="line">  arg =&gt; arg.length === fn.length</span><br><span class="line">    ? fn(...arg)</span><br><span class="line">    : curry(fn, arg)</span><br><span class="line">)([...arr, ...args])</span><br></pre></td></tr></table></figure>
-<h2 id="使用场景【1】-减少重复传递不变的部分参数"><a href="#使用场景【1】-减少重复传递不变的部分参数" class="headerlink" title="使用场景【1】 减少重复传递不变的部分参数"></a>使用场景【1】 减少重复传递不变的部分参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">simpleURL</span>(<span class="params">protocol, domain, path</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> protocol + <span class="string">"://"</span> + domain + <span class="string">"/"</span> + path;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 避免每次调用重复传参</span></span><br><span class="line"><span class="keyword">let</span> myURL1 = curry(simpleURL)(<span class="string">'https'</span>, <span class="string">'mysite'</span>);</span><br><span class="line"><span class="keyword">let</span> res1 = myURL1(<span class="string">'home.html'</span>);    <span class="comment">//</span></span><br><span class="line"><span class="built_in">console</span>.log(res1);<span class="comment">//https://mysite/home.html</span></span><br><span class="line"><span class="keyword">let</span> myURL2 = curry(simpleURL)(<span class="string">'http'</span>, <span class="string">'mysite'</span>);</span><br><span class="line"><span class="keyword">let</span> res2 = myURL2(<span class="string">'aboutme.html'</span>);    <span class="comment">//</span></span><br><span class="line"><span class="built_in">console</span>.log(res2);<span class="comment">//http://mysite/aboutme.html</span></span><br></pre></td></tr></table></figure>
-<h2 id="使用场景【2】-将柯里化后的callback参数传递给map-filter等函数"><a href="#使用场景【2】-将柯里化后的callback参数传递给map-filter等函数" class="headerlink" title="使用场景【2】 将柯里化后的callback参数传递给map,filter等函数"></a>使用场景【2】 将柯里化后的callback参数传递给map,filter等函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> persons = [&#123;<span class="attr">name</span>: <span class="string">'kevin'</span>, <span class="attr">age</span>: <span class="number">11</span>&#125;, &#123;<span class="attr">name</span>: <span class="string">'daisy'</span>, <span class="attr">age</span>: <span class="number">24</span>&#125;]</span><br><span class="line"><span class="keyword">let</span> getProp = curry(<span class="function"><span class="keyword">function</span> (<span class="params">key, obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> obj[key]</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">let</span> names2 = persons.map(getProp(<span class="string">'name'</span>))</span><br><span class="line"><span class="built_in">console</span>.log(names2); <span class="comment">//['kevin', 'daisy']</span></span><br><span class="line"><span class="keyword">let</span> ages2 = persons.map(getProp(<span class="string">'age'</span>))</span><br><span class="line"><span class="built_in">console</span>.log(ages2); <span class="comment">//[11,24]</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
-<blockquote>
-<p>作者：仇江涛</p>
-</blockquote>
+<img src="/blog/2019/07/17/git-commit-规范指南/3827973-fd58eb2b9c5f5ded.webp" title="Angular.js commit 规范">
+<p><center>Angular.js commit 规范</center></p>
+<h2 id="commit-message的格式"><a href="#commit-message的格式" class="headerlink" title="commit message的格式"></a>commit message的格式</h2><p>包括三个部分：header、body（可选）和footer（可选）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h2><h3 id="type-必选"><a href="#type-必选" class="headerlink" title="type(必选)"></a>type(必选)</h3><p>commit type的类别，只允许使用下面7个标识:</p>
+<ul>
+<li>feat：新功能（feature）</li>
+<li>fix：修补bug</li>
+<li>docs：文档（documentation）</li>
+<li>style： 格式（不影响代码运行的变动）</li>
+<li>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动</li>
+</ul>
+<h3 id="scope（可选）"><a href="#scope（可选）" class="headerlink" title="scope（可选）"></a>scope（可选）</h3><p>用于说明 commit 影响的范围，比如数据层、控制层、视图层等等：<br>例（Angular）：$location, $browser, $compile, $rootScope, ngHref, ngClick, ngView, *（影响不止一个）等。</p>
+<h3 id="subject-必选"><a href="#subject-必选" class="headerlink" title="subject(必选)"></a>subject(必选)</h3><p>简短描述，不超过50个字符</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/taokiang/blog/2019/04/19/2019-04-19/" data-id="cjy5i7mrk000fbwnzqwr3lhut" class="article-share-link">分享</a>
+      <a data-url="https://github.com/taokiang/blog/2019/07/17/git-commit-规范指南/" data-id="cjy6nmosd000opgnzpd0tn3kx" class="article-share-link">分享</a>
       
       
       
@@ -123,7 +129,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/16/">16</a><a class="extend next" rel="next" href="/blog/page/2/">下一页&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/17/">17</a><a class="extend next" rel="next" href="/blog/page/2/">下一页&raquo;</a>
   </nav>
 </section>
            
@@ -154,7 +160,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title categories">分类</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/GIT/">GIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Hexo搭建博客/">Hexo搭建博客</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JS/">JS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/VUE/">VUE</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/优秀方案收藏/">优秀方案收藏</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/前端开发规范/">前端开发规范</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/GIT/">GIT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Hexo搭建博客/">Hexo搭建博客</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JS/">JS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/VUE/">VUE</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/优秀方案收藏/">优秀方案收藏</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/前端开发规范/">前端开发规范</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -167,6 +173,10 @@
     <h3 class="widget-title recent-posts">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2019/07/17/git-commit-规范指南/">git-commit-规范指南</a>
+          </li>
         
           <li>
             <a href="/blog/2019/04/19/2019-04-19/">js柯里化函数</a>
@@ -184,10 +194,6 @@
             <a href="/blog/2018/09/19/2018-09-19/">webpack.base.conf.js配置文件详解</a>
           </li>
         
-          <li>
-            <a href="/blog/2018/09/07/2018-09-07/">Web页面加载，如何进行优化？</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -197,7 +203,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">九月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
